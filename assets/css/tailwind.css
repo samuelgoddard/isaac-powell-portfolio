@@ -9,6 +9,8 @@
 
 body {
   @apply antialiased font-sans;
+
+  min-width: 320px;
 }
 
 .dark {
@@ -53,4 +55,10 @@ body {
     opacity: 0;
     transform: scale(0.97);
   }
+}
+
+.hide-scrollbars {
+  overflow-y: scroll;
+  padding-right: 17px;
+  box-sizing: content-box;
 }

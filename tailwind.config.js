@@ -38,6 +38,8 @@ module.exports = {
       '48': '12rem',
       '56': '14rem',
       '64': '16rem',
+      '90': '20rem',
+      '128': '32rem',
     },
     backgroundColor: theme => theme('colors'),
     backgroundPosition: {
@@ -134,6 +136,7 @@ module.exports = {
       ],
     },
     fontSize: {
+      '6': '0.375rem',
       '7': '0.4375rem',
       '8': '0.5rem',
       '9': '0.5625rem',
@@ -215,10 +218,11 @@ module.exports = {
       ...theme('spacing'),
       ...negative(theme('spacing')),
     }),
-    maxHeight: {
+    maxHeight: theme => ({
+      ...theme('spacing'),
       full: '100%',
       screen: '100vh',
-    },
+    }),
     maxWidth: {
       xs: '20rem',
       sm: '24rem',

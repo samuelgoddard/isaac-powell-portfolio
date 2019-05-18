@@ -1,6 +1,6 @@
 <template>
   <header class="flex items-center">
-    <div class="flex-1">
+    <div class="md:flex-1">
       <logo />
       <div class="hidden md:inline-block align-middle">
         <span class="leading-snug tracking-tight font-serif pl-16 lg:pl-40">Nottingham, England</span>

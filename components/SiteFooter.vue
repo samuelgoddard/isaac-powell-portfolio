@@ -1,8 +1,14 @@
 <template>
   <footer class="w-full flex flex-wrap items-end">
     <div class="w-full md:flex-1 mb-4 md:mb-0">
-      <span class="text-7 md:text-8 lg:text-9 xl:text-11 2xl:text-14 tracking-widest uppercase block">Things I do</span>
-      <span class="text-15 md:text-14 lg:text-base xl:text-20 2xl:text-26">Interactive Design, Visual Identity, Design Consultancy</span>
+      <div class="pr-12">
+        <span class="text-7 md:text-8 lg:text-9 xl:text-11 2xl:text-14 tracking-widest uppercase block mb-px">Things I do</span>
+        <p class="text-15 md:text-14 lg:text-base xl:text-20 2xl:text-26">Interactive Design, Visual Identity, Design Consultancy</p>
+      </div>
+    </div>
+
+    <div class="hidden md:block ml-auto mr-auto">
+      <seperator width="w-5" />
     </div>
 
     <div class="w-full md:flex-1 md:ml-auto md:text-right">
@@ -25,7 +31,12 @@
 </template>
 
 <script>
+import Seperator from '~/components/Seperator.vue';
+
 export default {
+  components: {
+    Seperator,
+  },
   data () {
     return {
       socials: [{
