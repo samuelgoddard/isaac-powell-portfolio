@@ -14,10 +14,26 @@
 import SiteHeader from '~/components/SiteHeader.vue';
 import SiteFooter from '~/components/SiteFooter.vue';
 
+import { createNamespacedHelpers } from "vuex";
+const { mapState } = createNamespacedHelpers("ui");
+
 export default {
   components: {
     SiteHeader,
     SiteFooter,
-  }
+  },
+  computed: {
+    ...mapState(["dark"]),
+    darkMode() {
+      return this.dark;
+    },
+  },
+  head() {
+    return {
+      bodyAttrs: {
+        class: this.dark ? 'dark transition-color' : 'light transition-color'
+      }
+    }
+  },
 }
 </script>

@@ -14,6 +14,9 @@ module.exports = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: pkg.description }
     ],
+    bodyAttrs: {
+      class: 'transition',
+    },
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
@@ -21,6 +24,10 @@ module.exports = {
 
   webfontloader: {
     typekit: { id: 'jnr4hbb' }
+  },
+
+  router: {
+    linkExactActiveClass: 'underline'
   },
 
   /*

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="block border-b border-black"
+    class="seperator transition-color block border-b"
     :class="width"
   ></div>
 </template>

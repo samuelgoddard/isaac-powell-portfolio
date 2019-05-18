@@ -7,7 +7,7 @@
         font-serif
         text-center"
       >
-        I’m Isaac, a freelance designer from Nottingham, UK. <nuxt-link to="/projects" class="underline">See my work</nuxt-link>, or <a href="mailto:isaac@40000ft.co.uk" class="underline">drop me a line</a> if you want to work with me on your next project.
+        Projects
       </h1>
     </div>
   </section>
@@ -17,7 +17,7 @@
 export default {
   transition: 'fade',
   created () {
-    this.$store.commit('ui/TOGGLE_LIGHT')
+    this.$store.commit('ui/TOGGLE_DARK')
   },
 }
 </script>
