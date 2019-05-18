@@ -4,17 +4,20 @@
     flex flex-col
     p-8 md:p-12 lg:p-20 xl:p-24 2xl:p-32"
   >
+    <site-header />
     <nuxt />
     <site-footer />
   </div>
 </template>
 
 <script>
-import SiteFooter from '~/components/SiteFooter.vue'
+import SiteHeader from '~/components/SiteHeader.vue';
+import SiteFooter from '~/components/SiteFooter.vue';
 
 export default {
   components: {
-    SiteFooter
+    SiteHeader,
+    SiteFooter,
   }
 }
 </script>
