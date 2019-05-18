@@ -2,7 +2,7 @@
   <section class="flex-1 flex items-center justify-center">
       <div class="flex flex-wrap w-full">
         <div class="w-full md:ml-auto md:w-1/2 overflow-x-hidden">
-          <div class="w-full overflow-y-auto max-h-64 lg:max-h-90 block hide-scrollbars">
+          <div class="w-full overflow-y-auto max-h-64 lg:max-h-90 xl:max-h-128 block hide-scrollbars">
             <nav>
               <ul>
                 <li 
@@ -23,7 +23,7 @@
                         leading-none tracking-tight
                         font-serif
                         mb-2 lg:mb-0
-                        text-32 md:text-43 lg:text-48 h-trim"
+                        text-32 md:text-43 lg:text-48 xl:text-52 h-trim"
                       :to="project.uri">
                         {{ project.name }}
                     </nuxt-link>
@@ -50,25 +50,25 @@ export default {
       projects: [{
         name: 'Paul Smith',
         id: 'i',
-        uri: '/projects/paul-smith',
+        uri: '/projects/example',
         date: '2018',
         meta: 'Fashion House'
       },{
         name: 'CPMG',
         id: 'ii',
-        uri: '/projects/cpmg',
+        uri: '/projects/example',
         date: '2017',
         meta: 'Architecture Studio'
       },{
         name: 'Hive Analytics',
         id: 'iii',
-        uri: '/projects/hive-analytics',
+        uri: '/projects/example',
         date: '2017',
         meta: 'Data App'
       },{
         name: 'Yale',
         id: 'iv',
-        uri: '/projects/hive-analytics',
+        uri: '/projects/example',
         date: '2017',
         meta: 'Home Security'
       },{

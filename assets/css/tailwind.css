@@ -62,3 +62,9 @@ body {
   padding-right: 17px;
   box-sizing: content-box;
 }
+
+@media screen and (max-width: theme('screens.md')) {
+  .bleed {
+    @apply -mx-8;
+  }
+}

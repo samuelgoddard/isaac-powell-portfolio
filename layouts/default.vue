@@ -1,6 +1,6 @@
 <template>
   <div class="
-    h-full min-h-screen
+    min-h-screen
     flex flex-col
     p-8 md:p-12 lg:p-20 xl:p-24 2xl:p-32"
   >
