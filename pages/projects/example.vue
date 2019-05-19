@@ -7,11 +7,11 @@
             <seperator width="w-8" class="inline-block align-middle mr-2" />
             <span class="font-serif text-11 uppercase inline-block align-middle">iii</span>
           </div>
-          
+      
           <h1 class="
             leading-none tracking-tight
             text-60 md:text-127 lg:text-138 xl:text-142 2xl:text-226
-            font-serif mb-12 md:mb-20 lg:mb-24"
+            font-serif"
           >
             Example Project
           </h1>
@@ -52,12 +52,14 @@
           </div>
         </div>
         
-        <div class="my-16 md:my-24 lg:my-32 bleed">
-          <picture class="w-full">
-            <source srcset="https://placekitten.com/1200/600"
-                    media="(min-width: 768px)">
-            <img src="https://placekitten.com/600/600" class="w-full"/>
-          </picture>
+        <div class="overflow-hidden">
+          <div class="my-16 md:my-24 lg:my-32 bleed">
+            <picture class="w-full">
+              <source srcset="https://placedog.net/1200/600"
+                      media="(min-width: 768px)">
+              <img src="https://placedog.net/600/600" class="w-full"/>
+            </picture>
+          </div>
         </div>
 
         <div class="w-4/5">
@@ -66,9 +68,9 @@
 
         <div class="my-16 md:my-24 lg:my-32 bleed">
           <picture class="w-full">
-            <source srcset="https://placekitten.com/1200/600"
+            <source srcset="https://placedog.net/1200/600"
                     media="(min-width: 768px)">
-            <img src="https://placekitten.com/600/600" class="w-full"/>
+            <img src="https://placedog.net/600/600" class="w-full"/>
           </picture>
         </div>
 
@@ -78,16 +80,16 @@
 
         <div class="mt-16 md:mt-24 lg:mt-32 mb-2 md:mb-4 lg:mb-6 bleed">
           <picture class="w-full">
-            <source srcset="https://placekitten.com/1200/600"
+            <source srcset="https://placedog.net/1200/600"
                     media="(min-width: 768px)">
-            <img src="https://placekitten.com/600/600" class="w-full"/>
+            <img src="https://placedog.net/600/600" class="w-full"/>
           </picture>
         </div>
         <div class="mb-16 md:mb-24 lg:mb-32 bleed">
           <picture class="w-full">
-            <source srcset="https://placekitten.com/1200/600"
+            <source srcset="https://placedog.net/1200/600"
                     media="(min-width: 768px)">
-            <img src="https://placekitten.com/600/600" class="w-full"/>
+            <img src="https://placedog.net/600/600" class="w-full"/>
           </picture>
         </div>
 

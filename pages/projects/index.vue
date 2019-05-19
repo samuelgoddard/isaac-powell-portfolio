@@ -1,40 +1,37 @@
 <template>
   <section class="flex-1 flex items-center justify-center">
       <div class="flex flex-wrap w-full">
-        <div class="w-full md:ml-auto md:w-1/2 overflow-x-hidden">
-          <div class="w-full overflow-y-auto max-h-64 lg:max-h-90 xl:max-h-128 block hide-scrollbars">
-            <nav>
-              <ul>
-                <li 
-                  v-for="(project, index) in projects"
-                  :key="project.name"
-                  class="mb-8 lg:mb-12 flex flex-wrap items-center"
+        <div class="w-full md:ml-auto md:w-1/2 overflow-hidden">
+          <nav class="w-full overflow-y-auto overflow-x-hidden max-h-64 lg:max-h-90 xl:max-h-128 block hide-scrollbars p-8">
+            <ul>
+              <li 
+                v-for="(project, index) in projects"
+                :key="project.name"
+                class="mb-8 lg:mb-12 flex flex-wrap items-center"
+              >
+                <span 
+                  class="font-serif text-8 uppercase w-6"
                 >
-                  <span 
-                    class="font-serif text-8 uppercase w-6"
-                  >
-                    {{ project.id }}
-                  </span>
-                  
-                  <div class="lg:flex lg:flex-wrap lg:items-end">
-                    <nuxt-link 
-                      class="
-                        inline-block 
-                        leading-none tracking-tight
-                        font-serif
-                        mb-2 lg:mb-0
-                        text-32 md:text-43 lg:text-48 xl:text-52 h-trim"
-                      :to="project.uri">
-                        {{ project.name }}
-                    </nuxt-link>
-                    <span class="text-6 lg:text-7 lg:ml-4 lg:mb-1 tracking-widest uppercase block">{{ project.date }} / {{ project.meta }}</span>
-                  </div>
-                </li>
-              </ul>
-            </nav>
-          </div>
+                  {{ project.id }}
+                </span>
+                
+                <div class="lg:flex lg:flex-wrap lg:items-end">
+                  <nuxt-link 
+                    class="
+                      inline-block 
+                      leading-none tracking-tight
+                      font-serif
+                      mb-2 lg:mb-0
+                      text-32 md:text-43 lg:text-48 xl:text-52 h-trim"
+                    :to="project.uri">
+                      {{ project.name }}
+                  </nuxt-link>
+                  <span class="text-6 lg:text-7 lg:ml-4 lg:mb-1 tracking-widest uppercase block">{{ project.date }} / {{ project.meta }}</span>
+                </div>
+              </li>
+            </ul>
+          </nav>
         </div>
-      </div>
     </div>
   </section>
 </template>

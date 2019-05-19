@@ -45,8 +45,10 @@ module.exports = {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: [
-  ],
+  plugins: [{
+    src: '~plugins/vue-mouse-parallax.js',
+    ssr: true
+  }],
 
   /*
   ** Nuxt.js modules

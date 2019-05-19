@@ -59,8 +59,10 @@ body {
 
 .hide-scrollbars {
   overflow-y: scroll;
-  padding-right: 17px;
+  /* padding-right: 17px; */
   box-sizing: content-box;
+  margin-right: -20px;
+  padding-right: 20px;
 }
 
 @media screen and (max-width: theme('screens.md')) {
