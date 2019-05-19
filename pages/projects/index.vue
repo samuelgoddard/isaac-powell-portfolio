@@ -2,32 +2,32 @@
   <section class="flex-1 flex items-center justify-center">
       <div class="flex flex-wrap w-full">
         <div class="w-full md:ml-auto md:w-1/2 overflow-hidden">
-          <nav class="w-full overflow-y-auto overflow-x-hidden max-h-64 lg:max-h-90 xl:max-h-128 block hide-scrollbars md:p-8">
+          <nav class="w-full overflow-y-auto overflow-x-hidden max-h-64 lg:max-h-90 xl:max-h-128 block hide-scrollbars md:p-8 opacity-0 scale-85" ref="menu" @mouseover="isHovering = true" @mouseout="isHovering = false">
             <ul>
               <li 
                 v-for="(project, index) in projects"
                 :key="project.name"
+                ref="numbers"
                 class="mb-8 lg:mb-12 flex flex-wrap items-center"
               >
-                <span 
-                  class="font-serif text-8 uppercase w-6"
-                >
-                  {{ project.id }}
-                </span>
-                
-                <div class="lg:flex lg:flex-wrap lg:items-end">
-                  <nuxt-link 
-                    class="
-                      inline-block 
-                      leading-none tracking-tight
-                      font-serif
-                      mb-2 lg:mb-0
-                      text-32 md:text-43 lg:text-48 xl:text-52 h-trim"
-                    :to="project.uri">
-                      {{ project.name }}
-                  </nuxt-link>
-                  <span class="text-6 lg:text-7 lg:ml-4 lg:mb-1 tracking-widest uppercase block">{{ project.date }} / {{ project.meta }}</span>
-                </div>
+                <nuxt-link
+                  @mouseover.native="selected = project.id"
+                  @mouseout.native="selected = undefined"
+                  ref="opaque"
+                  class="
+                    flex flex-wrap items-center lg:items-end
+                    leading-none tracking-tight
+                    font-serif
+                    text-white
+                    mb-2 lg:mb-0
+                    text-32 md:text-43 lg:text-48 xl:text-52 h-trim
+                    transition"
+                  :class="[{'opacity-25' : isHovering}, { 'opacity-100' :project.id == selected}]"
+                  :to="project.uri">
+                  <span class="font-serif text-8 uppercase w-6 lg:mb-4">{{ project.id }}</span>
+                    {{ project.name }}
+                  <span class="w-full text-6 lg:w-auto lg:text-7 ml-6 lg:ml-3 lg:mb-1 mt-2 lg:mt-0 tracking-widest uppercase block">{{ project.date }} / {{ project.meta }}</span>
+                </nuxt-link>
               </li>
             </ul>
           </nav>
@@ -37,6 +37,8 @@
 </template>
 
 <script>
+import { TweenMax } from 'gsap';
+
 export default {
   transition: 'fade',
   created () {
@@ -44,38 +46,50 @@ export default {
   },
   data () {
     return {
+      isHovering: false,
+      selected: undefined,
       projects: [{
         name: 'Paul Smith',
         id: 'i',
         uri: '/projects/example',
         date: '2018',
-        meta: 'Fashion House'
+        meta: 'Fashion House',
+        current: false
       },{
         name: 'CPMG',
         id: 'ii',
         uri: '/projects/example',
         date: '2017',
-        meta: 'Architecture Studio'
+        meta: 'Architecture Studio',
+        current: false
       },{
         name: 'Hive Analytics',
         id: 'iii',
         uri: '/projects/example',
         date: '2017',
-        meta: 'Data App'
+        meta: 'Data App',
+        current: false
       },{
         name: 'Yale',
         id: 'iv',
         uri: '/projects/example',
         date: '2017',
-        meta: 'Home Security'
+        meta: 'Home Security',
+        current: false
       },{
         name: 'Misc',
         id: 'v',
         uri: '/projects/misc',
         date: '2016',
-        meta: 'Personal'
+        meta: 'Personal',
+        current: false
       }]
     }
+  },
+  methods : {
+  },
+  mounted () {
+    TweenMax.to(this.$refs.menu, 0.3, { css: { scale: 1, autoAlpha:1 }, delay: 0.25 })
   }
 }
 </script>
