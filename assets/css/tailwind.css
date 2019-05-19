@@ -70,3 +70,70 @@ body {
     @apply -mx-8;
   }
 }
+
+.imageBox {
+  cursor: none;
+  touch-action: none;
+  backface-visibility: hidden;
+  pointer-events: none;
+  width: 200px;
+  height: 300px;
+  transform: scale(0);
+  margin-right: calc(50% - 100px);
+  
+  @screen md {
+    @apply -mr-24;
+
+    width: 520px;
+    height: 320px;
+  }
+
+  @screen lg {
+    @apply -mr-64;
+
+    width: 650px;
+    height: 380px;
+  }
+  
+  @screen xl {
+    @apply -mr-90;
+
+    width: 720px;
+    height: 500px;
+  }
+}
+
+.imageBoxCarouselInner {
+  width: 200px;
+  height: 300px;
+  
+  @screen md {
+    width: 520px;
+    height: 320px;
+  }
+
+  @screen lg {
+    width: 650px;
+    height: 380px;
+  }
+  
+  @screen xl {
+    width: 720px;
+    height: 500px;
+  }
+}
+
+@media screen and (max-width: theme('screens.md')) {
+  .imageBox {
+    @apply -mt-8;
+  }
+}
+
+.imageBoxCarousel {
+  transform: scale(1);
+  opacity: 0;
+}
+
+.agile__nav-button {
+  display: none !important;
+}

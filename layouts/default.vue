@@ -1,6 +1,6 @@
 <template>
   <div>
-    <mq-layout mq="md+">
+    <!-- <mq-layout mq="md+">
     <parallax-container class="overflow-hidden h-screen">
       <parallax-element :parallaxStrength="5" :type="'depth'" class="overflow-hidden min-h-full flex flex-col">
         <div class="w-full min-h-full max-h-full flex-1 flex flex-col md:fixed top-0 left-0 right-0 bottom-0 overflow-hidden p-8 md:p-12 lg:p-20 xl:p-24 2xl:p-32">
@@ -15,9 +15,9 @@
         </div>
       </parallax-element>
     </parallax-container>
-    </mq-layout>
+    </mq-layout> -->
 
-    <mq-layout mq="sm">
+    <!-- <mq-layout mq="sm"> -->
       <div class="overflow-hidden min-h-screen flex flex-col">
         <div class="w-full flex-1 flex flex-col p-8 md:p-12 lg:p-20 xl:p-24 2xl:p-32">
           <div class="flex-1 flex flex-col">
@@ -29,7 +29,7 @@
           </div>
         </div>
       </div>
-    </mq-layout>
+    <!-- </mq-layout> -->
   </div>
 </template>
 

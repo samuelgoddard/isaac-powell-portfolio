@@ -1,5 +1,5 @@
 <template>
-  <footer class="w-full flex flex-wrap items-end">
+  <footer class="relative z-10 w-full flex flex-wrap items-end">
     <div class="w-full md:flex-1 mb-4 md:mb-0">
       <div class="pr-12">
         <span class="text-7 md:text-8 lg:text-9 xl:text-11 2xl:text-14 tracking-widest uppercase block mb-px">Things I do</span>

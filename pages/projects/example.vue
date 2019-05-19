@@ -11,7 +11,7 @@
           <h1 class="
             leading-none tracking-tight
             text-60 md:text-127 lg:text-138 xl:text-142 2xl:text-226
-            font-serif"
+            font-serif mb-12 md:mb-20 lg:mb-24"
           >
             Example Project
           </h1>

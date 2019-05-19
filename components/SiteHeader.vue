@@ -1,5 +1,5 @@
 <template>
-  <header class="flex items-center">
+  <header class="relative z-10 flex items-center">
     <div class="md:flex-1">
       <logo />
       <div class="hidden md:inline-block align-middle">
