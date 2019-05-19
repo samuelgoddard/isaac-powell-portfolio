@@ -2,6 +2,8 @@
   <section class="flex-1 flex items-center justify-center">
       <div class="flex flex-wrap w-full">
         <div class="w-full md:ml-auto md:w-1/2 overflow-hidden">
+          <parallax-container class="overflow-hidden">
+          <parallax-element :parallaxStrength="15" :type="'depth'">
           <nav class="w-full overflow-y-auto overflow-x-hidden max-h-64 lg:max-h-90 xl:max-h-128 block hide-scrollbars md:p-8 opacity-0 scale-85" ref="menu" @mouseover="isHovering = true" @mouseout="isHovering = false">
             <ul>
               <li 
@@ -31,6 +33,8 @@
               </li>
             </ul>
           </nav>
+          </parallax-element>
+          </parallax-container>
         </div>
     </div>
   </section>
