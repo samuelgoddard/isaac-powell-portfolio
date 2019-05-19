@@ -2,7 +2,7 @@
   <section class="flex-1 flex items-center justify-center">
       <div class="flex flex-wrap w-full">
         <div class="w-full md:ml-auto md:w-1/2 overflow-hidden">
-          <nav class="w-full overflow-y-auto overflow-x-hidden max-h-64 lg:max-h-90 xl:max-h-128 block hide-scrollbars p-8">
+          <nav class="w-full overflow-y-auto overflow-x-hidden max-h-64 lg:max-h-90 xl:max-h-128 block hide-scrollbars md:p-8">
             <ul>
               <li 
                 v-for="(project, index) in projects"

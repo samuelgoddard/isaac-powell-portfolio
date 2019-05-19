@@ -48,6 +48,9 @@ module.exports = {
   plugins: [{
     src: '~plugins/vue-mouse-parallax.js',
     ssr: true
+  }, {
+    src: '~plugins/vue-mq.js',
+    ssr: true
   }],
 
   /*
