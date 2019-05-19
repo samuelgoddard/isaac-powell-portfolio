@@ -14,9 +14,10 @@
             <no-ssr placeholder="Loading...">
               <agile :infinite="true" :autoplay="true" :fade="true" :autoplaySpeed="650" :arrows="false" :dots="false">
                 <div 
-                  v-for="image in images"
+                  v-for="(image, index) in images"
                   :key="image.image"
                   class="slide imageBoxCarouselInner"
+                  :class="`imageBoxCarouselInner-${ index }`"
                   :style="`background-image: url('${ image.image }')`">
                 </div>
               </agile>
@@ -35,7 +36,7 @@
                 text-center
                 py-16 md:p-16 lg:p-24"
               >
-                <span ref="opaque">"I’m Isaac, a freelance designer from Nottingham, UK.</span> <span ref="work"><nuxt-link  v-on:mouseover.native="hover" v-on:mouseout.native="mouseOut" to="/projects" class="underline">See my work</nuxt-link></span><span ref="opaque2">, or </span><a v-on:mouseover="hoverLine" v-on:mouseout="mouseOutLine" ref="line" href="mailto:isaac@40000ft.co.uk" class="underline">drop me a line</a><span ref="opaque3"> if you want to work with me on your next project.</span>
+                <span ref="opaque">I’m Isaac, a freelance designer from Nottingham, UK.</span> <span ref="work"><nuxt-link  v-on:mouseover.native="hover" v-on:mouseout.native="mouseOut" to="/projects" class="underline">See my work</nuxt-link></span><span ref="opaque2">, or </span><a v-on:mouseover="hoverLine" v-on:mouseout="mouseOutLine" ref="line" href="mailto:isaac@40000ft.co.uk" class="underline">drop me a line</a><span ref="opaque3"> if you want to work with me on your next project.</span>
               </h1>
             </parallax-element>
           </parallax-container>
@@ -49,7 +50,7 @@
             text-center
             py-16 md:p-16 lg:p-24"
           >
-            "I’m Isaac, a freelance designer from Nottingham, UK. <nuxt-link to="/projects" class="underline">See my work</nuxt-link>, or <a href="mailto:isaac@40000ft.co.uk" class="underline">drop me a line</a> if you want to work with me on your next project.
+            I’m Isaac, a freelance designer from Nottingham, UK. <nuxt-link to="/projects" class="underline">See my work</nuxt-link>, or <a href="mailto:isaac@40000ft.co.uk" class="underline">drop me a line</a> if you want to work with me on your next project.
           </h1>
         </mq-layout>
       </div>
