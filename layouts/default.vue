@@ -19,7 +19,7 @@
 
     <!-- <mq-layout mq="sm"> -->
       <div class="overflow-hidden min-h-screen flex flex-col">
-        <div class="w-full flex-1 flex flex-col p-8 md:p-12 lg:p-20 xl:p-24 2xl:p-32">
+        <div class="w-full flex-1 flex flex-col p-8 md:py-7 md:px-12 lg:py-10 lg:px-14 xl:py-11 xl:px-18">
           <div class="flex-1 flex flex-col">
             <div class="flex flex-col flex-1">
               <site-header />
