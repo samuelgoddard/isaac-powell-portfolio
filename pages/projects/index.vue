@@ -6,7 +6,7 @@
           <div 
             ref="projectimageCover" 
             class="opacity-0 max-w-full relative"
-            style="width: 300px; height: 200px;">
+            style="width: 400px; height: 260px;">
 
             <div
               v-for="(project, index) in projects"
@@ -129,16 +129,13 @@ export default {
       this.selected = id;
 
       // TweenMax.set(this.$refs.projectimage, { css: { backgroundImage:`url(${ imageUrl })` }});
-      TweenMax.to(this.$refs.projectimageCover, 0.33, { ease: Power2.easeOut, autoAlpha: 1, width: width, height: height });
-      let current = `projectimage${id}`
+      TweenMax.to(this.$refs.projectimageCover, 0.55, { ease: Power2.easeOut, autoAlpha: 1, width: width, height: height });
       
-      TweenMax.to(this.$refs.projectimage[index], 0.33, { ease: Power2.easeOut, autoAlpha: 1 });
+      TweenMax.to(this.$refs.projectimage[index], 0.55, { ease: Power2.easeOut, autoAlpha: 1 });
     },
     projectImageReset () {
-      this.selected = undefined;
-
-      TweenMax.to(this.$refs.projectimageCover, 0.33, { ease: Power2.easeOut, autoAlpha: 0 });
-      TweenMax.to(this.$refs.projectimage, 0.33, { ease: Power2.easeOut, autoAlpha: 0 });
+      // TweenMax.to(this.$refs.projectimageCover, 0.66, { ease: Power2.easeOut, autoAlpha: 0 });
+      TweenMax.to(this.$refs.projectimage, 0.55, { ease: Power2.easeOut, autoAlpha: 0 });
     },
     startBaffle (id, name) {
       this.selected = id
