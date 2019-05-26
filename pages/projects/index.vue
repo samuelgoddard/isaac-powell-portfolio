@@ -59,7 +59,7 @@
 </template>
 
 <script>
-import { Power2, TweenMax } from "gsap";
+import { Power4, TweenMax } from "gsap";
 import baffle from "baffle";
 
 export default {
@@ -129,13 +129,13 @@ export default {
       this.selected = id;
 
       // TweenMax.set(this.$refs.projectimage, { css: { backgroundImage:`url(${ imageUrl })` }});
-      TweenMax.to(this.$refs.projectimageCover, 0.55, { ease: Power2.easeOut, autoAlpha: 1, width: width, height: height });
+      TweenMax.to(this.$refs.projectimageCover, 0.55, { ease: Power4.easeInOut, autoAlpha: 1, width: width, height: height });
       
-      TweenMax.to(this.$refs.projectimage[index], 0.55, { ease: Power2.easeOut, autoAlpha: 1 });
+      TweenMax.to(this.$refs.projectimage[index], 0.55, { ease: Power4.easeInOut, autoAlpha: 1 });
     },
     projectImageReset () {
-      // TweenMax.to(this.$refs.projectimageCover, 0.66, { ease: Power2.easeOut, autoAlpha: 0 });
-      TweenMax.to(this.$refs.projectimage, 0.55, { ease: Power2.easeOut, autoAlpha: 0 });
+      // TweenMax.to(this.$refs.projectimageCover, 0.66, { ease: Power4.easeInOut, autoAlpha: 0 });
+      TweenMax.to(this.$refs.projectimage, 0.55, { ease: Power4.easeInOut, autoAlpha: 0 });
     },
     startBaffle (id, name) {
       this.selected = id
