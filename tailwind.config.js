@@ -240,7 +240,7 @@ module.exports = {
       sm: '24rem',
       md: '28rem',
       lg: '32rem',
-      xl: '36rem',
+      xl: '38rem',
       '2xl': '42rem',
       '3xl': '48rem',
       '4xl': '56rem',

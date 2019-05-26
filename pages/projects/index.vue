@@ -4,14 +4,21 @@
       <div class="w-full md:w-1/2">
         <div class="hidden md:flex md:flex-wrap items-center justify-center h-full">
           <div 
-            ref="projectimage" 
-            class="bg-cover bg-center opacity-0 max-w-full"
-            style="width: 300px; height: 200px; background-image: url('/images/paul-smith.jpg')"
-          >
+            ref="projectimageCover" 
+            class="opacity-0 max-w-full relative"
+            style="width: 300px; height: 200px;">
+
+            <div
+              v-for="(project, index) in projects"
+              :key="project.name"
+              class="absolute top-0 right-0 opacity-0 bottom-0 left-0 bg-cover bg-center"
+              ref="projectimage"
+              :style="`background-image: url('${ project.image }')`">
+            </div>
           </div>
         </div>
       </div>
-      <div class="w-full md:ml-auto md:w-1/2 overflow-hidden">
+      <div class="w-full md:ml-auto md:flex-1 overflow-hidden">
         <parallax-container class="overflow-hidden">
         <parallax-element :parallaxStrength="15" :type="'depth'">
         <nav class="w-full overflow-y-auto overflow-x-hidden max-h-128 block hide-scrollbars md:p-8 opacity-0 scale-85" ref="menu" @mouseover="isHovering = true" @mouseout="isHovering = false">
@@ -23,8 +30,8 @@
               class="flex flex-wrap items-center"
             >
               <nuxt-link
-                @mouseover.native="projectImageUpdate(project.id, project.image, project.width, project.height)"
-                @focus.native="projectImageUpdate(project.id, project.image, project.width, project.height)"
+                @mouseover.native="projectImageUpdate(project.id, index, project.image, project.width, project.height)"
+                @focus.native="projectImageUpdate(project.id, index, project.image, project.width, project.height)"
                 @mouseout.native="projectImageReset()"
                 ref="opaque"
                 class="
@@ -118,16 +125,20 @@ export default {
     }
   },
   methods : {
-    projectImageUpdate (id, imageUrl, width, height) {
+    projectImageUpdate (id, index, imageUrl, width, height) {
       this.selected = id;
 
-      TweenMax.set(this.$refs.projectimage, { css: { backgroundImage:`url(${ imageUrl })` }});
-      TweenMax.to(this.$refs.projectimage, 0.33, { ease: Power2.easeOut, scale: 1, autoAlpha: 1, width: width, height: height });
+      // TweenMax.set(this.$refs.projectimage, { css: { backgroundImage:`url(${ imageUrl })` }});
+      TweenMax.to(this.$refs.projectimageCover, 0.33, { ease: Power2.easeOut, autoAlpha: 1, width: width, height: height });
+      let current = `projectimage${id}`
+      
+      TweenMax.to(this.$refs.projectimage[index], 0.33, { ease: Power2.easeOut, autoAlpha: 1 });
     },
     projectImageReset () {
       this.selected = undefined;
 
-      TweenMax.to(this.$refs.projectimage, 0.33, { ease: Power2.easeOut, scale: 0.95, autoAlpha: 0 });
+      TweenMax.to(this.$refs.projectimageCover, 0.33, { ease: Power2.easeOut, autoAlpha: 0 });
+      TweenMax.to(this.$refs.projectimage, 0.33, { ease: Power2.easeOut, autoAlpha: 0 });
     },
     startBaffle (id, name) {
       this.selected = id
@@ -141,7 +152,6 @@ export default {
   },
   mounted () {
     TweenMax.to(this.$refs.menu, 0.3, { css: { scale: 1, autoAlpha:1 }, delay: 0.25 })
-    TweenMax.set(this.$refs.projectimage, { scale: 0.95 });
   }
 }
 </script>

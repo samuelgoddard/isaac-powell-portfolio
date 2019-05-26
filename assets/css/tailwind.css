@@ -72,11 +72,11 @@ body {
   touch-action: none;
   backface-visibility: hidden;
   pointer-events: none;
-  width: 200px;
-  height: 300px;
+  width: 230px;
+  height: 320px;
   opacity: 0;
   transform: scale(0.75);
-  margin-right: calc(50% - 100px);
+  margin-right: calc(50% - 115px);
   
   @screen md {
     @apply -mr-24;
@@ -86,35 +86,15 @@ body {
   }
 
   @screen lg {
-    @apply -mr-64;
+    @apply -mr-32;
 
     width: 650px;
-    height: 380px;
+    height: 365px;
   }
   
   @screen xl {
     @apply -mr-90;
 
-    width: 720px;
-    height: 500px;
-  }
-}
-
-.imageBoxCarouselInner {
-  width: 200px;
-  height: 300px;
-  
-  @screen md {
-    width: 520px;
-    height: 320px;
-  }
-
-  @screen lg {
-    width: 650px;
-    height: 380px;
-  }
-  
-  @screen xl {
     width: 720px;
     height: 500px;
   }
@@ -140,4 +120,12 @@ body {
 }
 .scale-85 {
   transform: scale(0.85);
+}
+
+.home-heading {
+  max-width: 620px;
+
+  @screen lg {
+    max-width: 675px;
+  }
 }

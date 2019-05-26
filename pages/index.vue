@@ -3,9 +3,9 @@
     
     <seperator width="w-20" class="hidden md:block mr-auto" />
     
-    <div class="w-full md:w-4/5 lg:w-3/5 xl:w-2/5 md:mr-auto md:-ml-20 relative">
+    <div class="w-full md:w-4/5 md:mr-auto md:-ml-20 relative">
 
-      <div class="relative flex items-end justify-end">
+      <div class="relative flex items-center justify-center">
         
         <div class="z-0 absolute right-0 top-0 bottom-0 right-0 bg-cover bg-center imageBox opacity-0 transition" ref="imageBox">
         </div>
@@ -14,35 +14,35 @@
           <img src="/images/portfolio-loop.gif" alt="Portfolio" class="w-90 z-50 opacity-0 fixed" ref="imageBoxCarousel" />
         </mq-layout>
 
-        <div ref="heading" class="opacity-0 scale-50">
-            <parallax-container class="overflow-hidden">
-              <parallax-element :parallaxStrength="20" :type="'depth'" class="">
-                <mq-layout mq="md+">
-                  <h1 class="
-                    relative z-10
-                    leading-snug tracking-tight
-                    text-21 md:text-31 lg:text-32 xl:text-42 2xl:text-52
-                    font-serif
-                    text-center
-                    py-16 md:p-16 lg:p-24"
-                  >
-                    <span ref="opaque">I’m Isaac, a freelance designer from Nottingham, UK.</span> <span ref="work"><nuxt-link v-on:mouseover.native="hover" v-on:mousemove.native="mouseMove" v-on:mouseout.native="mouseOut" to="/projects" class="underline">See my work</nuxt-link></span><span ref="opaque2">, or </span><a v-on:mouseover="hoverLine" v-on:mouseout="mouseOutLine" ref="line" href="mailto:isaac@40000ft.co.uk" class="underline">drop me a line</a><span ref="opaque3"> if you want to work with me on your next project.</span>
-                  </h1>
-                </mq-layout>
-                <mq-layout mq="sm">
-                  <h1 class="
-                    relative z-10
-                    leading-snug tracking-tight
-                    text-21 md:text-31 lg:text-32 xl:text-42 2xl:text-52
-                    font-serif
-                    text-center
-                    py-16 px-6 md:p-16 lg:p-24"
-                  >
-                    I’m Isaac, a freelance designer from Nottingham, UK. <nuxt-link to="/projects" class="underline">See my work</nuxt-link>, or <a href="mailto:isaac@40000ft.co.uk" class="underline">drop me a line</a> if you want to work with me on your next project.
-                  </h1>
-                </mq-layout>
-              </parallax-element>
-            </parallax-container>
+        <div ref="heading" class="opacity-0 scale-50 max-w-xl home-heading">
+          <parallax-container class="overflow-hidden">
+            <parallax-element :parallaxStrength="20" :type="'depth'">
+              <mq-layout mq="md+">
+                <h1 class="
+                  relative z-10
+                  leading-snug tracking-tight
+                  text-21 md:text-31 lg:text-32 xl:text-42 2xl:text-52
+                  font-serif
+                  text-center
+                  py-16 md:p-16 lg:p-24"
+                >
+                  <span ref="opaque">I’m Isaac, a freelance designer from Nottingham, UK.</span> <span ref="work"><nuxt-link v-on:mouseover.native="hover" v-on:mousemove.native="mouseMove" v-on:mouseout.native="mouseOut" to="/projects" class="underline">See my work</nuxt-link></span><span ref="opaque2">, or </span><a v-on:mouseover="hoverLine" v-on:mouseout="mouseOutLine" ref="line" href="mailto:isaac@40000ft.co.uk" class="underline">drop me a line</a><span ref="opaque3"> if you want to work with me on your next project.</span>
+                </h1>
+              </mq-layout>
+              <mq-layout mq="sm">
+                <h1 class="
+                  relative z-10
+                  leading-snug tracking-tight
+                  text-21 md:text-31 lg:text-32 xl:text-42 2xl:text-52
+                  font-serif
+                  text-center
+                  py-16 px-6 md:p-16 lg:p-24"
+                >
+                  I’m Isaac, a freelance designer from Nottingham, UK. <nuxt-link to="/projects" class="underline">See my work</nuxt-link>, or <a href="mailto:isaac@40000ft.co.uk" class="underline">drop me a line</a> if you want to work with me on your next project.
+                </h1>
+              </mq-layout>
+            </parallax-element>
+          </parallax-container>
         </div>
       </div>
     </div>
