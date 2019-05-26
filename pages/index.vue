@@ -50,7 +50,7 @@
 </template>
 
 <script>
-import { TweenMax } from 'gsap';
+import { Back, TweenMax } from 'gsap';
 import Seperator from '~/components/Seperator.vue';
 
 export default {
@@ -100,7 +100,11 @@ export default {
   },
   mounted () {
     TweenMax.to(this.$refs.imageBox, 0.3, { css: { scale: 1, autoAlpha:1, backgroundImage:`url(${ this.image })` }, delay: 0.5 })
-    TweenMax.to(this.$refs.heading, 0.3, { css: { scale: 1, autoAlpha:1 }, delay: 0.25 })
+    // TweenMax.to(this.$refs.heading, 0.3, { css: { scale: 1, autoAlpha:1 }, delay: 0.25 })
+    TweenMax.set(this.$refs.heading, { perspective:400} )
+
+    TweenMax.to(this.$refs.heading, 0.8, {opacity:1, scale: 1 });
+
   }
 }
 </script>

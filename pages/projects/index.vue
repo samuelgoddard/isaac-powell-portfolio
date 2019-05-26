@@ -1,28 +1,38 @@
 <template>
   <section class="flex-1 flex items-center justify-center">
     <div class="flex flex-wrap w-full">
+      <div class="w-full md:w-1/2">
+        <div class="hidden md:flex md:flex-wrap items-center justify-center h-full">
+          <div 
+            ref="projectimage" 
+            class="bg-cover bg-center opacity-0 max-w-full"
+            style="width: 300px; height: 200px; background-image: url('/images/paul-smith.jpg')"
+          >
+          </div>
+        </div>
+      </div>
       <div class="w-full md:ml-auto md:w-1/2 overflow-hidden">
         <parallax-container class="overflow-hidden">
         <parallax-element :parallaxStrength="15" :type="'depth'">
-        <nav class="w-full overflow-y-auto overflow-x-hidden max-h-64 lg:max-h-90 xl:max-h-128 block hide-scrollbars md:p-8 opacity-0 scale-85" ref="menu" @mouseover="isHovering = true" @mouseout="isHovering = false">
+        <nav class="w-full overflow-y-auto overflow-x-hidden max-h-128 block hide-scrollbars md:p-8 opacity-0 scale-85" ref="menu" @mouseover="isHovering = true" @mouseout="isHovering = false">
           <ul>
             <li 
               v-for="(project, index) in projects"
               :key="project.name"
               ref="numbers"
-              class="mb-8 lg:mb-12 flex flex-wrap items-center"
+              class="flex flex-wrap items-center"
             >
               <nuxt-link
-                @mouseover.native="startBaffle(project.id, project.name)"
-                @focus.native="startBaffle(project.id, project.name)"
-                @mouseout.native="selected = undefined"
+                @mouseover.native="projectImageUpdate(project.id, project.image, project.width, project.height)"
+                @focus.native="projectImageUpdate(project.id, project.image, project.width, project.height)"
+                @mouseout.native="projectImageReset()"
                 ref="opaque"
                 class="
                   flex flex-wrap items-center lg:items-end
                   leading-none tracking-tight
                   font-serif
                   text-white
-                  mb-2 lg:mb-0
+                  py-3 lg:py-4
                   text-32 md:text-43 lg:text-48 xl:text-52 h-trim
                   transition"
                 :class="[{ 'opacity-25' : isHovering }, { 'opacity-100' :project.id == selected }]"
@@ -42,7 +52,7 @@
 </template>
 
 <script>
-import { TweenMax } from "gsap";
+import { Power2, TweenMax } from "gsap";
 import baffle from "baffle";
 
 export default {
@@ -60,6 +70,9 @@ export default {
         uri: '/projects/example',
         date: '2018',
         meta: 'Fashion House',
+        image: '/images/paul-smith.jpg',
+        width: 400,
+        height: 260,
         current: false
       },{
         name: 'CPMG',
@@ -67,6 +80,9 @@ export default {
         uri: '/projects/example',
         date: '2017',
         meta: 'Architecture Studio',
+        image: '/images/cpmg.jpg',
+        width: 260,
+        height: 320,
         current: false
       },{
         name: 'Hive Analytics',
@@ -74,6 +90,9 @@ export default {
         uri: '/projects/example',
         date: '2017',
         meta: 'Data App',
+        image: '/images/hive.jpg',
+        width: 350,
+        height: 300,
         current: false
       },{
         name: 'Yale',
@@ -81,6 +100,9 @@ export default {
         uri: '/projects/example',
         date: '2017',
         meta: 'Home Security',
+        image: '/images/yale.jpg',
+        width: 410,
+        height: 250,
         current: false
       },{
         name: 'Misc',
@@ -88,23 +110,38 @@ export default {
         uri: '/projects/misc',
         date: '2016',
         meta: 'Personal',
+        image: '/images/misc.jpg',
+        width: 260,
+        height: 320,
         current: false
       }]
     }
   },
   methods : {
+    projectImageUpdate (id, imageUrl, width, height) {
+      this.selected = id;
+
+      TweenMax.set(this.$refs.projectimage, { css: { backgroundImage:`url(${ imageUrl })` }});
+      TweenMax.to(this.$refs.projectimage, 0.33, { ease: Power2.easeOut, scale: 1, autoAlpha: 1, width: width, height: height });
+    },
+    projectImageReset () {
+      this.selected = undefined;
+
+      TweenMax.to(this.$refs.projectimage, 0.33, { ease: Power2.easeOut, scale: 0.95, autoAlpha: 0 });
+    },
     startBaffle (id, name) {
       this.selected = id
 
       const b = baffle('.' + id).start();
       b.start()
-      .set({ speed: 75 })
+      .set({ speed: 150 })
       .text(text => name)
       .reveal(750);
     },
   },
   mounted () {
     TweenMax.to(this.$refs.menu, 0.3, { css: { scale: 1, autoAlpha:1 }, delay: 0.25 })
+    TweenMax.set(this.$refs.projectimage, { scale: 0.95 });
   }
 }
 </script>
