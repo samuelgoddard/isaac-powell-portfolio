@@ -69,6 +69,7 @@ export default {
   },
   data () {
     return {
+      media: this.$mq,
       isHovering: false,
       selected: undefined,
       projects: [{
@@ -79,7 +80,7 @@ export default {
         meta: 'Fashion House',
         image: '/images/paul-smith.jpg',
         width: 400,
-        height: 260,
+        height: 240,
         current: false
       },{
         name: 'CPMG',
@@ -129,7 +130,11 @@ export default {
       this.selected = id;
 
       // TweenMax.set(this.$refs.projectimage, { css: { backgroundImage:`url(${ imageUrl })` }});
-      TweenMax.to(this.$refs.projectimageCover, 0.55, { ease: Power4.easeInOut, autoAlpha: 1, width: width, height: height });
+      TweenMax.to(this.$refs.projectimageCover, 0.55, { 
+        ease: Power4.easeInOut,
+        autoAlpha: 1, 
+        width: this.$mq == '2xl' ? width * 1.5 : width * 1.1, 
+        height: this.$mq == '2xl' ? height * 1.5 : height  * 1.1});
       
       TweenMax.to(this.$refs.projectimage[index], 0.55, { ease: Power4.easeInOut, autoAlpha: 1 });
     },

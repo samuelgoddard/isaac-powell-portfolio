@@ -18,7 +18,8 @@
     "nuxt-webfontloader": "^1.1.0",
     "vue-agile": "^1.0.8",
     "vue-mouse-parallax": "^0.9.2",
-    "vue-mq": "^1.0.1"
+    "vue-mq": "^1.0.1",
+    "vue-waypoint": "^3.2.2"
   },
   "devDependencies": {
     "autoprefixer": "^8.6.4",

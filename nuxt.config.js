@@ -53,9 +53,9 @@ module.exports = {
     ssr: true
   }, {
     src: '~plugins/vue-mq.js',
-    ssr: true
-  },{
-    src: '~/plugins/vue-agile',
+    ssr: false
+  }, {
+    src: '~plugins/vue-waypoint.js',
     ssr: false
   }],
 

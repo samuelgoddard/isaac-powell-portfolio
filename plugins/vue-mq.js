@@ -7,6 +7,7 @@ Vue.use(VueMq, {
     md: 768,
     lg: 1280,
     xl : 1920,
+    '2xl' : 2560,
   },
   defaultBreakpoint: 'md'
 })

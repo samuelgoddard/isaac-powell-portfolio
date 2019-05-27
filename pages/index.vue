@@ -14,7 +14,7 @@
           <img src="/images/portfolio-loop.gif" alt="Portfolio" class="w-90 z-50 opacity-0 fixed" ref="imageBoxCarousel" />
         </mq-layout>
 
-        <div ref="heading" class="opacity-0 scale-50 max-w-xl home-heading">
+        <div ref="heading" class="opacity-0 scale-50 home-heading">
           <parallax-container class="overflow-hidden">
             <parallax-element :parallaxStrength="20" :type="'depth'">
               <mq-layout mq="md+">

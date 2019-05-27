@@ -17,6 +17,7 @@ module.exports = {
       white: '#fff',
       grey: '#c9c9c9',
       'grey-dark': '#222',
+      'grey-light': '#F0F0F0',
     },
     spacing: {
       px: '1px',
