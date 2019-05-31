@@ -9,6 +9,14 @@
 <script>
 export default {
   methods: {
+    // startBaffle () {
+    //   const b = baffle('.logo').start();
+
+    //   b.start()
+    //   .set({ speed: 75 })
+    //   .text(text => 'IJP')
+    //   .reveal(750);
+    // },
   }
 }
 </script>
