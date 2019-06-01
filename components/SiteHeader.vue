@@ -1,9 +1,11 @@
 <template>
   <header class="relative z-10 flex items-center">
     <div class="md:flex-1">
-      <logo />
-      <div class="hidden md:inline-block align-middle">
-        <span class="leading-snug tracking-tight font-serif pl-16 lg:pl-40">Nottingham, England</span>
+      <div class="md:hidden">
+        <logo />
+      </div>
+      <div class="hidden md:inline-block w-48 ml-24 lg:ml-26 align-end" @mouseover="startBaffle" @mouseout="unBaffle">
+          <span class="ml-auto leading-snug tracking-tight font-serif time">Nottingham, England</span>
       </div>
     </div>
     <div class="hidden md:block ml-auto mr-auto">
@@ -35,6 +37,10 @@
 import Logo from '~/components/Logo.vue';
 import Seperator from '~/components/Seperator.vue';
 
+import baffle from "baffle";
+import moment from 'moment';
+
+
 export default {
   components: {
     Logo,
@@ -42,6 +48,7 @@ export default {
   },
   data () {
     return {
+      currentTime: null,
       pages: [{
         name: 'Bio',
         uri: '/'
@@ -50,6 +57,31 @@ export default {
         uri: '/projects'
       }]
     }
+  },
+  methods: {
+    updateCurrentTime() {
+      this.currentTime = moment().format('LTS');
+    },
+    startBaffle () {
+      const b = baffle('.time').start();
+
+      b.start()
+      .set({ speed: 150 })
+      .text(text => this.currentTime)
+      .reveal(500);
+    },
+    unBaffle () {
+      const b = baffle('.time').start();
+
+      b.start()
+      .set({ speed: 150 })
+      .text(text => 'Nottingham, England')
+      .reveal(500);
+    },
+  },
+  created() {
+    this.currentTime = moment().format('LTS');
+    setInterval(() => this.updateCurrentTime(), 1 * 1000);
   }
 }
 </script>

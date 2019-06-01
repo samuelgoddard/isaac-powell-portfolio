@@ -173,38 +173,38 @@ export default {
   methods: {
     onWaypoint1 ({ going, direction, index }) {
       if (going === this.$waypointMap.GOING_IN) {
-        TweenMax.to(this.$refs.imageContainer1, 1.75, { borderLeftWidth: 0, borderRightWidth: 0, ease: Power4.easeOut })
+        TweenMax.to(this.$refs.imageContainer1, 1.75, { autoAlpha: 1, ease: Power4.easeOut })
       }
       
       if (going === this.$waypointMap.GOING_OUT) {
-        TweenMax.to(this.$refs.imageContainer1, 1.75, { borderLeftWidth: 175, borderRightWidth: 175, ease: Power4.easeOut })
+        TweenMax.to(this.$refs.imageContainer1, 1.75, { autoAlpha: 0, ease: Power4.easeOut })
       }
     },
     onWaypoint2 ({ going, direction, index }) {
       if (going === this.$waypointMap.GOING_IN) {
-        TweenMax.to(this.$refs.imageContainer2, 1.75, { borderLeftWidth: 0, borderRightWidth: 0, ease: Power4.easeOut })
+        TweenMax.to(this.$refs.imageContainer2, 1.75, { autoAlpha: 1, ease: Power4.easeOut })
       }
       
       if (going === this.$waypointMap.GOING_OUT) {
-        TweenMax.to(this.$refs.imageContainer2, 1.75, { borderLeftWidth: 175, borderRightWidth: 175, ease: Power4.easeOut })
+        TweenMax.to(this.$refs.imageContainer2, 1.75, { autoAlpha: 0, ease: Power4.easeOut })
       }
     },
     onWaypoint3 ({ going, direction, index }) {
       if (going === this.$waypointMap.GOING_IN) {
-        TweenMax.to(this.$refs.imageContainer3, 1.75, { borderLeftWidth: 0, borderRightWidth: 0, ease: Power4.easeOut })
+        TweenMax.to(this.$refs.imageContainer3, 1.75, { autoAlpha: 1, ease: Power4.easeOut })
       }
       
       if (going === this.$waypointMap.GOING_OUT) {
-        TweenMax.to(this.$refs.imageContainer3, 1.75, { borderLeftWidth: 175, borderRightWidth: 175, ease: Power4.easeOut })
+        TweenMax.to(this.$refs.imageContainer3, 1.75, { autoAlpha: 0, ease: Power4.easeOut })
       }
     },
     onWaypoint4 ({ going, direction, index }) {
       if (going === this.$waypointMap.GOING_IN) {
-        TweenMax.to(this.$refs.imageContainer4, 1.75, { borderLeftWidth: 0, borderRightWidth: 0, ease: Power4.easeOut })
+        TweenMax.to(this.$refs.imageContainer4, 1.75, { autoAlpha: 1, ease: Power4.easeOut })
       }
       
       if (going === this.$waypointMap.GOING_OUT) {
-        TweenMax.to(this.$refs.imageContainer4, 1.75, { borderLeftWidth: 175, borderRightWidth: 175, ease: Power4.easeOut })
+        TweenMax.to(this.$refs.imageContainer4, 1.75, { autoAlpha: 0, ease: Power4.easeOut })
       }
     }
   },
@@ -212,10 +212,10 @@ export default {
     this.$store.commit('ui/TOGGLE_LIGHT')
   },
   mounted () {
-    TweenMax.set(this.$refs.imageContainer1, { borderColor: 'white', borderLeftWidth: 175, borderRightWidth: 175 })
-    TweenMax.set(this.$refs.imageContainer2, { borderColor: 'white', borderLeftWidth: 175, borderRightWidth: 175 })
-    TweenMax.set(this.$refs.imageContainer3, { borderColor: 'white', borderLeftWidth: 175, borderRightWidth: 175 })
-    TweenMax.set(this.$refs.imageContainer4, { borderColor: 'white', borderLeftWidth: 175, borderRightWidth: 175 })
+    TweenMax.set(this.$refs.imageContainer1, { autoAlpha: 0 })
+    TweenMax.set(this.$refs.imageContainer2, { autoAlpha: 0 })
+    TweenMax.set(this.$refs.imageContainer3, { autoAlpha: 0 })
+    TweenMax.set(this.$refs.imageContainer4, { autoAlpha: 0 })
   }
 }
 </script>

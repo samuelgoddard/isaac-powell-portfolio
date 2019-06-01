@@ -57,6 +57,9 @@ module.exports = {
   }, {
     src: '~plugins/vue-waypoint.js',
     ssr: false
+  }, {
+    src: '~plugins/vue-smooth-scrollbar.js',
+    ssr: false
   }],
 
   /*

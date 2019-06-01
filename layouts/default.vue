@@ -1,23 +1,15 @@
 <template>
-  <div>
-    <!-- <mq-layout mq="md+">
-    <parallax-container class="overflow-hidden h-screen">
-      <parallax-element :parallaxStrength="5" :type="'depth'" class="overflow-hidden min-h-full flex flex-col">
-        <div class="w-full min-h-full max-h-full flex-1 flex flex-col md:fixed top-0 left-0 right-0 bottom-0 overflow-hidden p-8 md:p-12 lg:p-20 xl:p-24 2xl:p-32">
-
-            <div class="flex-1 flex flex-col global-container">
-              <div class="flex flex-col flex-1 md:hide-scrollbars md:overflow-y-auto">
-                <site-header />
-                <nuxt />
-                <site-footer />
-              </div>
-            </div>
-        </div>
-      </parallax-element>
-    </parallax-container>
-    </mq-layout> -->
-
-    <!-- <mq-layout mq="sm"> -->
+  <div id="scrollArea">
+    <mq-layout mq="lg+">
+      <div class="fixed top-0 left-0 mt-6 lg:mt-8 ml-12 z-10">
+        <Logo />
+      </div>
+      <!-- <div class="fixed top-0 right-0 mt-6 lg:mt-40 mr-8 z-10 section-title">
+        <span>Section Title</span>
+      </div> -->
+    </mq-layout>
+    <smooth-scrollbar>
+    <div id="example-content">
       <div class="overflow-hidden min-h-screen flex flex-col">
         <div class="w-full flex-1 flex flex-col p-8 md:py-7 md:px-12 lg:py-10 lg:px-14 xl:py-11 xl:px-18">
           <div class="flex-1 flex flex-col">
@@ -29,13 +21,16 @@
           </div>
         </div>
       </div>
-    <!-- </mq-layout> -->
+    </div>
+    </smooth-scrollbar>
   </div>
 </template>
 
 <script>
 import SiteHeader from '~/components/SiteHeader.vue';
 import SiteFooter from '~/components/SiteFooter.vue';
+
+import Logo from '~/components/Logo.vue';
 
 import { createNamespacedHelpers } from "vuex";
 const { mapState } = createNamespacedHelpers("ui");
@@ -44,6 +39,7 @@ export default {
   components: {
     SiteHeader,
     SiteFooter,
+    Logo,
   },
   computed: {
     ...mapState(["dark"]),
@@ -60,3 +56,9 @@ export default {
   },
 }
 </script>
+
+<style>
+  #scrollArea {
+    height: 100vh;
+  }
+</style>
