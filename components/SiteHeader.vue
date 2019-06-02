@@ -4,7 +4,10 @@
       <div class="md:hidden">
         <logo />
       </div>
-      <div class="hidden md:inline-block w-48 ml-24 lg:ml-26 align-end" @mouseover="startBaffle" @mouseout="unBaffle">
+      <div class="hidden md:block fixed top-0 left-0 mt-6 lg:mt-8 ml-12 z-10">
+        <Logo />
+      </div>
+      <div class="hidden md:inline-block w-48 ml-24 lg:ml-26 align-end" @mouseover="startBaffle" @mouseleave="unBaffle">
           <span class="ml-auto leading-snug tracking-tight font-serif time">Nottingham, England</span>
       </div>
     </div>

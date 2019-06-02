@@ -149,6 +149,7 @@ body {
   transition-delay: 0.25s;
 }
 
-.section-title {
-  transform: rotate(90deg);
+.sectionTitle {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
 }
