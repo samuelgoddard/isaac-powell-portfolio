@@ -19,6 +19,21 @@ body {
   .seperator {
     @apply border-white;
   }
+
+  &:after {
+    position: fixex;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    @apply bg-grey-dark;
+  }
+}
+
+.darkPane {
+  z-index: -10;
 }
 
 .light {
@@ -30,14 +45,25 @@ body {
 }
 
 .fade-enter-active {
-  animation: fadeIn .3s forwards;
+  animation: fadeIn 0.5s forwards;
 }
 .fade-leave-active {
-  animation: fadeOut .3s forwards;
+  animation: fadeOut 0.5s forwards;
+}
+
+.fade-enter-active, 
+.fade-leave-active {
+  transition-duration: 0.5s;
+  /* transition-property: height, opacity, transform; */
+  /* transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1); */
+  /* overflow: hidden; */
 }
 
 @keyframes fadeIn {
   0% {
+    opacity: 0;
+  }
+  75% {
     opacity: 0;
   }
   100% {
@@ -46,6 +72,9 @@ body {
 }
 @keyframes fadeOut {
   0% {
+    opacity: 1;
+  }
+  75% {
     opacity: 1;
   }
   100% {
@@ -136,13 +165,30 @@ body {
 .home-heading {
   max-width: 620px;
 
-  @screen lg {
-    max-width: 675px;
+  @screen md {
+    max-width: 720px;
   }
   
   @screen xl {
     max-width: 875px;
   }
+}
+
+.headline-reveal,
+.nav-reveal {
+  top: 60px;
+  opacity: 0;
+  transform: rotate(-5deg);
+}
+.project-title {
+  top: 80px;
+  opacity: 0;
+  transform: rotate(-2deg);
+}
+
+.seperator-reveal {
+  opacity: 0;
+  left: -100px;
 }
 
 .transition-delay {

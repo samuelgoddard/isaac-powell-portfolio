@@ -1,18 +1,19 @@
 <template>
+<div class="flex flex-col flex-1">
+  <site-header />
   <section class="flex-1 flex items-center justify-center">
     <div class="flex flex-wrap w-full">
       <div class="w-full md:w-1/2">
         <div class="hidden md:flex md:flex-wrap items-center justify-center h-full">
           <div 
-            ref="projectimageCover" 
-            class="opacity-0 max-w-full relative"
+            class="opacity-0 max-w-full relative project-image-cover"
             style="width: 400px; height: 260px;">
 
             <div
               v-for="(project, index) in projects"
               :key="project.name"
-              class="absolute top-0 right-0 opacity-0 bottom-0 left-0 bg-cover bg-center"
-              ref="projectimage"
+              class="absolute top-0 right-0 opacity-0 bottom-0 left-0 bg-cover bg-center project-image"
+              :class="'project-image-' + project.id"
               :style="`background-image: url('${ project.image }')`">
             </div>
           </div>
@@ -21,7 +22,7 @@
       <div class="w-full md:ml-auto md:flex-1 overflow-hidden">
         <parallax-container class="overflow-hidden">
         <parallax-element :parallaxStrength="15" :type="'depth'">
-        <nav class="w-full overflow-y-auto overflow-x-hidden max-h-128 block hide-scrollbars md:p-8 opacity-0 scale-85" ref="menu" @mouseover="isHovering = true" @mouseout="isHovering = false">
+        <nav class="w-full overflow-y-auto overflow-x-hidden max-h-128 block hide-scrollbars md:p-8 opacity-0 scale-85 menu" @mouseover="isHovering = true" @mouseout="isHovering = false">
           <ul>
             <li 
               v-for="(project, index) in projects"
@@ -29,25 +30,29 @@
               ref="numbers"
               class="flex flex-wrap items-center"
             >
-              <nuxt-link
-                @mouseover.native="projectImageUpdate(project.id, index, project.image, project.width, project.height)"
-                @focus.native="projectImageUpdate(project.id, index, project.image, project.width, project.height)"
-                @mouseout.native="projectImageReset()"
-                ref="opaque"
-                class="
-                  flex flex-wrap items-center lg:items-end
-                  leading-none tracking-tight
-                  font-serif
-                  text-white
-                  py-3 lg:py-4
-                  text-32 md:text-43 lg:text-48 xl:text-52 h-trim
-                  transition"
-                :class="[{ 'opacity-25' : isHovering }, { 'opacity-100' :project.id == selected }]"
-                :to="project.uri">
-                <span class="font-serif text-8 uppercase w-6 lg:mb-4">{{ project.id }}</span>
-                  <span :class="project.id">{{ project.name }}</span>
-                <span class="w-full text-6 lg:w-auto lg:text-7 ml-6 lg:ml-3 lg:mb-1 mt-2 lg:mt-0 tracking-widest uppercase block">{{ project.date }} / {{ project.meta }}</span>
-              </nuxt-link>
+              <span class="overflow-hidden relative block">
+                <span class="nav-reveal relative block opacty-0">
+                  <nuxt-link
+                    @mouseover.native="projectImageUpdate(project.id, index, project.image, project.width, project.height)"
+                    @focus.native="projectImageUpdate(project.id, index, project.image, project.width, project.height)"
+                    @mouseout.native="projectImageReset()"
+                    ref="opaque"
+                    class="
+                      flex flex-wrap items-center lg:items-end
+                      leading-none tracking-tight
+                      font-serif
+                      text-white
+                      py-3 lg:py-4
+                      text-32 md:text-43 lg:text-48 xl:text-52 h-trim
+                      transition"
+                    :class="[{ 'opacity-25' : isHovering }, { 'opacity-100' :project.id == selected }]"
+                    :to="project.uri">
+                    <span class="font-serif text-8 uppercase w-6 lg:mb-4">{{ project.id }}</span>
+                      <span :class="project.id">{{ project.name }}</span>
+                    <span class="w-full text-6 lg:w-auto lg:text-7 ml-6 lg:ml-3 lg:mb-1 mt-2 lg:mt-0 tracking-widest uppercase block">{{ project.date }} / {{ project.meta }}</span>
+                  </nuxt-link>
+                </span>
+              </span>
             </li>
           </ul>
         </nav>
@@ -56,14 +61,29 @@
       </div>
     </div>
   </section>
+  <site-footer />
+</div>
 </template>
 
 <script>
-import { Power4, TweenMax } from "gsap";
+import { StaggerTo, Power4, TweenMax } from "gsap";
 import baffle from "baffle";
 
+import SiteHeader from '~/components/SiteHeader.vue';
+import SiteFooter from '~/components/SiteFooter.vue';
+
 export default {
-  transition: 'fade',
+  transition: {
+    mode: 'out-in',
+    css: false,
+    leave(el, done) {
+      TweenMax.staggerTo(".nav-reveal", 1, { css: { top: 60, autoAlpha: 0, rotation: -5 }, ease: Power4.easeOut, onComplete: done }, -0.1);
+    },
+  },
+  components: {
+    SiteHeader,
+    SiteFooter,
+  },
   created () {
     this.$store.commit('ui/TOGGLE_DARK')
   },
@@ -130,17 +150,22 @@ export default {
       this.selected = id;
 
       // TweenMax.set(this.$refs.projectimage, { css: { backgroundImage:`url(${ imageUrl })` }});
-      TweenMax.to(this.$refs.projectimageCover, 0.35, { 
+      TweenMax.to('.project-image-cover', 0.35, { 
         ease: Power4.easeOut,
         autoAlpha: 1, 
         width: this.$mq == '2xl' ? width * 1.5 : width * 1.1, 
         height: this.$mq == '2xl' ? height * 1.5 : height  * 1.1});
       
-      TweenMax.to(this.$refs.projectimage[index], 0.35, { ease: Power4.easeOut, autoAlpha: 1 });
+      // THIS IS FIRST
+      TweenMax.to('.project-image', 0.35, { ease: Power4.easeOut, autoAlpha: 0 });
+      // Need to do somethig with indx here....
+      let current = '.project-image-' + id;
+      console.log(current);
+      TweenMax.to(current, 0.35, { ease: Power4.easeOut, autoAlpha: 1 });
     },
     projectImageReset () {
       // TweenMax.to(this.$refs.projectimageCover, 0.66, { ease: Power4.easeOut, autoAlpha: 0 });
-      TweenMax.to(this.$refs.projectimage, 0.35, { ease: Power4.easeOut, autoAlpha: 0 });
+      TweenMax.to('.project-image', 0.35, { ease: Power4.easeOut, autoAlpha: 0 });
     },
     startBaffle (id, name) {
       this.selected = id
@@ -153,7 +178,9 @@ export default {
     },
   },
   mounted () {
-    TweenMax.to(this.$refs.menu, 0.3, { css: { scale: 1, autoAlpha:1 }, delay: 0.25 })
-  }
+    TweenMax.to('.menu', 0.3, { css: { scale: 1, autoAlpha:1 }, delay: 0.25 });
+
+    TweenMax.staggerTo(".nav-reveal", 1, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 0.5, ease: Power4.easeOut }, 0.1);
+  },
 }
 </script>

@@ -1,62 +1,90 @@
 <template>
-  <section class="flex-1 flex items-center justify-center">
-    
-    <seperator width="w-20" class="hidden md:block mr-auto" />
-    
+<div class="flex flex-col flex-1">
+  <site-header />
+  <section class="flex-1 flex items-center justify-center overflow-hidden relative">
+    <div class="hidden md:block w-20 mr-auto">
+      <span class="seperator-reveal block opacity-0 relative">
+        <seperator width="w-20" class="hidden md:block mr-auto" />
+      </span>
+    </div>
     <div class="w-full md:w-4/5 md:mr-auto md:-ml-20 relative">
-
       <div class="relative flex items-center justify-center">
-        
-        <div class="z-0 absolute right-0 top-0 bottom-0 right-0 bg-cover bg-center imageBox opacity-0 transition" ref="imageBox">
+        <div class="z-0 absolute right-0 top-0 bottom-0 right-0 bg-cover bg-center imageBox opacity-0 image-box" ref="imageBox">
         </div>
-        
-        <mq-layout mq="md+">
-          <img src="/images/portfolio-loop.gif" alt="Portfolio" class="w-90 z-50 opacity-0 fixed" ref="imageBoxCarousel" />
-        </mq-layout>
-
-        <div ref="heading" class="opacity-0 scale-50 home-heading">
+        <img src="/images/portfolio-loop.gif" alt="Portfolio" class="w-90 z-50 opacity-0 fixed image-box-carousel" ref="imageBoxCarousel" />
+        <div ref="heading" class="home-heading">
           <parallax-container class="overflow-hidden">
             <parallax-element :parallaxStrength="20" :type="'depth'">
-              <mq-layout mq="md+">
                 <h1 class="
                   relative z-10
                   leading-snug tracking-tight
                   text-21 md:text-31 lg:text-32 xl:text-42 2xl:text-52
                   font-serif
                   text-center
-                  py-16 md:p-16 lg:p-24"
+                  py-16 md:p-8 lg:p-24"
                 >
-                  <span ref="opaque">I’m Isaac, a freelance designer from Nottingham, UK.</span> <span ref="work"><nuxt-link v-on:mouseover.native="hover" v-on:mousemove.native="mouseMove" v-on:mouseout.native="mouseOut" to="/projects" class="underline">See my work</nuxt-link></span><span ref="opaque2">, or </span><a v-on:mouseover="hoverLine" v-on:mouseout="mouseOutLine" ref="line" href="mailto:isaac@40000ft.co.uk" class="underline">drop me a line</a><span ref="opaque3"> if you want to work with me on your next project.</span>
+                  <span class="overflow-hidden relative block">
+                    <span class="headline-reveal headline-reveal-1 block opacity-0 relative">
+                      <span class="opaque">I’m Isaac, a freelance designer from</span>
+                    </span>
+                  </span>
+                    
+                  <span class="overflow-hidden relative block">
+                    <span class="headline-reveal headline-reveal-2 block opacity-0 relative">
+                      <span class="opaque">Nottingham, UK.</span>
+                      <span class="work">
+                        <mq-layout mq="md+" class="inline-block">
+                          <nuxt-link v-on:mouseover.native="hover" v-on:mousemove.native="mouseMove" v-on:mouseout.native="mouseOut" to="/projects" class="underline">See my work</nuxt-link>
+                        </mq-layout>
+                        <mq-layout mq="sm" class="inline-block">
+                          <nuxt-link to="/projects" class="underline">See my work</nuxt-link>
+                        </mq-layout>
+                      </span><span class="opaque">, or</span>
+                    </span>
+                  </span>
+                  
+                  <span class="overflow-hidden relative block">
+                    <span class="headline-reveal headline-reveal-3 block opacity-0 relative">
+                      <a v-on:mouseover="hoverLine" v-on:mouseout="mouseOutLine" href="mailto:isaac@40000ft.co.uk" class="underline line">drop me a line</a><span class="opaque"> if you want to work</span>
+                    </span>
+                  </span>
+                  
+                  <span class="overflow-hidden relative block">
+                    <span class="headline-reveal headline-reveal-4 block opacity-0 relative">
+                      <span class="opaque">with me on your next project.</span>
+                    </span>
+                  </span>
                 </h1>
-              </mq-layout>
-              <mq-layout mq="sm">
-                <h1 class="
-                  relative z-10
-                  leading-snug tracking-tight
-                  text-21 md:text-31 lg:text-32 xl:text-42 2xl:text-52
-                  font-serif
-                  text-center
-                  py-16 px-6 md:p-16 lg:p-24"
-                >
-                  I’m Isaac, a freelance designer from Nottingham, UK. <nuxt-link to="/projects" class="underline">See my work</nuxt-link>, or <a href="mailto:isaac@40000ft.co.uk" class="underline">drop me a line</a> if you want to work with me on your next project.
-                </h1>
-              </mq-layout>
             </parallax-element>
           </parallax-container>
         </div>
       </div>
-    </div>
+    </div>  
   </section>
+  <site-footer />
+</div>
 </template>
 
 <script>
-import { Back, TweenMax } from 'gsap';
+import { Back, Power4, TweenMax } from "gsap";
+import SiteHeader from '~/components/SiteHeader.vue';
+import SiteFooter from '~/components/SiteFooter.vue';
 import Seperator from '~/components/Seperator.vue';
 
 export default {
-  transition: 'fade',
+  transition: {
+    mode: 'out-in',
+    css: false,
+    leave(el, done) {
+      TweenMax.staggerTo(".headline-reveal", 1, { css: { top: 60, autoAlpha: 0, rotation: -5 }, ease: Power4.easeOut, onComplete: done }, -0.1);
+      TweenMax.to('.image-box', 0.75, { css: { scale: 0.75, autoAlpha:0 }, ease: Power4.easeOut, onComplete: done });
+      TweenMax.to(".seperator-reveal", 1, { css: { left: -100, autoAlpha: 0 }, ease: Power4.easeOut, onComplete: done });
+    },
+  },
   components: {
     Seperator,
+    SiteHeader,
+    SiteFooter,
   },
   data() {
     return { 
@@ -66,45 +94,38 @@ export default {
   },
   methods : {
     hover : function(e) {
-      TweenMax.to(this.$refs.imageBoxCarousel, 0, { css: { autoAlpha: 1, left: e.pageX + 30, top: e.pageY + 30 } })
-      TweenMax.to(this.$refs.opaque, 0.3, { css: { autoAlpha:0.15 } })
-      TweenMax.to(this.$refs.opaque2, 0.3, { css: { autoAlpha:0.15 } })
-      TweenMax.to(this.$refs.opaque3, 0.3, { css: { autoAlpha:0.15 } })
-      TweenMax.to(this.$refs.line, 0.3, { css: { autoAlpha:0.15 } })
+      TweenMax.to('.image-box-carousel', 0, { css: { autoAlpha: 1, left: e.pageX + 30, top: e.pageY + 30 } })
+      TweenMax.to('.opaque', 0.3, { css: { autoAlpha:0.15 } })
+      TweenMax.to('.line', 0.3, { css: { autoAlpha:0.15 } })
     },
     mouseMove : function(e) {
-      TweenMax.to(this.$refs.imageBoxCarousel, 0, { css: { left: e.pageX + 30, top: e.pageY + 30 } })
+      TweenMax.to('.image-box-carousel', 0, { css: { left: e.pageX + 30, top: e.pageY + 30 } })
     },
     mouseOut : function() {
-      TweenMax.to(this.$refs.opaque, 0.3, { css: { autoAlpha: 1 } })
-      TweenMax.to(this.$refs.opaque2, 0.3, { css: { autoAlpha: 1 } })
-      TweenMax.to(this.$refs.opaque3, 0.3, { css: { autoAlpha: 1 } })
-      TweenMax.to(this.$refs.line, 0.3, { css: { autoAlpha: 1 } })
-      TweenMax.to(this.$refs.imageBoxCarousel, 0, { css: { scale: 1, autoAlpha: 0 } })
+      TweenMax.to('.opaque', 0.3, { css: { autoAlpha: 1 } })
+      TweenMax.to('.line', 0.3, { css: { autoAlpha: 1 } })
+      TweenMax.to('.image-box-carousel', 0, { css: { scale: 1, autoAlpha: 0 } })
     },
     hoverLine : function() {
-      TweenMax.to(this.$refs.opaque, 0.3, { css: { autoAlpha:0.15 } })
-      TweenMax.to(this.$refs.opaque2, 0.3, { css: { autoAlpha:0.15 } })
-      TweenMax.to(this.$refs.opaque3, 0.3, { css: { autoAlpha:0.15 } })
-      TweenMax.to(this.$refs.work, 0.3, { css: { autoAlpha:0.15 } })
+      TweenMax.to('.opaque', 0.3, { css: { autoAlpha:0.15 } })
+      TweenMax.to('.work', 0.3, { css: { autoAlpha:0.15 } })
     },
     mouseOutLine : function() {
-      TweenMax.to(this.$refs.opaque, 0.3, { css: { autoAlpha: 1 } })
-      TweenMax.to(this.$refs.opaque2, 0.3, { css: { autoAlpha: 1 } })
-      TweenMax.to(this.$refs.opaque3, 0.3, { css: { autoAlpha: 1 } })
-      TweenMax.to(this.$refs.work, 0.3, { css: { autoAlpha:1 } })
+      TweenMax.to('.opaque', 0.3, { css: { autoAlpha: 1 } })
+      TweenMax.to('.work', 0.3, { css: { autoAlpha:1 } })
     }
   },
   created () {
     this.$store.commit('ui/TOGGLE_LIGHT')
   },
   mounted () {
-    TweenMax.to(this.$refs.imageBox, 0.3, { css: { scale: 1, autoAlpha:1, backgroundImage:`url(${ this.image })` }, delay: 0.5 })
-    // TweenMax.to(this.$refs.heading, 0.3, { css: { scale: 1, autoAlpha:1 }, delay: 0.25 })
-    TweenMax.set(this.$refs.heading, { perspective:400} )
+    TweenMax.set('.image-box-carousel', { css: { left: 0, bottom: 0 } });
+    TweenMax.set('.image-box', { css: { autoAlpha: 0, backgroundImage:`url(${ this.image })` } });    
+    TweenMax.to('.image-box', 0.75, { css: { scale: 1, autoAlpha:1 }, delay: 0.7 });
 
-    TweenMax.to(this.$refs.heading, 0.8, {opacity:1, scale: 1 });
+    TweenMax.staggerTo(".headline-reveal", 1, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 0.5, ease: Power4.easeOut }, 0.1);
 
-  }
+    TweenMax.to(".seperator-reveal", 1, { css: { left: 0, autoAlpha: 1 }, delay: 0.75, ease: Power4.easeOut });
+  },
 }
 </script>

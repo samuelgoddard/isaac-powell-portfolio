@@ -1,6 +1,7 @@
 <template>
 <div>
-  <div class="block fixed top-0 right-0 mt-40 lg:mt-56 mr-6 md:mr-14 lg:mr-18 z-10 sectionTitle" ref="sectionTitle">
+  <site-header />
+  <div class="block fixed top-0 right-0 mt-40 lg:mt-56 mr-6 md:mr-14 lg:mr-18 z-10 sectionTitle opacity-0" ref="sectionTitle">
     <span class="text-22">Introduction</span>
   </div>
   <div v-waypoint="{ active: true, callback: onWayPointIntro, options: intersectionOptions }">
@@ -11,19 +12,31 @@
         <div class="w-full">
           <div class="w-4/5 xl:w-4/5">
             <div class="pb-18 md:pb-24 xl:pb-56">
-              <seperator width="w-8" class="inline-block align-middle mr-2" />
-              <span class="font-serif text-11 uppercase inline-block align-middle">iii</span>
+              <div class="overflow-hidden relative block">
+                <div class="seperator-reveal relative block opacity-0">
+                  <seperator width="w-8" class="inline-block align-middle mr-2" />
+                  <span class="font-serif text-11 uppercase inline-block align-middle">iii</span>
+                </div>
+              </div>
             </div>
-        
-            <h1 class="
-              leading-none tracking-tight
-              text-60 md:text-127 lg:text-138 xl:text-142
-              font-serif mb-12 md:mb-20"
-            >
-              Paul<br/>Smith
-            </h1>
 
-            <p class="mb-12 md:mb-20 lg:mb-24 text-15 md:text-20 lg:text-22 xl:text-26">Paul Smith is one of Britain’s most iconic fashion brands, with stores located in cities all over the world. To help make their online e-commerce experience as slick as the physical, I’ve been working with their internal team to tackle key user experience challenges and establish and evolve their existing visual language. </p>
+            <span class="overflow-hidden relative block mb-12 md:mb-20">
+              <span class="project-title relative block opacity-0">
+                <h1 class="
+                  leading-none tracking-tight
+                  text-60 md:text-127 lg:text-138 xl:text-142
+                  font-serif"
+                >
+                  Paul<br/>Smith
+                </h1>
+              </span>
+            </span>
+
+            <span class="overflow-hidden relative block mb-12 md:mb-20 lg:mb-24">
+              <span class="project-title relative block opacty-0">
+                <p class="text-15 md:text-20 lg:text-22 xl:text-26">Paul Smith is one of Britain’s most iconic fashion brands, with stores located in cities all over the world. To help make their online e-commerce experience as slick as the physical, I’ve been working with their internal team to tackle key user experience challenges and establish and evolve their existing visual language. </p>
+              </span>
+            </span>
 
             <div class="flex flex-wrap mb-12 md:mb-20 lg:mb-24">
               <div class="w-1/2 md:w-1/3">
@@ -239,18 +252,32 @@
       </div>
     </div>
   </section>
+  <site-footer />
 </div>
 </template>
 
 <script>
-import { Power4, TweenMax } from "gsap";
+import { StaggerTo, Power4, TweenMax } from "gsap";
 import baffle from "baffle";
+
+import SiteHeader from '~/components/SiteHeader.vue';
+import SiteFooter from '~/components/SiteFooter.vue';
 
 import Seperator from '~/components/Seperator.vue';
 
 export default {
-  transition: 'fade',
+  transition: {
+    mode: 'out-in',
+    css: false,
+    leave(el, done) {
+      TweenMax.staggerTo('.project-title', 1, { css: { top: 80, autoAlpha: 0, rotation: -2 }, ease: Power4.easeOut, onComplete: done }, -0.1);
+      TweenMax.to(".seperator-reveal", 1, { css: { left: -100, autoAlpha: 0 }, ease: Power4.easeOut, onComplete: done });
+      TweenMax.to(".sectionTitle", 1, { css: { autoAlpha: 0 }, ease: Power4.easeOut, onComplete: done });
+    },
+  },
   components: {
+    SiteHeader,
+    SiteFooter,
     Seperator,
   },
   data: () => ({
@@ -370,6 +397,11 @@ export default {
     TweenMax.set(this.$refs.imageContainer5, { autoAlpha: 0 })
     TweenMax.set(this.$refs.imageContainer6, { autoAlpha: 0 })
     TweenMax.set(this.$refs.imageContainer7, { autoAlpha: 0 })
+
+    TweenMax.staggerTo('.project-title', 1, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 0.5, ease: Power4.easeOut }, 0.1);
+
+    TweenMax.to(".seperator-reveal", 1, { css: { left: 0, autoAlpha: 1 }, delay: 0.75, ease: Power4.easeOut });
+    TweenMax.to(".sectionTitle", 1, { css: { autoAlpha: 1 }, delay: 0.75, ease: Power4.easeOut });
   }
 }
 </script>

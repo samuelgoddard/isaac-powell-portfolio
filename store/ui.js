@@ -1,6 +1,7 @@
 export const state = () => ({
   dark: false,
   light: false,
+  header: false
 })
 
 export const mutations = {
@@ -11,5 +12,8 @@ export const mutations = {
   TOGGLE_LIGHT(state) {
     state.light = true;
     state.dark = false;
+  },
+  TOGGLE_HEADER(state) {
+    state.header = true;
   },
 }
