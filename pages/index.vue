@@ -76,14 +76,14 @@ export default {
     mode: 'out-in',
     css: false,
     leave(el, done) {
-      TweenMax.staggerTo(document.querySelectorAll('.top-mask'), 0.8, { css: { top: -100, autoAlpha: 0, rotation: 0 }, delay: 0, ease: Power4.easeInOut }, -0.15);
-      TweenMax.staggerTo(document.querySelectorAll('.bottom-mask'), 0.8, { css: { top: 100, autoAlpha: 0, rotation: 0 }, delay: 0, ease: Power4.easeInOut }, -0.15);
+      TweenMax.staggerTo(document.querySelectorAll('.top-mask'), 1.5, { css: { top: -100, autoAlpha: 0, rotation: 0 }, delay: 0, ease: Power4.easeInOut }, -0.15);
+      TweenMax.staggerTo(document.querySelectorAll('.bottom-mask'), 1.5, { css: { top: 100, autoAlpha: 0, rotation: 0 }, delay: 0, ease: Power4.easeInOut }, -0.15);
 
-      TweenMax.to(document.querySelector('.seperator-reveal'), 1, { css: { left: -100, autoAlpha: 1 }, delay: 0.25, ease: Power4.easeInOut, onComplete: done });
-      TweenMax.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1, { css: { left: -100, autoAlpha: 1 }, delay: 0, ease: Power4.easeInOut }, -0.25);
+      TweenMax.to(document.querySelector('.seperator-reveal'), 1.5, { css: { left: -100, autoAlpha: 1 }, delay: 0.5, ease: Power4.easeInOut, onComplete: done });
+      TweenMax.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1.5, { css: { left: -100, autoAlpha: 1 }, delay: 0, ease: Power4.easeInOut }, -0.25);
 
-      TweenMax.to(document.querySelectorAll('.image-box'), 0.75, { css: { scale: 0.8, autoAlpha:0 }, delay: 0.4, ease: Power4.easeInOut });
-      TweenMax.staggerTo(document.querySelectorAll('.headline-reveal'), 0.8, { css: { top: 60, autoAlpha: 0, rotation: -5 }, delay: 0.55, ease: Power4.easeInOut }, -0.1);
+      TweenMax.to(document.querySelectorAll('.image-box'), 1.5, { css: { scale: 0.8, autoAlpha:0 }, delay: 0.5, ease: Power4.easeInOut });
+      TweenMax.staggerTo(document.querySelectorAll('.headline-reveal'), 1.5, { css: { top: 60, autoAlpha: 0, rotation: -5 }, delay: 0.75, ease: Power4.easeInOut }, -0.1);
     },
   },
   components: {
@@ -127,14 +127,14 @@ export default {
     TweenMax.set(document.querySelector('.image-box-carousel'), { css: { left: 0, bottom: 0 } });
     TweenMax.set(document.querySelector('.image-box'), { css: { autoAlpha: 0, backgroundImage:`url(${ this.image })` } });
 
-    TweenMax.to(document.querySelector('.image-box'), 1, { css: { scale: 1, autoAlpha:1 }, delay: 0.5, ease: Power4.easeInOut });
-    TweenMax.staggerTo(document.querySelectorAll('.headline-reveal'), 1, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 0.35 }, 0.075);
+    TweenMax.to(document.querySelector('.image-box'), 1.5, { css: { scale: 1, autoAlpha:1 }, delay: 0.75, ease: Power4.easeInOut });
+    TweenMax.staggerTo(document.querySelectorAll('.headline-reveal'), 1.5, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 0.5 }, 0.075);
     TweenMax.to(document.querySelector('.seperator-reveal'), 1.5, { css: { left: 0, autoAlpha: 1 }, delay: 0, ease: Power4.easeInOut });
     
-    TweenMax.staggerTo(document.querySelectorAll('.top-mask'), 1, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 0.5, ease: Power4.easeInOut }, 0.075);
-    TweenMax.staggerTo(document.querySelectorAll('.bottom-mask'), 1, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 0.5, ease: Power4.easeInOut }, 0.075);
+    TweenMax.staggerTo(document.querySelectorAll('.top-mask'), 1.5, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 0.75, ease: Power4.easeInOut }, 0.075);
+    TweenMax.staggerTo(document.querySelectorAll('.bottom-mask'), 1.5, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 0.75, ease: Power4.easeInOut }, 0.075);
 
-    TweenMax.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1, { css: { left: 0, autoAlpha: 1 }, delay: 0.5, ease: Power4.easeInOut }, 0.2);
+    TweenMax.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1.5, { css: { left: 0, autoAlpha: 1 }, delay: 0.75, ease: Power4.easeInOut }, 0.2);
   }
 }
 </script>
