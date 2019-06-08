@@ -45,17 +45,19 @@
               <nuxt-link 
                 v-for="(page, index) in pages"
                 class="
+                  fancy-link
                   inline-block
                   mx-4 lg:mx-8 
-                  text-16 lg:text-20"
+                  text-16 lg:text-18 xl:text-20"
                 :key="page.name"
                 :to="page.uri">
                   {{ page.name }}
               </nuxt-link>
               <a class="
                   inline-block
+                  fancy-link
                   mx-4 lg:mx-8 mr-0
-                  text-16 lg:text-20"
+                  text-16 lg:text-18 xl:text-20"
                 href="mailto:isaac@40000ft.co.uk">
                   Contact
               </a>

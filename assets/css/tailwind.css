@@ -226,3 +226,37 @@ p {
   writing-mode: vertical-rl;
   text-orientation: mixed;
 }
+
+
+
+
+.fancy-link {
+  text-decoration: none;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(180deg,transparent 97%, #000 0);
+  background-size: 0 100%;
+  transition: background-size 0.35s ease-in-out;
+  
+  &:hover {
+    background-size: 100% 100%;
+  }
+}
+
+.current {
+  background-size: 100% 100%;
+}
+
+.dark {
+  .fancy-link {
+    background-image: linear-gradient(180deg,transparent 97%, #FFF 0);
+  }
+}
+
+::selection {
+  background: #000;
+  color: #fff;
+}
+::-moz-selection {
+  background: #000;
+  color: #fff;
+}

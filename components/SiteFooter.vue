@@ -27,7 +27,7 @@
               v-for="(social, index) in socials"
               class="
                 inline-block
-                underline
+                fancy-link
                 mx-4 
                 text-15 md:text-14 lg:text-base xl:text-20 2xl:text-26"
               :class="[{'md:mr-0': index === socials.length - 1}, {'ml-0 md:ml-3' : index === socials.length - socials.length }]"

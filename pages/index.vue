@@ -99,12 +99,12 @@ export default {
   },
   methods : {
     hover : function(e) {
-      TweenMax.to('.image-box-carousel', 0, { css: { autoAlpha: 1, left: e.pageX + 30, top: e.pageY + 30 } })
+      TweenMax.to('.image-box-carousel', 0, { css: { autoAlpha: 1, left: e.pageX + 30, top: e.pageY + 30, display: 'block' } })
       TweenMax.to('.opaque', 0.3, { css: { autoAlpha:0.15 } })
       TweenMax.to('.line', 0.3, { css: { autoAlpha:0.15 } })
     },
     mouseMove : function(e) {
-      TweenMax.to('.image-box-carousel', 0, { css: { left: e.pageX + 30, top: e.pageY + 30 } })
+      TweenMax.to('.image-box-carousel', 0, { css: { left: e.pageX + 30, top: e.pageY + 30, display: 'block' } })
     },
     mouseOut : function() {
       TweenMax.to('.opaque', 0.3, { css: { autoAlpha: 1 } })
@@ -124,7 +124,7 @@ export default {
     this.$store.commit('ui/TOGGLE_LIGHT')
   },
   mounted () {
-    TweenMax.set(document.querySelector('.image-box-carousel'), { css: { left: 0, bottom: 0 } });
+    TweenMax.set(document.querySelector('.image-box-carousel'), { css: { left: 0, bottom: 0, display: 'none' } });
     TweenMax.set(document.querySelector('.image-box'), { css: { autoAlpha: 0, backgroundImage:`url(${ this.image })` } });
 
     TweenMax.to(document.querySelector('.image-box'), 1.5, { css: { scale: 1, autoAlpha:1 }, delay: 0.4, ease: Power4.easeInOut });

@@ -30,7 +30,7 @@ module.exports = {
   },
 
   router: {
-    linkExactActiveClass: 'underline'
+    linkExactActiveClass: 'current'
   },
 
   /*

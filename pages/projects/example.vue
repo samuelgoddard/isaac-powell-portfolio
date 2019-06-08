@@ -67,7 +67,7 @@
                   Link
                 </h2>
 
-                <a href="www.paulsmith.co.uk" rel="noopener" target="_blank" class="underline text-12 md:text-15 lg:text-19 xl:text-24">www.paulsmith.co.uk</a>
+                <a href="www.paulsmith.co.uk" rel="noopener" target="_blank" class="fancy-link text-12 md:text-15 lg:text-19 xl:text-24">www.paulsmith.co.uk</a>
               </div>
             </div>
           </div>
@@ -233,7 +233,7 @@
     </div>
   </div>
 
-  <section class="pb-18 md:pb-24 lg:pb-32 md:flex md:items-center">
+  <section class="pb-16 md:pb-20 lg:pb-28 md:flex md:items-center">
     <div class="w-full xl:w-2/3 mx-auto">
       <div class="w-full">
         <div class="w-full text-right">
@@ -244,8 +244,10 @@
               leading-none tracking-tight
               font-serif
               no-underline
+              fancy-link
+              pb-3 md:pb-4
               text-32 md:text-43 lg:text-52 xl:text-60 h-trim"
-            to="/projects/example">
+            to="/projects/mat-hayward">
               Mat Hayward
           </nuxt-link>
         </div>
@@ -273,7 +275,7 @@ export default {
       TweenMax.staggerTo('.project-title', 1.5, { css: { top: 120, autoAlpha: 0, rotation: -2 }, ease: Power4.easeOut, onComplete: done }, -0.1);
       TweenMax.to(".sectionTitle", 1.5, { css: { autoAlpha: 0 }, ease: Power4.easeOut });
 
-      TweenMax.to(document.querySelectorAll('.seperator-reveal'), 1.5, { css: { left: -100, autoAlpha: 0 }, ease: Power4.easeOut });
+      TweenMax.to(document.querySelectorAll('.seperator-reveal'), 3, { css: { left: -75, autoAlpha: 0 }, ease: Power4.easeOut });
 
       TweenMax.staggerTo(document.querySelectorAll('.top-mask'), 1.5, { css: { top: -100, autoAlpha: 0, rotation: 0 }, delay: 0, ease: Power4.easeInOut }, -0.15);
       TweenMax.staggerTo(document.querySelectorAll('.bottom-mask'), 1.5, { css: { top: 100, autoAlpha: 0, rotation: 0 }, delay: 0, ease: Power4.easeInOut }, -0.15);
