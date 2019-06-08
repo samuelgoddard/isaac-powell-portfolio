@@ -84,11 +84,11 @@ export default {
 
       TweenMax.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1.5, { css: { left: -100, autoAlpha: 1 }, delay: 0, ease: Power4.easeInOut }, 0.2);
       
-      TweenMax.staggerTo(document.querySelectorAll('.nav-reveal'), 2, { css: { top: 60, autoAlpha: 0, rotation: -5 }, delay: 0.75, ease: Power4.easeOut, onComplete: done }, -0.1);
+      TweenMax.staggerTo(document.querySelectorAll('.nav-reveal'), 2.5, { css: { top: 60, autoAlpha: 0, rotation: -5 }, delay: 1, ease: Power4.easeOut }, -0.1);
 
-      TweenMax.to(document.querySelector('.project-image-cover'), 1.5, { css: { top: 400, autoAlpha: 0, rotation: -12 }, delay: 0.5, ease: Power4.easeInOut });
+      TweenMax.to(document.querySelector('.project-image-cover'), 1.5, { css: { top: 400, autoAlpha: 0, rotation: -12 }, delay: 1, ease: Power4.easeInOut, onComplete: done });
 
-      TweenMax.to(document.querySelector('.swipe-reveal'), 1.5, { css: { top: '100vh' }, delay: 1.25, ease: Power4.easeInOut });
+      TweenMax.to(document.querySelector('.swipe-reveal'), 1.5, { css: { top: '100vh' }, delay: 1.65, ease: Power4.easeInOut });
     },
   },
   components: {
@@ -191,10 +191,10 @@ export default {
   mounted () {
     TweenMax.set(document.querySelector('.project-image-cover'), { css: { rotation: 0 }});
 
-    TweenMax.staggerTo(document.querySelectorAll('.top-mask'), 1.5, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 1.5, ease: Power4.easeInOut }, 0.15);
-    TweenMax.to(document.querySelectorAll('.bottom-mask'), 1.5, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 1.5, ease: Power4.easeInOut });
+    TweenMax.staggerTo(document.querySelectorAll('.top-mask'), 1.5, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 1.25, ease: Power4.easeInOut }, 0.15);
+    TweenMax.to(document.querySelectorAll('.bottom-mask'), 1.5, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 1.25, ease: Power4.easeInOut });
 
-    TweenMax.staggerTo(document.querySelectorAll('.nav-reveal'), 2, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 0.65, ease: Power4.easeInOut }, 0.075);
+    TweenMax.staggerTo(document.querySelectorAll('.nav-reveal'), 2.5, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 0, ease: Power4.easeInOut }, 0.1);
     TweenMax.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1.5, { css: { left: 0, autoAlpha: 1 }, delay: 1.25, ease: Power4.easeInOut }, -0.2);
 
     TweenMax.to(document.querySelectorAll('.swipe-reveal'), 1.5, { css: { top: 0 }, delay: 0, ease: Power4.easeInOut });

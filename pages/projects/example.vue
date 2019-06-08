@@ -404,15 +404,15 @@ export default {
     TweenMax.set(this.$refs.imageContainer6, { autoAlpha: 0 })
     TweenMax.set(this.$refs.imageContainer7, { autoAlpha: 0 })
 
-    TweenMax.staggerTo('.project-title', 1.5, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 0.5, ease: Power4.easeOut }, 0.1);
+    TweenMax.staggerTo('.project-title', 1.5, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 0.75, ease: Power4.easeOut }, 0.1);
 
-    TweenMax.staggerTo(document.querySelectorAll('.top-mask'), 1.5, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 0.5, ease: Power4.easeInOut }, 0.075);
-    TweenMax.staggerTo(document.querySelectorAll('.bottom-mask'), 1.5, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 0.5, ease: Power4.easeInOut }, 0.075);
+    TweenMax.staggerTo(document.querySelectorAll('.top-mask'), 1.5, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 0.8, ease: Power4.easeInOut }, 0.075);
+    TweenMax.staggerTo(document.querySelectorAll('.bottom-mask'), 1.5, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 0.8, ease: Power4.easeInOut }, 0.075);
 
-    TweenMax.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1, { css: { left: 0, autoAlpha: 1 }, delay: 0.5, ease: Power4.easeInOut }, 0.2);
+    TweenMax.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1, { css: { left: 0, autoAlpha: 1 }, delay: 0.8, ease: Power4.easeInOut }, 0.2);
 
-    TweenMax.to(".seperator-reveal", 1.5, { css: { left: 0, autoAlpha: 1 }, delay: 0.5, ease: Power4.easeOut });
-    TweenMax.to(".sectionTitle", 1.5, { css: { autoAlpha: 1 }, delay: 0.5, ease: Power4.easeOut });
+    TweenMax.to(".seperator-reveal", 1.5, { css: { left: 0, autoAlpha: 1 }, delay: 0.75, ease: Power4.easeOut });
+    TweenMax.to(".sectionTitle", 1.5, { css: { autoAlpha: 1 }, delay: 0.75, ease: Power4.easeOut });
   }
 }
 </script>
