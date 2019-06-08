@@ -18,7 +18,7 @@
                 <h1 class="
                   relative z-10
                   leading-snug tracking-tight
-                  text-21 md:text-31 lg:text-32 xl:text-42 2xl:text-52
+                  text-16 xs:text-20 md:text-31 lg:text-32 xl:text-42 2xl:text-52
                   font-serif
                   text-center
                   py-16 md:p-8 lg:p-24"
@@ -127,12 +127,12 @@ export default {
     TweenMax.set(document.querySelector('.image-box-carousel'), { css: { left: 0, bottom: 0 } });
     TweenMax.set(document.querySelector('.image-box'), { css: { autoAlpha: 0, backgroundImage:`url(${ this.image })` } });
 
-    TweenMax.to(document.querySelector('.image-box'), 1.5, { css: { scale: 1, autoAlpha:1 }, delay: 0.75, ease: Power4.easeInOut });
+    TweenMax.to(document.querySelector('.image-box'), 1.5, { css: { scale: 1, autoAlpha:1 }, delay: 0.4, ease: Power4.easeInOut });
     TweenMax.staggerTo(document.querySelectorAll('.headline-reveal'), 1.5, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 0.5 }, 0.075);
     TweenMax.to(document.querySelector('.seperator-reveal'), 1.5, { css: { left: 0, autoAlpha: 1 }, delay: 0, ease: Power4.easeInOut });
     
-    TweenMax.staggerTo(document.querySelectorAll('.top-mask'), 1.5, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 0.75, ease: Power4.easeInOut }, 0.075);
-    TweenMax.staggerTo(document.querySelectorAll('.bottom-mask'), 1.5, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 0.75, ease: Power4.easeInOut }, 0.075);
+    TweenMax.staggerTo(document.querySelectorAll('.top-mask'), 1.5, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 1, ease: Power4.easeInOut }, 0.075);
+    TweenMax.staggerTo(document.querySelectorAll('.bottom-mask'), 1.5, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 1, ease: Power4.easeInOut }, 0.075);
 
     TweenMax.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1.5, { css: { left: 0, autoAlpha: 1 }, delay: 0.75, ease: Power4.easeInOut }, 0.2);
   }

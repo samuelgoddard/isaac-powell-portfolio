@@ -7,7 +7,11 @@
           <div class="flex items-center">
             <div>
               <div class="md:hidden">
-                <logo />
+                <div class="relative z-10 overflow-hidden">
+                  <div class="top-mask relative opacity-0">
+                    <logo />
+                  </div>
+                </div>
               </div>
               <div class="hidden md:inline-block">
                 <div class="relative z-10 overflow-hidden">
