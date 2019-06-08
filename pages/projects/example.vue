@@ -20,11 +20,11 @@
               </div>
             </div>
 
-            <span class="overflow-hidden relative block mb-12 md:mb-20">
+            <span class="overflow-hidden relative block mb-12 md:mb-16">
               <span class="project-title relative block opacity-0">
                 <h1 class="
                   leading-none tracking-titleSmall md:tracking-title
-                  text-60 md:text-127 lg:text-138 xl:text-142
+                  text-60 md:text-127 lg:text-138 xl:text-142 pb-3 md:pb-6
                   font-serif"
                 >
                   Hive<br/>Analytics.
@@ -75,10 +75,10 @@
       </div>
     </section>  
 
-  <div v-waypoint="{ active: true, callback: onWaypoint1, options: intersectionOptions }" class="bleed--all pb-8 md:pb-12">
-    <div class="bg-grey-light" ref="imageContainer1">
+  <div class="bleed--all pb-8 md:pb-12">
+    <div class="bg-grey-light">
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
-        <div class="w-full md:w-4/6 xl:w-3/5 mx-auto py-0 md:py-12" ref="image1">
+        <div class="w-full md:w-4/6 xl:w-3/5 mx-auto py-0 md:py-12">
           <picture class="w-full">
             <source srcset="/images/paul-smith/ps-perspective@2x.jpg"
                     media="(min-width: 768px)">
@@ -89,10 +89,10 @@
     </div>
   </div>
   
-  <div v-waypoint="{ active: true, callback: onWaypoint2, options: intersectionOptions }" class="bleed--all pb-16 md:pb-24 lg:pb-32">
-    <div class="bg-grey-light" ref="imageContainer2">
+  <div class="bleed--all pb-16 md:pb-24 lg:pb-32">
+    <div class="bg-grey-light">
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
-        <div class="w-full md:w-4/6 xl:w-3/5 mx-auto py-0 md:py-12" ref="image2">
+        <div class="w-full md:w-4/6 xl:w-3/5 mx-auto py-0 md:py-12">
           <picture class="w-full">
             <source srcset="/images/paul-smith/ps-home@2x.jpg"
                     media="(min-width: 768px)">
@@ -116,10 +116,10 @@
     </div>
   </section>
 
-  <div v-waypoint="{ active: true, callback: onWaypoint3, options: intersectionOptions }" class="bleed--all pb-16 md:pb-24 lg:pb-32">
-    <div class="bg-grey-light" ref="imageContainer3">
+  <div class="bleed--all pb-16 md:pb-24 lg:pb-32">
+    <div class="bg-grey-light">
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
-        <div class="w-full md:w-4/6 xl:w-3/5 mx-auto py-0 md:py-12" ref="image3">
+        <div class="w-full md:w-4/6 xl:w-3/5 mx-auto py-0 md:py-12">
           <picture class="w-full">
             <source srcset="/images/paul-smith/ps-stories@2x.jpg"
                     media="(min-width: 768px)">
@@ -145,10 +145,10 @@
     </div>
   </section>
 
-  <div v-waypoint="{ active: true, callback: onWaypoint4, options: intersectionOptions }" class="bleed--all pb-16 md:pb-24 lg:pb-32">
-    <div class="bg-grey-light" ref="imageContainer4">
+  <div class="bleed--all pb-16 md:pb-24 lg:pb-32">
+    <div class="bg-grey-light">
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
-        <div class="w-full md:w-4/6 xl:w-3/5 mx-auto py-0 md:py-12" ref="image4">
+        <div class="w-full md:w-4/6 xl:w-3/5 mx-auto py-0 md:py-12">
           <picture class="w-full mb-8 md:mb-12 block">
             <source srcset="/images/paul-smith/ps-filters-a@2x.jpg"
                     media="(min-width: 768px)">
@@ -178,10 +178,10 @@
     </div>
   </section>
 
-  <div v-waypoint="{ active: true, callback: onWaypoint5, options: intersectionOptions }" class="bleed--all pb-16 md:pb-24 lg:pb-32">
-    <div class="bg-grey-light" ref="imageContainer5">
+  <div class="bleed--all pb-16 md:pb-24 lg:pb-32">
+    <div class="bg-grey-light">
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
-        <div class="w-full md:w-4/6 xl:w-3/5 mx-auto py-0 md:py-12" ref="image5">
+        <div class="w-full md:w-4/6 xl:w-3/5 mx-auto py-0 md:py-12">
           <picture class="w-full">
             <source srcset="/images/paul-smith/ps-icons@2x.jpg"
                     media="(min-width: 768px)">
@@ -205,10 +205,10 @@
     </div>
   </section>
 
-  <div v-waypoint="{ active: true, callback: onWaypoint6, options: intersectionOptions }" class="bleed--all pb-8 md:pb-12">
-    <div class="bg-grey-light" ref="imageContainer6">
+  <div class="bleed--all pb-8 md:pb-12">
+    <div class="bg-grey-light">
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
-        <div class="w-full md:w-4/6 xl:w-3/5 mx-auto py-0 md:py-12" ref="image6">
+        <div class="w-full md:w-4/6 xl:w-3/5 mx-auto py-0 md:py-12">
           <picture class="w-full">
             <source srcset="/images/paul-smith/ps-modules@2x.jpg"
                     media="(min-width: 768px)">
@@ -219,10 +219,10 @@
     </div>
   </div>
 
-  <div v-waypoint="{ active: true, callback: onWaypoint7, options: intersectionOptions }" class="bleed--all pb-16 md:pb-24 lg:pb-32">
-    <div class="bg-grey-light" ref="imageContainer7">
+  <div class="bleed--all pb-16 md:pb-24 lg:pb-32">
+    <div class="bg-grey-light">
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
-        <div class="w-full md:w-4/6 xl:w-3/5 mx-auto py-0 md:py-12" ref="image7">
+        <div class="w-full md:w-4/6 xl:w-3/5 mx-auto py-0 md:py-12">
           <picture class="w-full">
             <source srcset="/images/paul-smith/ps-newsletter@2x.jpg"
                     media="(min-width: 768px)">
@@ -270,7 +270,7 @@ export default {
     mode: 'out-in',
     css: false,
     leave(el, done) {
-      TweenMax.staggerTo('.project-title', 1.5, { css: { top: 80, autoAlpha: 0, rotation: -2 }, ease: Power4.easeOut, onComplete: done }, -0.1);
+      TweenMax.staggerTo('.project-title', 1.5, { css: { top: 120, autoAlpha: 0, rotation: -2 }, ease: Power4.easeOut, onComplete: done }, -0.1);
       TweenMax.to(".sectionTitle", 1.5, { css: { autoAlpha: 0 }, ease: Power4.easeOut });
 
       TweenMax.to(document.querySelectorAll('.seperator-reveal'), 1.5, { css: { left: -100, autoAlpha: 0 }, ease: Power4.easeOut });
@@ -319,69 +319,6 @@ export default {
         this.startBaffle('Evolution');
       }
     },
-    onWaypoint1 ({ going, direction, index, title }) {
-      if (going === this.$waypointMap.GOING_IN) {
-        TweenMax.to(this.$refs.imageContainer1, 1.75, { autoAlpha: 1, ease: Power4.easeOut });
-      }
-      
-      if (going === this.$waypointMap.GOING_OUT) {
-        TweenMax.to(this.$refs.imageContainer1, 1.75, { autoAlpha: 0, ease: Power4.easeOut })
-      }
-    },
-    onWaypoint2 ({ going, direction, index }) {
-      if (going === this.$waypointMap.GOING_IN) {
-        TweenMax.to(this.$refs.imageContainer2, 1.75, { autoAlpha: 1, ease: Power4.easeOut })
-      }
-      
-      if (going === this.$waypointMap.GOING_OUT) {
-        TweenMax.to(this.$refs.imageContainer2, 1.75, { autoAlpha: 0, ease: Power4.easeOut })
-      }
-    },
-    onWaypoint3 ({ going, direction, index }) {
-      if (going === this.$waypointMap.GOING_IN) {
-        TweenMax.to(this.$refs.imageContainer3, 1.75, { autoAlpha: 1, ease: Power4.easeOut })
-      }
-      
-      if (going === this.$waypointMap.GOING_OUT) {
-        TweenMax.to(this.$refs.imageContainer3, 1.75, { autoAlpha: 0, ease: Power4.easeOut })
-      }
-    },
-    onWaypoint4 ({ going, direction, index }) {
-      if (going === this.$waypointMap.GOING_IN) {
-        TweenMax.to(this.$refs.imageContainer4, 1.75, { autoAlpha: 1, ease: Power4.easeOut })
-      }
-      
-      if (going === this.$waypointMap.GOING_OUT) {
-        TweenMax.to(this.$refs.imageContainer4, 1.75, { autoAlpha: 0, ease: Power4.easeOut })
-      }
-    },
-    onWaypoint5 ({ going, direction, index }) {
-      if (going === this.$waypointMap.GOING_IN) {
-        TweenMax.to(this.$refs.imageContainer5, 1.75, { autoAlpha: 1, ease: Power4.easeOut })
-      }
-      
-      if (going === this.$waypointMap.GOING_OUT) {
-        TweenMax.to(this.$refs.imageContainer5, 1.75, { autoAlpha: 0, ease: Power4.easeOut })
-      }
-    },
-    onWaypoint6 ({ going, direction, index }) {
-      if (going === this.$waypointMap.GOING_IN) {
-        TweenMax.to(this.$refs.imageContainer6, 1.75, { autoAlpha: 1, ease: Power4.easeOut })
-      }
-      
-      if (going === this.$waypointMap.GOING_OUT) {
-        TweenMax.to(this.$refs.imageContainer6, 1.75, { autoAlpha: 0, ease: Power4.easeOut })
-      }
-    },
-    onWaypoint7 ({ going, direction, index }) {
-      if (going === this.$waypointMap.GOING_IN) {
-        TweenMax.to(this.$refs.imageContainer7, 1.75, { autoAlpha: 1, ease: Power4.easeOut })
-      }
-      
-      if (going === this.$waypointMap.GOING_OUT) {
-        TweenMax.to(this.$refs.imageContainer7, 1.75, { autoAlpha: 0, ease: Power4.easeOut })
-      }
-    },
     startBaffle (title) {
       const b = baffle('.sectionTitle').start();
 
@@ -396,13 +333,6 @@ export default {
   },
   mounted () {
     this.startBaffle('Introduction');
-    TweenMax.set(this.$refs.imageContainer1, { autoAlpha: 0 })
-    TweenMax.set(this.$refs.imageContainer2, { autoAlpha: 0 })
-    TweenMax.set(this.$refs.imageContainer3, { autoAlpha: 0 })
-    TweenMax.set(this.$refs.imageContainer4, { autoAlpha: 0 })
-    TweenMax.set(this.$refs.imageContainer5, { autoAlpha: 0 })
-    TweenMax.set(this.$refs.imageContainer6, { autoAlpha: 0 })
-    TweenMax.set(this.$refs.imageContainer7, { autoAlpha: 0 })
 
     TweenMax.staggerTo('.project-title', 1.5, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 0.75, ease: Power4.easeOut }, 0.1);
 
