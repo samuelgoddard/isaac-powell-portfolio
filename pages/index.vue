@@ -127,7 +127,7 @@ export default {
     TweenMax.set(document.querySelector('.image-box-carousel'), { css: { left: 0, bottom: 0, display: 'none' } });
     TweenMax.set(document.querySelector('.image-box'), { css: { autoAlpha: 0, backgroundImage:`url(${ this.image })` } });
 
-    TweenMax.to(document.querySelector('.image-box'), 5.5, { css: { scale: 1, autoAlpha:1 }, delay: 0.2, ease: Power4.easeInOut });
+    TweenMax.to(document.querySelector('.image-box'), 4, { css: { scale: 1, autoAlpha:1 }, delay: 0.05, ease: Power4.easeInOut });
     TweenMax.staggerTo(document.querySelectorAll('.headline-reveal'), 1.5, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 0.5 }, 0.075);
     TweenMax.to(document.querySelector('.seperator-reveal'), 1.5, { css: { left: 0, autoAlpha: 1 }, delay: 0, ease: Power4.easeInOut });
     
