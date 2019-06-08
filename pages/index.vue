@@ -3,7 +3,7 @@
   <site-header />
   <section class="flex-1 flex items-center justify-center overflow-hidden relative">
     <div class="hidden md:block w-20 mr-auto">
-      <span class="seperator-reveal block opacity-0 relative">
+      <span class="seperator-reveal block relative">
         <seperator width="w-20" class="hidden md:block mr-auto" />
       </span>
     </div>
@@ -66,7 +66,7 @@
 </template>
 
 <script>
-import { Back, Power4, TweenMax } from "gsap";
+import { Power4, TweenMax } from "gsap";
 import SiteHeader from '~/components/SiteHeader.vue';
 import SiteFooter from '~/components/SiteFooter.vue';
 import Seperator from '~/components/Seperator.vue';
@@ -76,9 +76,14 @@ export default {
     mode: 'out-in',
     css: false,
     leave(el, done) {
-      TweenMax.staggerTo(".headline-reveal", 1, { css: { top: 60, autoAlpha: 0, rotation: -5 }, ease: Power4.easeOut, onComplete: done }, -0.1);
-      TweenMax.to('.image-box', 0.75, { css: { scale: 0.75, autoAlpha:0 }, ease: Power4.easeOut, onComplete: done });
-      TweenMax.to(".seperator-reveal", 1, { css: { left: -100, autoAlpha: 0 }, ease: Power4.easeOut, onComplete: done });
+      TweenMax.staggerTo(document.querySelectorAll('.top-mask'), 0.8, { css: { top: -100, autoAlpha: 0, rotation: 0 }, delay: 0, ease: Power4.easeInOut }, -0.15);
+      TweenMax.staggerTo(document.querySelectorAll('.bottom-mask'), 0.8, { css: { top: 100, autoAlpha: 0, rotation: 0 }, delay: 0, ease: Power4.easeInOut }, -0.15);
+
+      TweenMax.to(document.querySelector('.seperator-reveal'), 1, { css: { left: -100, autoAlpha: 1 }, delay: 0.25, ease: Power4.easeInOut, onComplete: done });
+      TweenMax.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1, { css: { left: -100, autoAlpha: 1 }, delay: 0, ease: Power4.easeInOut }, -0.25);
+
+      TweenMax.to(document.querySelectorAll('.image-box'), 0.75, { css: { scale: 0.8, autoAlpha:0 }, delay: 0.4, ease: Power4.easeInOut });
+      TweenMax.staggerTo(document.querySelectorAll('.headline-reveal'), 0.8, { css: { top: 60, autoAlpha: 0, rotation: -5 }, delay: 0.55, ease: Power4.easeInOut }, -0.1);
     },
   },
   components: {
@@ -119,13 +124,17 @@ export default {
     this.$store.commit('ui/TOGGLE_LIGHT')
   },
   mounted () {
-    TweenMax.set('.image-box-carousel', { css: { left: 0, bottom: 0 } });
-    TweenMax.set('.image-box', { css: { autoAlpha: 0, backgroundImage:`url(${ this.image })` } });    
-    TweenMax.to('.image-box', 0.75, { css: { scale: 1, autoAlpha:1 }, delay: 0.7 });
+    TweenMax.set(document.querySelector('.image-box-carousel'), { css: { left: 0, bottom: 0 } });
+    TweenMax.set(document.querySelector('.image-box'), { css: { autoAlpha: 0, backgroundImage:`url(${ this.image })` } });
 
-    TweenMax.staggerTo(".headline-reveal", 1, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 0.5, ease: Power4.easeOut }, 0.1);
+    TweenMax.to(document.querySelector('.image-box'), 1, { css: { scale: 1, autoAlpha:1 }, delay: 0.5, ease: Power4.easeInOut });
+    TweenMax.staggerTo(document.querySelectorAll('.headline-reveal'), 1, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 0.35 }, 0.075);
+    TweenMax.to(document.querySelector('.seperator-reveal'), 1.5, { css: { left: 0, autoAlpha: 1 }, delay: 0, ease: Power4.easeInOut });
+    
+    TweenMax.staggerTo(document.querySelectorAll('.top-mask'), 1, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 0.5, ease: Power4.easeInOut }, 0.075);
+    TweenMax.staggerTo(document.querySelectorAll('.bottom-mask'), 1, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 0.5, ease: Power4.easeInOut }, 0.075);
 
-    TweenMax.to(".seperator-reveal", 1, { css: { left: 0, autoAlpha: 1 }, delay: 0.75, ease: Power4.easeOut });
-  },
+    TweenMax.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1, { css: { left: 0, autoAlpha: 1 }, delay: 0.5, ease: Power4.easeInOut }, 0.2);
+  }
 }
 </script>

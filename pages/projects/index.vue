@@ -5,16 +5,18 @@
     <div class="flex flex-wrap w-full">
       <div class="w-full md:w-1/2">
         <div class="hidden md:flex md:flex-wrap items-center justify-center h-full">
-          <div 
-            class="opacity-0 max-w-full relative project-image-cover"
-            style="width: 400px; height: 260px;">
+          <div class="relative z-10 overflow-hidden">
+            <div 
+              class="opacity-0 max-w-full relative project-image-cover"
+              style="width: 400px; height: 260px;">
 
-            <div
-              v-for="(project, index) in projects"
-              :key="project.name"
-              class="absolute top-0 right-0 opacity-0 bottom-0 left-0 bg-cover bg-center project-image"
-              :class="'project-image-' + project.id"
-              :style="`background-image: url('${ project.image }')`">
+              <div
+                v-for="(project, index) in projects"
+                :key="project.name"
+                class="absolute top-0 right-0 opacity-0 bottom-0 left-0 bg-cover bg-center project-image"
+                :class="'project-image-' + project.id"
+                :style="`background-image: url('${ project.image }')`">
+              </div>
             </div>
           </div>
         </div>
@@ -22,7 +24,7 @@
       <div class="w-full md:ml-auto md:flex-1 overflow-hidden">
         <parallax-container class="overflow-hidden">
         <parallax-element :parallaxStrength="15" :type="'depth'">
-        <nav class="w-full overflow-y-auto overflow-x-hidden max-h-128 block hide-scrollbars md:p-8 opacity-0 scale-85 menu" @mouseover="isHovering = true" @mouseout="isHovering = false">
+        <nav class="w-full overflow-y-auto overflow-x-hidden max-h-128 block hide-scrollbars md:p-8" @mouseover="isHovering = true" @mouseout="isHovering = false">
           <ul>
             <li 
               v-for="(project, index) in projects"
@@ -77,7 +79,16 @@ export default {
     mode: 'out-in',
     css: false,
     leave(el, done) {
-      TweenMax.staggerTo(".nav-reveal", 1, { css: { top: 60, autoAlpha: 0, rotation: -5 }, ease: Power4.easeOut, onComplete: done }, -0.1);
+      TweenMax.staggerTo(document.querySelectorAll('.top-mask'), 0.8, { css: { top: -100, autoAlpha: 0, rotation: 0 }, delay: 0, ease: Power4.easeInOut }, -0.15);
+      TweenMax.staggerTo(document.querySelectorAll('.bottom-mask'), 0.8, { css: { top: 100, autoAlpha: 0, rotation: 0 }, delay: 0, ease: Power4.easeInOut }, -0.15);
+
+      TweenMax.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1, { css: { left: -100, autoAlpha: 1 }, delay: 0, ease: Power4.easeInOut }, 0.2);
+      
+      TweenMax.staggerTo(document.querySelectorAll('.nav-reveal'), 1, { css: { top: 60, autoAlpha: 0, rotation: -5 }, delay: 0.15, ease: Power4.easeOut, onComplete: done }, -0.1);
+
+      TweenMax.to(document.querySelector('.project-image-cover'), 1.2, { css: { top: 400, autoAlpha: 0, rotation: -12 }, delay: 0.5, ease: Power4.easeInOut });
+
+      TweenMax.to(document.querySelector('.swipe-reveal'), 1, { css: { top: '100vh' }, delay: 1, ease: Power4.easeInOut });
     },
   },
   components: {
@@ -178,9 +189,15 @@ export default {
     },
   },
   mounted () {
-    TweenMax.to('.menu', 0.3, { css: { scale: 1, autoAlpha:1 }, delay: 0.25 });
+    TweenMax.set(document.querySelector('.project-image-cover'), { css: { rotation: 0 }});
 
-    TweenMax.staggerTo(".nav-reveal", 1, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 0.5, ease: Power4.easeOut }, 0.1);
+    TweenMax.staggerTo(document.querySelectorAll('.top-mask'), 1, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 0.3, ease: Power4.easeInOut }, 0.15);
+    TweenMax.to(document.querySelectorAll('.bottom-mask'), 1, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 0.3, ease: Power4.easeInOut });
+
+    TweenMax.staggerTo(document.querySelectorAll('.nav-reveal'), 1, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 0.35, ease: Power4.easeInOut }, 0.075);
+    TweenMax.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1, { css: { left: 0, autoAlpha: 1 }, delay: 0.5, ease: Power4.easeInOut }, -0.2);
+
+    TweenMax.to(document.querySelectorAll('.swipe-reveal'), 1, { css: { top: 0 }, delay: 0, ease: Power4.easeInOut });
   },
 }
 </script>

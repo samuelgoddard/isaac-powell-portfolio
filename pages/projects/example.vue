@@ -7,11 +7,11 @@
   <div v-waypoint="{ active: true, callback: onWayPointIntro, options: intersectionOptions }">
     <span class="block"></span>
   </div>
-    <section class="pb-24 pt-24 lg:pt-32 xl:pt-40 md:flex md:items-center">
+    <section class="pb-24 pt-24 md:pt-32 xl:pt-40 md:flex md:items-center">
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
         <div class="w-full">
           <div class="w-4/5 xl:w-4/5">
-            <div class="pb-18 md:pb-24 xl:pb-56">
+            <div class="pb-18 md:pb-28 xl:pb-52">
               <div class="overflow-hidden relative block">
                 <div class="seperator-reveal relative block opacity-0">
                   <seperator width="w-8" class="inline-block align-middle mr-2" />
@@ -23,11 +23,11 @@
             <span class="overflow-hidden relative block mb-12 md:mb-20">
               <span class="project-title relative block opacity-0">
                 <h1 class="
-                  leading-none tracking-tight
+                  leading-none tracking-titleSmall md:tracking-title
                   text-60 md:text-127 lg:text-138 xl:text-142
                   font-serif"
                 >
-                  Paul<br/>Smith
+                  Hive<br/>Analytics.
                 </h1>
               </span>
             </span>
@@ -271,8 +271,14 @@ export default {
     css: false,
     leave(el, done) {
       TweenMax.staggerTo('.project-title', 1, { css: { top: 80, autoAlpha: 0, rotation: -2 }, ease: Power4.easeOut, onComplete: done }, -0.1);
-      TweenMax.to(".seperator-reveal", 1, { css: { left: -100, autoAlpha: 0 }, ease: Power4.easeOut, onComplete: done });
-      TweenMax.to(".sectionTitle", 1, { css: { autoAlpha: 0 }, ease: Power4.easeOut, onComplete: done });
+      TweenMax.to(".sectionTitle", 1, { css: { autoAlpha: 0 }, ease: Power4.easeOut });
+
+      TweenMax.to(document.querySelectorAll('.seperator-reveal'), 1, { css: { left: -100, autoAlpha: 0 }, ease: Power4.easeOut });
+
+      TweenMax.staggerTo(document.querySelectorAll('.top-mask'), 0.8, { css: { top: -100, autoAlpha: 0, rotation: 0 }, delay: 0, ease: Power4.easeInOut }, -0.15);
+      TweenMax.staggerTo(document.querySelectorAll('.bottom-mask'), 0.8, { css: { top: 100, autoAlpha: 0, rotation: 0 }, delay: 0, ease: Power4.easeInOut }, -0.15);
+
+      TweenMax.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1, { css: { left: -100, autoAlpha: 1 }, delay: 0, ease: Power4.easeInOut }, 0.2);
     },
   },
   components: {
@@ -399,6 +405,11 @@ export default {
     TweenMax.set(this.$refs.imageContainer7, { autoAlpha: 0 })
 
     TweenMax.staggerTo('.project-title', 1, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 0.5, ease: Power4.easeOut }, 0.1);
+
+    TweenMax.staggerTo(document.querySelectorAll('.top-mask'), 1, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 0.5, ease: Power4.easeInOut }, 0.075);
+    TweenMax.staggerTo(document.querySelectorAll('.bottom-mask'), 1, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 0.5, ease: Power4.easeInOut }, 0.075);
+
+    TweenMax.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1, { css: { left: 0, autoAlpha: 1 }, delay: 0.5, ease: Power4.easeInOut }, 0.2);
 
     TweenMax.to(".seperator-reveal", 1, { css: { left: 0, autoAlpha: 1 }, delay: 0.75, ease: Power4.easeOut });
     TweenMax.to(".sectionTitle", 1, { css: { autoAlpha: 1 }, delay: 0.75, ease: Power4.easeOut });

@@ -1,33 +1,43 @@
 <template>
-  <footer class="relative z-10 w-full overflow-hidden">
-    <div ref="footerMask" class="relative opacity-0">
-      <div class="flex flex-wrap items-end">
-        <div class="w-full md:flex-1 mb-4 md:mb-0">
-          <div class="pr-12">
-            <span class="text-7 md:text-8 lg:text-9 xl:text-11 2xl:text-14 tracking-widest uppercase block mb-px">Things I do</span>
-            <p class="text-15 md:text-14 lg:text-base xl:text-20 2xl:text-26">Interactive Design, Visual Identity, Design Consultancy</p>
+  <footer class="relative z-10 w-full">
+    <div class="flex flex-wrap items-end">
+      <div class="w-full md:flex-1 mb-4 md:mb-0">
+        <div class="pr-12">
+          <div class="relative z-10 overflow-hidden">
+            <div class="bottom-mask relative opacity-0">
+              <span class="text-7 md:text-8 lg:text-9 xl:text-11 2xl:text-14 tracking-widest uppercase block mb-px">Things I do</span>
+              <p class="text-15 md:text-14 lg:text-base xl:text-20 2xl:text-26">Interactive Design, Visual Identity, Design Consultancy</p>
+            </div>
           </div>
         </div>
+      </div>
 
-        <div class="hidden md:block ml-auto mr-auto">
-          <seperator width="w-5" />
+      <div class="hidden md:block ml-auto mr-auto">
+        <div class="relative z-10 overflow-hidden">
+          <span class="seperator-reveal-staggered block relative">
+            <seperator width="w-5" />
+          </span>
         </div>
+      </div>
 
-        <div class="w-full md:flex-1 md:ml-auto md:text-right">
-          <a 
-            v-for="(social, index) in socials"
-            class="
-              inline-block
-              underline
-              mx-4 
-              text-15 md:text-14 lg:text-base xl:text-20 2xl:text-26"
-            :class="[{'md:mr-0': index === socials.length - 1}, {'ml-0 md:ml-3' : index === socials.length - socials.length }]"
-            :key="social.name"
-            :href="social.uri"
-            target="_blank"
-            rel="noopener">
-              {{ social.name }}
-          </a>
+      <div class="w-full md:flex-1 md:ml-auto md:text-right">
+        <div class="relative z-10 overflow-hidden">
+          <div class="bottom-mask relative opacity-0">
+            <a 
+              v-for="(social, index) in socials"
+              class="
+                inline-block
+                underline
+                mx-4 
+                text-15 md:text-14 lg:text-base xl:text-20 2xl:text-26"
+              :class="[{'md:mr-0': index === socials.length - 1}, {'ml-0 md:ml-3' : index === socials.length - socials.length }]"
+              :key="social.name"
+              :href="social.uri"
+              target="_blank"
+              rel="noopener">
+                {{ social.name }}
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -55,17 +65,6 @@ export default {
         uri: 'https://www.instagram.com/ijpowell/'
       }]
     }
-  },
-  mounted() {
-    if (this.$route.name == 'index') {
-      TweenMax.set(this.$refs.footerMask, {  css: { bottom: -100, rotation: 5 }});
-    } else {
-      TweenMax.set(this.$refs.footerMask, { css: { bottom: 0, autoAlpha: 0 }});
-    }
-    TweenMax.to(this.$refs.footerMask, 0.75, { css: { bottom: 0, autoAlpha: 1, rotation: 0 }, delay: 0.5, ease: Power4.easeOut });
-  },
-  beforeDestroy() {
-    TweenMax.to(this.$refs.footerMask, 0.75, { css: { bottom: 0, autoAlpha: 0 }, delay: 0, ease: Power4.easeOut });
   }
 }
 </script>
