@@ -18,6 +18,7 @@
     "nuxt": "^2.4.0",
     "nuxt-webfontloader": "^1.1.0",
     "smooth-scrollbar": "^8.4.0",
+    "smooth-vuebar": "^1.0.0",
     "vue-agile": "^1.0.8",
     "vue-mouse-parallax": "^0.9.2",
     "vue-mq": "^1.0.1",

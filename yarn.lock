@@ -6209,6 +6209,13 @@ smooth-scrollbar@^8.3.1, smooth-scrollbar@^8.4.0:
     lodash-es "^4.17.11"
     tslib "^1.9.3"
 
+smooth-vuebar@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/smooth-vuebar/-/smooth-vuebar-1.0.0.tgz#adac6c42b8c4b4d540bddb468c6b5f9dbe475177"
+  integrity sha512-CZpTtDkOBLfz25O3Asd2hUUDv+AVUU8vpBwl73IzWeF5m3S5eNxocKZxL+B4Afmns88Esfj2QgeGFe3cv92Opg==
+  dependencies:
+    smooth-scrollbar "^8.4.0"
+
 snapdragon-node@^2.0.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/snapdragon-node/-/snapdragon-node-2.1.1.tgz#6c175f86ff14bdb0724563e8f3c1b021a286853b"

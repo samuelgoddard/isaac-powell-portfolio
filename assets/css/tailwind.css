@@ -27,7 +27,7 @@ p {
 
 .light {
   @apply text-black;
-  
+
   .seperator {
     @apply border-black;
   }
@@ -40,7 +40,7 @@ p {
   animation: fadeOut 0.5s forwards;
 }
 
-.fade-enter-active, 
+.fade-enter-active,
 .fade-leave-active {
   transition-duration: 0.5s;
   /* transition-property: height, opacity, transform; */
@@ -111,7 +111,7 @@ p {
   opacity: 0;
   transform: scale(0.75);
   margin-right: calc(50% - 115px);
-  
+
   @screen md {
     @apply -mr-24;
 
@@ -125,14 +125,14 @@ p {
     width: 650px;
     height: 365px;
   }
-  
+
   @screen xl {
     @apply -mr-38;
 
     width: 675px;
     height: 430px;
   }
-  
+
   @screen 2xl {
     @apply -mr-48;
   }
@@ -157,7 +157,7 @@ p {
   @screen md {
     max-width: 720px;
   }
-  
+
   @screen xl {
     max-width: 875px;
   }
@@ -236,7 +236,7 @@ p {
   background-image: linear-gradient(180deg,transparent 97%, #000 0);
   background-size: 0 100%;
   transition: background-size 0.35s ease-in-out;
-  
+
   &:hover {
     background-size: 100% 100%;
   }
@@ -259,4 +259,8 @@ p {
 ::-moz-selection {
   background: #000;
   color: #fff;
+}
+
+.smooth-vuebar {
+  max-height: 100vh;
 }

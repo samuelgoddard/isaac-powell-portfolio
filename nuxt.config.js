@@ -57,6 +57,9 @@ module.exports = {
   }, {
     src: '~plugins/vue-waypoint.js',
     ssr: false
+  }, {
+    src: '~plugins/vue-smooth-vuebar.js',
+    ssr: false
   }],
 
   /*
@@ -74,7 +77,7 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend(config, ctx) {
-      
+
     }
   }
 }
