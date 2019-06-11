@@ -163,6 +163,7 @@ export default {
       // TweenMax.set(this.$refs.projectimage, { css: { backgroundImage:`url(${ imageUrl })` }});
       TweenMax.to('.project-image-cover', 0.35, { 
         ease: Power4.easeOut,
+        force3D: true,
         autoAlpha: 1, 
         width: this.$mq == '2xl' ? width * 1.5 : width * 1.1, 
         height: this.$mq == '2xl' ? height * 1.5 : height  * 1.1});
@@ -192,6 +193,7 @@ export default {
     TweenMax.set(document.querySelector('.project-image-cover'), { css: { rotation: 0 }});
     // TweenMax.set(document.querySelector('.swipe-reveal'), { y: window.innerHeight });
     TweenMax.set(document.querySelector('.swipe-reveal'), { scaleY:0 } )
+    TweenMax.set(document.querySelectorAll('.nav-reveal'), { y: 200, autoAlpha: 0, rotation: -20 });
 
     TweenMax.set(document.querySelectorAll('.top-mask'), { y: -100, autoAlpha: 0, rotation: -5 });
     TweenMax.set(document.querySelectorAll('.bottom-mask'), { y: 100, autoAlpha: 0, rotation: 5 });
@@ -199,8 +201,10 @@ export default {
     TweenMax.staggerTo(document.querySelectorAll('.top-mask'), 3, { y: 0, autoAlpha: 1, rotation: 0, delay: 1, force3D: true, ease: Power4.easeInOut }, 0.15);
     TweenMax.staggerTo(document.querySelectorAll('.bottom-mask'), 3, { y: 0, autoAlpha: 1, rotation: 0, delay: 1, force3D: true, ease: Power4.easeInOut }, 0.15);
     
-    TweenMax.staggerTo(document.querySelectorAll('.nav-reveal'), 2.5, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 0, ease: Power4.easeInOut }, 0.1);
+    
     TweenMax.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1.5, { css: { left: 0, autoAlpha: 1 }, delay: 1.25, ease: Power4.easeInOut }, -0.2);
+
+    TweenMax.staggerTo(document.querySelectorAll('.nav-reveal'), 2.45, { y: 0, autoAlpha: 1, delay: 0.65, rotation: 0, force3D: true, ease: Power4.easeInOut }, 0.15);
 
     TweenMax.to(document.querySelectorAll('.swipe-reveal'), 2.5, { scaleY: 1, transformOrigin:"center bottom", delay: 0, ease: Power4.easeInOut });
   },

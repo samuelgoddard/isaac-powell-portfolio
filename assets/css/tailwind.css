@@ -18,10 +18,16 @@ p {
 }
 
 .dark {
-  @apply text-white;
+  @apply text-white bg-black;
 
   .seperator {
     @apply border-white;
+  }
+}
+
+.wf-active {
+  .dark {
+    background: none !important;
   }
 }
 
@@ -106,8 +112,8 @@ p {
   touch-action: none;
   backface-visibility: hidden;
   pointer-events: none;
-  width: 230px;
-  height: 320px;
+  width: 0;
+  height: 0;
   opacity: 0;
   transform: scale(0.75);
   margin-right: calc(50% - 115px);
@@ -166,7 +172,7 @@ p {
 .headline-reveal,
 .nav-reveal {
   /* top: 135px; */
-  opacity: 0;
+  /* opacity: 0; */
   /* transform: rotate(-20deg); */
 }
 .project-title {

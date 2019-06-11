@@ -8,14 +8,14 @@
             <div>
               <div class="md:hidden">
                 <div class="relative z-10 overflow-hidden">
-                  <div class="top-mask relative opacity-0">
+                  <div class="top-mask relative">
                     <logo />
                   </div>
                 </div>
               </div>
               <div class="hidden md:inline-block">
                 <div class="relative z-10 overflow-hidden">
-                  <div class="top-mask relative opacity-0">
+                  <div class="top-mask relative">
                     <Logo />
                   </div>
                 </div>
@@ -23,7 +23,7 @@
             </div>
             <div class="hidden md:inline-block mx-auto" @mouseover="startBaffle" @mouseleave="unBaffle">
               <div class="relative z-10 overflow-hidden">
-                <div class="top-mask relative opacity-0">
+                <div class="top-mask relative">
                   <span class="ml-auto leading-snug tracking-tight font-serif time">Nottingham, England</span>
                 </div>
               </div>
@@ -50,7 +50,7 @@
                 :key="page.name"
                 :to="page.uri">
                 <div class="relative z-10 overflow-hidden">
-                  <div class="top-mask relative opacity-0">
+                  <div class="top-mask relative">
                   {{ page.name }}
                   </div>
                 </div>
@@ -58,7 +58,7 @@
               <div class="relative z-10 overflow-hidden inline-block
                       mx-4 lg:mx-8 mr-0 lg:mr-0
                       text-16 lg:text-18 xl:text-20">
-                <div class="top-mask relative opacity-0">
+                <div class="top-mask relative">
                   <a class="fancy-link"
                     href="mailto:isaac@40000ft.co.uk">
                       Contact

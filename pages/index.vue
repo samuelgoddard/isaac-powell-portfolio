@@ -9,9 +9,9 @@
     </div>
     <div class="w-full md:w-4/5 md:mr-auto md:-ml-20 relative">
       <div class="relative flex items-center justify-center">
-        <div class="z-0 absolute right-0 top-0 bottom-0 right-0 bg-cover bg-center imageBox opacity-0 image-box" ref="imageBox">
+        <div class="z-0 absolute top-0 bottom-0 right-0 bg-cover bg-center imageBox opacity-0 image-box" ref="imageBox">
         </div>
-        <img src="/images/portfolio-loop.gif" alt="Portfolio" class="w-90 z-50 opacity-0 fixed image-box-carousel" ref="imageBoxCarousel" />
+        <img src="/images/portfolio-loop.gif" alt="Portfolio" class="w-0 z-50 opacity-0 left-0 fixed image-box-carousel" ref="imageBoxCarousel" />
         <div ref="heading" class="home-heading">
           <parallax-container class="overflow-hidden">
             <parallax-element :parallaxStrength="20" :type="'depth'">
@@ -125,8 +125,8 @@ export default {
     this.$store.commit('ui/TOGGLE_LIGHT')
   },
   mounted () {
-    TweenMax.set(document.querySelector('.image-box-carousel'), { css: { left: 0, bottom: 0, display: 'none' } });
-    TweenMax.set(document.querySelector('.image-box'), { css: { autoAlpha: 0, backgroundImage:`url(${ this.image })` } });
+    TweenMax.set(document.querySelector('.image-box-carousel'), { width: 320, css: { left: 0, bottom: 0, display: 'none' } });
+    TweenMax.set(document.querySelector('.image-box'), { width: 230, height: 320, css: { autoAlpha: 0, backgroundImage:`url(${ this.image })` } });
     TweenMax.set(document.querySelectorAll('.headline-reveal'), { y: 200, autoAlpha: 0, rotation: -20 });
     TweenMax.set(document.querySelector('.swipe-reveal'), { scaleY:0} )
 
@@ -139,7 +139,7 @@ export default {
     
     TweenMax.staggerTo(document.querySelectorAll('.top-mask'), 3, { y: 0, autoAlpha: 1, rotation: 0, delay: 1, force3D: true, ease: Power4.easeInOut }, 0.15);
     TweenMax.staggerTo(document.querySelectorAll('.bottom-mask'), 3, { y: 0, autoAlpha: 1, rotation: 0, delay: 1, force3D: true, ease: Power4.easeInOut }, 0.15);
-    TweenMax.staggerTo(document.querySelectorAll('.headline-reveal'), 2.45, { y: 0, autoAlpha: 1, delay: 0.5, rotation: 0, force3D: true, ease: Power4.easeInOut }, 0.15);    
+    TweenMax.staggerTo(document.querySelectorAll('.headline-reveal'), 2.45, { y: 0, autoAlpha: 1, delay: 0.5, rotation: 0, force3D: true, ease: Power4.easeInOut }, 0.15);
     TweenMax.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1.5, { css: { left: 0, autoAlpha: 1 }, delay: 0.75, ease: Power4.easeInOut }, 0.2);
   }
 }
