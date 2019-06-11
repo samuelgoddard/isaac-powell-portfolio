@@ -79,16 +79,16 @@ export default {
     mode: 'out-in',
     css: false,
     leave(el, done) {
-      TweenMax.staggerTo(document.querySelectorAll('.top-mask'), 1.5, { css: { top: -100, autoAlpha: 0, rotation: 0 }, delay: 0, ease: Power4.easeInOut }, -0.15);
-      TweenMax.staggerTo(document.querySelectorAll('.bottom-mask'), 1.5, { css: { top: 100, autoAlpha: 0, rotation: 0 }, delay: 0, ease: Power4.easeInOut }, -0.15);
+      TweenMax.staggerTo(document.querySelectorAll('.top-mask'), 3, { y: -100, autoAlpha: 0, rotation: -5, force3D: true, ease: Power4.easeInOut }, -0.17);
+      TweenMax.staggerTo(document.querySelectorAll('.bottom-mask'), 3, { y: 100, autoAlpha: 0, rotation: 5, force3D: true, ease: Power4.easeInOut }, -0.17);
 
-      TweenMax.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1.5, { css: { left: -100, autoAlpha: 1 }, delay: 0, ease: Power4.easeInOut }, 0.2);
+      TweenMax.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1.5, { scaleX: 0, autoAlpha: 1, transformOrigin:"left center", delay: 0, ease: Power4.easeInOut }, -0.25);
       
-      TweenMax.staggerTo(document.querySelectorAll('.nav-reveal'), 2.5, { css: { top: 60, autoAlpha: 0, rotation: -5 }, delay: 1, ease: Power4.easeOut }, -0.1);
+      TweenMax.staggerTo(document.querySelectorAll('.nav-reveal'), 2.5, { y: 200, autoAlpha: 0, delay: 0.5, rotation: -20, force3D: true, ease: Power4.easeInOut }, -0.15);
 
-      TweenMax.to(document.querySelector('.project-image-cover'), 1.5, { css: { top: 400, autoAlpha: 0, rotation: -12 }, delay: 1, ease: Power4.easeInOut });
+      TweenMax.to(document.querySelector('.project-image-cover'), 1.5, { y: 400, autoAlpha: 0, rotation: -12, delay: 1, force3D: true, ease: Power4.easeInOut});
 
-      TweenMax.to(document.querySelectorAll('.swipe-reveal'), 2.5, { scaleY: 0, transformOrigin:"center bottom", delay: 1.65, ease: Power4.easeInOut, onComplete: done });
+      TweenMax.to(document.querySelectorAll('.swipe-reveal'), 2.5, { scaleY: 0, transformOrigin:"center bottom", delay: 1.65, force3D: true, ease: Power4.easeInOut, onComplete: done });
     },
   },
   components: {
@@ -190,21 +190,23 @@ export default {
     },
   },
   mounted () {
-    TweenMax.set(document.querySelector('.project-image-cover'), { css: { rotation: 0 }});
+    TweenMax.set(document.querySelector('.project-image-cover'), {  rotation: 0 });
     // TweenMax.set(document.querySelector('.swipe-reveal'), { y: window.innerHeight });
-    TweenMax.set(document.querySelector('.swipe-reveal'), { scaleY:0 } )
+    TweenMax.set(document.querySelector('.mask'), { scaleY:0} );
+    TweenMax.set(document.querySelector('.swipe-reveal'), { scaleY:0 } );
     TweenMax.set(document.querySelectorAll('.nav-reveal'), { y: 200, autoAlpha: 0, rotation: -20 });
+    TweenMax.set(document.querySelectorAll('.seperator-reveal-staggered'), { scaleX:0 } );
 
     TweenMax.set(document.querySelectorAll('.top-mask'), { y: -100, autoAlpha: 0, rotation: -5 });
     TweenMax.set(document.querySelectorAll('.bottom-mask'), { y: 100, autoAlpha: 0, rotation: 5 });
 
-    TweenMax.staggerTo(document.querySelectorAll('.top-mask'), 3, { y: 0, autoAlpha: 1, rotation: 0, delay: 1, force3D: true, ease: Power4.easeInOut }, 0.15);
-    TweenMax.staggerTo(document.querySelectorAll('.bottom-mask'), 3, { y: 0, autoAlpha: 1, rotation: 0, delay: 1, force3D: true, ease: Power4.easeInOut }, 0.15);
+    TweenMax.staggerTo(document.querySelectorAll('.top-mask'), 3, { y: 0, autoAlpha: 1, rotation: 0, delay: 1.25, force3D: true, ease: Power4.easeInOut }, 0.15);
+    TweenMax.staggerTo(document.querySelectorAll('.bottom-mask'), 3, { y: 0, autoAlpha: 1, rotation: 0, delay: 1.25, force3D: true, ease: Power4.easeInOut }, 0.15);
     
     
-    TweenMax.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1.5, { css: { left: 0, autoAlpha: 1 }, delay: 1.25, ease: Power4.easeInOut }, -0.2);
+    TweenMax.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1.85, { scaleX: 1, autoAlpha: 1, transformOrigin:"left center", delay: 1.85, ease: Power4.easeInOut }, 0.3);
 
-    TweenMax.staggerTo(document.querySelectorAll('.nav-reveal'), 2.45, { y: 0, autoAlpha: 1, delay: 0.65, rotation: 0, force3D: true, ease: Power4.easeInOut }, 0.15);
+    TweenMax.staggerTo(document.querySelectorAll('.nav-reveal'), 3, { y: 0, autoAlpha: 1, delay: 0.75, rotation: 0, force3D: true, ease: Power4.easeInOut }, 0.15);
 
     TweenMax.to(document.querySelectorAll('.swipe-reveal'), 2.5, { scaleY: 1, transformOrigin:"center bottom", delay: 0, ease: Power4.easeInOut });
   },

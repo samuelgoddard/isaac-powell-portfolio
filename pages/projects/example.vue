@@ -336,6 +336,9 @@ export default {
   mounted () {
     this.startBaffle('Introduction');
 
+    TweenMax.set(document.querySelector('.mask'), { scaleY:0} );
+    TweenMax.set(document.querySelector('.swipe-reveal'), { scaleY:0 } );
+
     TweenMax.staggerTo('.project-title', 1.5, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 0.75, ease: Power4.easeOut }, 0.1);
 
     TweenMax.staggerTo(document.querySelectorAll('.top-mask'), 1.5, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 0.8, ease: Power4.easeInOut }, 0.075);
