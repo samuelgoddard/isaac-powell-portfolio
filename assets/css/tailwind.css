@@ -165,9 +165,9 @@ p {
 
 .headline-reveal,
 .nav-reveal {
-  top: 150px;
+  /* top: 135px; */
   opacity: 0;
-  transform: rotate(-20deg);
+  /* transform: rotate(-20deg); */
 }
 .project-title {
   top: 80px;
@@ -182,17 +182,24 @@ p {
 .seperator-reveal-staggered {
   left: -100px;
 }
-
 .swipe-reveal {
   position: fixed;
-  top: auto;
+  top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+  height: 0px;
   width: 100%;
 
   @apply bg-grey-dark;
 }
+
+
+.wf-active {
+  .swipe-reveal {
+    height: 100vh;
+  }
+} 
 
 .header-mask {
   top: -100px;
@@ -206,7 +213,7 @@ p {
   transform: rotate(5deg);
 }
 
-.top-mask {
+/* .top-mask {
   top: -100px;
   opacity: 0;
   transform: rotate(-5deg);
@@ -216,7 +223,7 @@ p {
   top: 100px;
   opacity: 0;
   transform: rotate(5deg);
-}
+} */
 
 .transition-delay {
   transition-delay: 0.25s;
@@ -230,7 +237,7 @@ p {
 
 
 
-.fancy-link {
+/* .fancy-link {
   text-decoration: none;
   background-repeat: no-repeat;
   background-image: linear-gradient(180deg,transparent 97%, #000 0);
@@ -240,17 +247,17 @@ p {
   &:hover {
     background-size: 100% 100%;
   }
-}
+} */
 
-.current {
+/* .current {
   background-size: 100% 100%;
-}
+} */
 
-.dark {
+/* .dark {
   .fancy-link {
     background-image: linear-gradient(180deg,transparent 97%, #FFF 0);
   }
-}
+} */
 
 ::selection {
   background: #000;

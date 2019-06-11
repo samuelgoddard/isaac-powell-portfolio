@@ -4,9 +4,9 @@
       <div class="w-full md:flex-1 mb-4 md:mb-0">
         <div class="pr-12">
           <div class="relative z-10 overflow-hidden">
-            <div class="bottom-mask relative opacity-0">
-              <span class="text-7 md:text-8 lg:text-9 xl:text-11 2xl:text-14 tracking-widest uppercase block mb-px">Things I do</span>
-              <p class="text-15 md:text-14 lg:text-base xl:text-20 2xl:text-26">Interactive Design, Visual Identity, Design Consultancy</p>
+            <div class="bottom-mask relative">
+              <!-- <span class="text-7 md:text-8 lg:text-9 xl:text-11 2xl:text-14 tracking-widest uppercase block mb-px">Things I do</span> -->
+              <p class="text-15 md:text-14 lg:text-base xl:text-20 2xl:text-26">Interactive Design &amp; Brand Identity</p>
             </div>
           </div>
         </div>
@@ -22,7 +22,7 @@
 
       <div class="w-full md:flex-1 md:ml-auto md:text-right">
         <div class="relative z-10 overflow-hidden">
-          <div class="bottom-mask relative opacity-0">
+          <div class="bottom-mask relative">
             <a 
               v-for="(social, index) in socials"
               class="
@@ -35,7 +35,11 @@
               :href="social.uri"
               target="_blank"
               rel="noopener">
-                {{ social.name }}
+                <div class="relative z-10 overflow-hidden">
+                  <div class="bottom-mask relative">
+                  {{ social.name }}
+                  </div>
+                </div>
             </a>
           </div>
         </div>

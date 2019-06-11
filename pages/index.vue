@@ -24,13 +24,13 @@
                   py-16 md:p-8 lg:p-24"
                 >
                   <span class="overflow-hidden relative block">
-                    <span class="headline-reveal headline-reveal-1 block opacity-0 relative">
+                    <span class="headline-reveal headline-reveal-1 block relative">
                       <span class="opaque">I’m Isaac, a freelance designer from</span>
                     </span>
                   </span>
                     
                   <span class="overflow-hidden relative block">
-                    <span class="headline-reveal headline-reveal-2 block opacity-0 relative">
+                    <span class="headline-reveal headline-reveal-2 block relative">
                       <span class="opaque">Nottingham, UK.</span>
                       <span class="work">
                         <mq-layout mq="md+" class="inline-block">
@@ -44,13 +44,13 @@
                   </span>
                   
                   <span class="overflow-hidden relative block">
-                    <span class="headline-reveal headline-reveal-3 block opacity-0 relative">
+                    <span class="headline-reveal headline-reveal-3 block relative">
                       <a v-on:mouseover="hoverLine" v-on:mouseout="mouseOutLine" href="mailto:isaac@40000ft.co.uk" class="underline line">drop me a line</a><span class="opaque"> if you want to work</span>
                     </span>
                   </span>
                   
                   <span class="overflow-hidden relative block">
-                    <span class="headline-reveal headline-reveal-4 block opacity-0 relative">
+                    <span class="headline-reveal headline-reveal-4 block relative">
                       <span class="opaque">with me on your next project.</span>
                     </span>
                   </span>
@@ -66,7 +66,7 @@
 </template>
 
 <script>
-import { Power4, TweenMax } from "gsap";
+import { Power2, Power4, TweenMax } from "gsap";
 import SiteHeader from '~/components/SiteHeader.vue';
 import SiteFooter from '~/components/SiteFooter.vue';
 import Seperator from '~/components/Seperator.vue';
@@ -79,11 +79,12 @@ export default {
       TweenMax.staggerTo(document.querySelectorAll('.top-mask'), 1.5, { css: { top: -100, autoAlpha: 0, rotation: 0 }, delay: 0, ease: Power4.easeInOut }, -0.15);
       TweenMax.staggerTo(document.querySelectorAll('.bottom-mask'), 1.5, { css: { top: 100, autoAlpha: 0, rotation: 0 }, delay: 0, ease: Power4.easeInOut }, -0.15);
 
-      TweenMax.to(document.querySelector('.seperator-reveal'), 1.5, { css: { left: -100, autoAlpha: 1 }, delay: 0.5, ease: Power4.easeInOut, onComplete: done });
+      TweenMax.to(document.querySelector('.seperator-reveal'), 1.5, { css: { left: -100, autoAlpha: 1 }, delay: 0.5, ease: Power4.easeInOut });
       TweenMax.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1.5, { css: { left: -100, autoAlpha: 1 }, delay: 0, ease: Power4.easeInOut }, -0.25);
 
       TweenMax.to(document.querySelectorAll('.image-box'), 1.5, { css: { scale: 0.8, autoAlpha:0 }, delay: 0.5, ease: Power4.easeInOut });
-      TweenMax.staggerTo(document.querySelectorAll('.headline-reveal'), 1.5, { css: { top: 60, autoAlpha: 0, rotation: -5 }, delay: 0.75, ease: Power4.easeInOut }, -0.1);
+  
+      TweenMax.staggerTo(document.querySelectorAll('.headline-reveal'), 3.5, { y: 200, autoAlpha: 0, delay: 0.5, rotation: -20, force3D: true, ease: Power4.easeInOut, onComplete: done }, -0.15);
     },
   },
   components: {
@@ -126,14 +127,19 @@ export default {
   mounted () {
     TweenMax.set(document.querySelector('.image-box-carousel'), { css: { left: 0, bottom: 0, display: 'none' } });
     TweenMax.set(document.querySelector('.image-box'), { css: { autoAlpha: 0, backgroundImage:`url(${ this.image })` } });
+    TweenMax.set(document.querySelectorAll('.headline-reveal'), { y: 200, autoAlpha: 0, rotation: -20 });
+    TweenMax.set(document.querySelector('.swipe-reveal'), { scaleY:0} )
 
-    TweenMax.to(document.querySelector('.image-box'), 4, { css: { scale: 1, autoAlpha:1 }, delay: 0.05, ease: Power4.easeInOut });
-    TweenMax.staggerTo(document.querySelectorAll('.headline-reveal'), 1.5, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 0.5 }, 0.075);
-    TweenMax.to(document.querySelector('.seperator-reveal'), 1.5, { css: { left: 0, autoAlpha: 1 }, delay: 0, ease: Power4.easeInOut });
+    TweenMax.set(document.querySelectorAll('.top-mask'), { y: -100, autoAlpha: 0, rotation: -5 });
+    TweenMax.set(document.querySelectorAll('.bottom-mask'), { y: 100, autoAlpha: 0, rotation: 5 });
+
+    TweenMax.to(document.querySelector('.image-box'), 4, { scale: 1, autoAlpha:1,  delay: 0.05, ease: Power4.easeInOut });
+
+    TweenMax.to(document.querySelector('.seperator-reveal'), 1.5, { css: { left: 0, autoAlpha: 1 }, delay: 0 });
     
-    TweenMax.staggerTo(document.querySelectorAll('.top-mask'), 1.5, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 1, ease: Power4.easeInOut }, 0.075);
-    TweenMax.staggerTo(document.querySelectorAll('.bottom-mask'), 1.5, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 1, ease: Power4.easeInOut }, 0.075);
-
+    TweenMax.staggerTo(document.querySelectorAll('.top-mask'), 3, { y: 0, autoAlpha: 1, rotation: 0, delay: 1, force3D: true, ease: Power4.easeInOut }, 0.15);
+    TweenMax.staggerTo(document.querySelectorAll('.bottom-mask'), 3, { y: 0, autoAlpha: 1, rotation: 0, delay: 1, force3D: true, ease: Power4.easeInOut }, 0.15);
+    TweenMax.staggerTo(document.querySelectorAll('.headline-reveal'), 2.45, { y: 0, autoAlpha: 1, delay: 0.5, rotation: 0, force3D: true, ease: Power4.easeInOut }, 0.15);    
     TweenMax.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1.5, { css: { left: 0, autoAlpha: 1 }, delay: 0.75, ease: Power4.easeInOut }, 0.2);
   }
 }

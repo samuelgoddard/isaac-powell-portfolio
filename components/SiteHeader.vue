@@ -40,8 +40,6 @@
           </div>
         </div>
         <div class="flex-1 ml-auto text-right">
-          <div class="relative z-10 overflow-hidden">
-            <div class="top-mask relative opacity-0">
               <nuxt-link 
                 v-for="(page, index) in pages"
                 class="
@@ -51,16 +49,22 @@
                   text-16 lg:text-18 xl:text-20"
                 :key="page.name"
                 :to="page.uri">
+                <div class="relative z-10 overflow-hidden">
+                  <div class="top-mask relative opacity-0">
                   {{ page.name }}
+                  </div>
+                </div>
               </nuxt-link>
-              <a class="
-                  inline-block
-                  fancy-link
-                  mx-4 lg:mx-8 mr-0
-                  text-16 lg:text-18 xl:text-20"
-                href="mailto:isaac@40000ft.co.uk">
-                  Contact
-              </a>
+              <div class="relative z-10 overflow-hidden inline-block
+                      mx-4 lg:mx-8 mr-0 lg:mr-0
+                      text-16 lg:text-18 xl:text-20">
+                <div class="top-mask relative opacity-0">
+                  <a class="fancy-link"
+                    href="mailto:isaac@40000ft.co.uk">
+                      Contact
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
