@@ -39,56 +39,11 @@ p {
   }
 }
 
-.fade-enter-active {
-  animation: fadeIn 0.5s forwards;
-}
-.fade-leave-active {
-  animation: fadeOut 0.5s forwards;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition-duration: 0.5s;
-  /* transition-property: height, opacity, transform; */
-  /* transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1); */
-  /* overflow: hidden; */
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  75% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  75% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
 .hide-scrollbars {
   overflow-y: scroll;
-  /* padding-right: 17px; */
   box-sizing: content-box;
   margin-right: -20px;
   padding-right: 20px;
-}
-
-@media screen and (max-width: theme('screens.md')) {
-  .bleed {
-    @apply -mx-8;
-  }
 }
 
 .bleed--all {
@@ -107,7 +62,7 @@ p {
   }
 }
 
-.imageBox {
+.image-box {
   cursor: none;
   touch-action: none;
   backface-visibility: hidden;
@@ -116,31 +71,29 @@ p {
   height: 0;
   opacity: 0;
   transform: scale(0.75);
-  margin-right: calc(50% - 115px);
 
   @screen md {
-    @apply -mr-24;
+    margin-top: -80px;
+    margin-right: -100px;
 
-    width: 520px;
-    height: 320px;
+    width: 560px;
+    height: 380px;
   }
 
   @screen lg {
-    @apply -mr-32;
+    margin-top: -55px;
+    margin-right: -120px;
 
-    width: 650px;
-    height: 365px;
+    width: 640px;
+    height: 450px;
   }
 
   @screen xl {
-    @apply -mr-38;
+    margin-top: -90px;
+    margin-right: -230px;
 
-    width: 675px;
-    height: 430px;
-  }
-
-  @screen 2xl {
-    @apply -mr-48;
+    width: 900px;
+    height: 620px;
   }
 }
 
@@ -204,18 +157,6 @@ p {
   .swipe-reveal {
     height: 100vh;
   }
-} 
-
-.header-mask {
-  top: -100px;
-  opacity: 0;
-  transform: rotate(-5deg)
-}
-
-.footer-mask {
-  top: 100px;
-  opacity: 0;
-  transform: rotate(5deg);
 }
 
 .sectionTitle {
@@ -253,8 +194,4 @@ p {
 ::-moz-selection {
   background: #000;
   color: #fff;
-}
-
-.smooth-vuebar {
-  max-height: 100vh;
 }

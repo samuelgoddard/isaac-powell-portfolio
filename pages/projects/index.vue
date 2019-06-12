@@ -6,7 +6,7 @@
       <div class="w-full md:w-1/2">
         <div class="hidden md:flex md:flex-wrap items-center justify-center h-full">
           <div class="relative z-10 overflow-hidden">
-            <div 
+            <div
               class="opacity-0 max-w-full relative project-image-cover"
               style="width: 400px; height: 260px;">
 
@@ -26,7 +26,7 @@
         <parallax-element :parallaxStrength="15" :type="'depth'">
         <nav class="w-full overflow-y-auto overflow-x-hidden max-h-128 block hide-scrollbars md:p-8" @mouseover="isHovering = true" @mouseout="isHovering = false">
           <ul>
-            <li 
+            <li
               v-for="(project, index) in projects"
               :key="project.name"
               ref="numbers"
@@ -83,7 +83,7 @@ export default {
       TweenMax.staggerTo(document.querySelectorAll('.bottom-mask'), 3, { y: 100, autoAlpha: 0, rotation: 5, force3D: true, ease: Power4.easeInOut }, -0.17);
 
       TweenMax.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1.5, { scaleX: 0, autoAlpha: 1, transformOrigin:"left center", delay: 0, ease: Power4.easeInOut }, -0.25);
-      
+
       TweenMax.staggerTo(document.querySelectorAll('.nav-reveal'), 2.5, { y: 200, autoAlpha: 0, delay: 0.5, rotation: -20, force3D: true, ease: Power4.easeInOut }, -0.15);
 
       TweenMax.to(document.querySelector('.project-image-cover'), 1.5, { y: 400, autoAlpha: 0, rotation: -12, delay: 1, force3D: true, ease: Power4.easeInOut});
@@ -161,13 +161,13 @@ export default {
       this.selected = id;
 
       // TweenMax.set(this.$refs.projectimage, { css: { backgroundImage:`url(${ imageUrl })` }});
-      TweenMax.to('.project-image-cover', 0.35, { 
+      TweenMax.to('.project-image-cover', 0.35, {
         ease: Power4.easeOut,
         force3D: true,
-        autoAlpha: 1, 
-        width: this.$mq == '2xl' ? width * 1.5 : width * 1.1, 
-        height: this.$mq == '2xl' ? height * 1.5 : height  * 1.1});
-      
+        autoAlpha: 1,
+        width: this.$mq == '2xl' ? width * 1.3 : width * 1.1,
+        height: this.$mq == '2xl' ? height * 1.3 : height  * 1.1});
+
       // THIS IS FIRST
       TweenMax.to('.project-image', 0.35, { ease: Power4.easeOut, autoAlpha: 0 });
       // Need to do somethig with indx here....
@@ -202,8 +202,8 @@ export default {
 
     TweenMax.staggerTo(document.querySelectorAll('.top-mask'), 3, { y: 0, autoAlpha: 1, rotation: 0, delay: 1.25, force3D: true, ease: Power4.easeInOut }, 0.15);
     TweenMax.staggerTo(document.querySelectorAll('.bottom-mask'), 3, { y: 0, autoAlpha: 1, rotation: 0, delay: 1.25, force3D: true, ease: Power4.easeInOut }, 0.15);
-    
-    
+
+
     TweenMax.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1.85, { scaleX: 1, autoAlpha: 1, transformOrigin:"left center", delay: 1.85, ease: Power4.easeInOut }, 0.3);
 
     TweenMax.staggerTo(document.querySelectorAll('.nav-reveal'), 3, { y: 0, autoAlpha: 1, delay: 0.75, rotation: 0, force3D: true, ease: Power4.easeInOut }, 0.15);

@@ -5,8 +5,7 @@
         <div class="pr-12">
           <div class="relative z-10 overflow-hidden">
             <div class="bottom-mask relative">
-              <!-- <span class="text-7 md:text-8 lg:text-9 xl:text-11 2xl:text-14 tracking-widest uppercase block mb-px">Things I do</span> -->
-              <p class="text-15 md:text-14 lg:text-base xl:text-20 2xl:text-26">Interactive Design &amp; Brand Identity</p>
+              <p class="text-15 md:text-14 lg:text-base xl:text-20">Interactive Design &amp; Brand Identity</p>
             </div>
           </div>
         </div>
@@ -23,13 +22,13 @@
       <div class="w-full md:flex-1 md:ml-auto md:text-right">
         <div class="relative z-10 overflow-hidden">
           <div class="bottom-mask relative">
-            <a 
+            <a
               v-for="(social, index) in socials"
               class="
                 inline-block
                 fancy-link
-                mx-4 
-                text-15 md:text-14 lg:text-base xl:text-20 2xl:text-26"
+                mx-4
+                text-15 md:text-14 lg:text-base xl:text-20"
               :class="[{'md:mr-0': index === socials.length - 1}, {'ml-0 md:ml-3' : index === socials.length - socials.length }]"
               :key="social.name"
               :href="social.uri"
