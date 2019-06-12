@@ -87,7 +87,7 @@ p {
 
   @screen lg {
     margin-top: -55px;
-    margin-right: -120px;
+    margin-right: 0px;
 
     width: 640px;
     height: 450px;
@@ -125,12 +125,6 @@ p {
   @screen xl {
     max-width: 875px;
   }
-}
-
-.project-title {
-  top: 80px;
-  opacity: 0;
-  transform: rotate(-2deg);
 }
 
 .swipe-reveal {

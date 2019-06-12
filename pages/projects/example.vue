@@ -12,16 +12,18 @@
         <div class="w-full">
           <div class="w-4/5 xl:w-4/5">
             <div class="pb-18 md:pb-28 xl:pb-52">
-              <div class="overflow-hidden relative block">
-                <div class="seperator-reveal relative block opacity-0">
+              <div class="overflow-hidden relative block flex">
+                <div class="seperator-reveal relative block">
                   <seperator width="w-8" class="inline-block align-middle mr-2" />
-                  <span class="font-serif text-11 uppercase inline-block align-middle">iii</span>
+                </div>
+                <div class="overflow-hidden">
+                  <span class="font-serif text-11 uppercase inline-block align-middle meta">iii</span>
                 </div>
               </div>
             </div>
 
             <span class="overflow-hidden relative block mb-12 md:mb-16">
-              <span class="project-title relative block opacity-0">
+              <span class="content relative block">
                 <h1 class="
                   leading-none tracking-titleSmall md:tracking-title
                   text-60 md:text-127 lg:text-138 xl:text-142 pb-3 md:pb-6
@@ -33,47 +35,49 @@
             </span>
 
             <span class="overflow-hidden relative block mb-12 md:mb-20 lg:mb-24">
-              <span class="project-title relative block opacty-0">
+              <span class="content relative block">
                 <p class="text-15 md:text-20 lg:text-22 xl:text-26">Paul Smith is one of Britain’s most iconic fashion brands, with stores located in cities all over the world. To help make their online e-commerce experience as slick as the physical, I’ve been working with their internal team to tackle key user experience challenges and establish and evolve their existing visual language. </p>
               </span>
             </span>
 
-            <div class="flex flex-wrap mb-12 md:mb-20 lg:mb-24">
-              <div class="w-1/2 md:w-1/3">
-                <h2 class="leading-none tracking-tight
-                text-16 md:text-19 lg:text-22 xl:text-28
-                font-serif font-medium mb-2 md:mb-4">
-                  Services
-                </h2>
+            <div class="overflow-hidden relative">
+              <div class="flex flex-wrap mb-12 md:mb-20 lg:mb-24 content">
+                <div class="w-1/2 md:w-1/3">
+                  <h2 class="leading-none tracking-tight
+                  text-16 md:text-19 lg:text-22 xl:text-28
+                  font-serif font-medium mb-2 md:mb-4">
+                    Services
+                  </h2>
 
-                <ul class="text-12 md:text-15 lg:text-19 xl:text-24"> 
-                  <li>Visual Design</li>
-                  <li>Consultancy</li>
-                </ul>
-              </div>
-              <div class="w-1/2 md:w-1/3 mb-8">
-                <h2 class="leading-none tracking-tight
-                text-16 md:text-19 lg:text-22 xl:text-28
-                font-serif font-medium mb-2 md:mb-4">
-                  Years
-                </h2>
+                  <ul class="text-12 md:text-15 lg:text-19 xl:text-24">
+                    <li>+ Visual Design</li>
+                    <li>+ Consultancy</li>
+                  </ul>
+                </div>
+                <div class="w-1/2 md:w-1/3 mb-8">
+                  <h2 class="leading-none tracking-tight
+                  text-16 md:text-19 lg:text-22 xl:text-28
+                  font-serif font-medium mb-2 md:mb-4">
+                    Years
+                  </h2>
 
-                <p class="text-12 md:text-15 lg:text-19 xl:text-24">2017 — 2019</p>
-              </div>
-              <div class="w-1/2 md:w-1/3">
-                <h2 class="leading-none tracking-tight
-                text-16 md:text-19 lg:text-22 xl:text-28
-                font-serif font-medium mb-2 md:mb-4">
-                  Link
-                </h2>
+                  <p class="text-12 md:text-15 lg:text-19 xl:text-24">2017 — 2019</p>
+                </div>
+                <div class="w-1/2 md:w-1/3">
+                  <h2 class="leading-none tracking-tight
+                  text-16 md:text-19 lg:text-22 xl:text-28
+                  font-serif font-medium mb-2 md:mb-4">
+                    Link
+                  </h2>
 
-                <a href="www.paulsmith.co.uk" rel="noopener" target="_blank" class="fancy-link text-12 md:text-15 lg:text-19 xl:text-24">www.paulsmith.co.uk</a>
+                  <a href="www.paulsmith.co.uk" rel="noopener" target="_blank" class="fancy-link text-12 md:text-15 lg:text-19 xl:text-24">www.paulsmith.co.uk</a>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>  
+    </section>
 
   <div class="bleed--all pb-8 md:pb-12">
     <div class="bg-grey-light">
@@ -88,7 +92,7 @@
       </div>
     </div>
   </div>
-  
+
   <div class="bleed--all pb-16 md:pb-24 lg:pb-32">
     <div class="bg-grey-light">
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
@@ -129,7 +133,7 @@
       </div>
     </div>
   </div>
-  
+
   <div v-waypoint="{ active: true, callback: onWayPointChallenges, options: intersectionOptions }">
     <span class="block"></span>
   </div>
@@ -238,9 +242,9 @@
       <div class="w-full">
         <div class="w-full text-right">
           <span class="text-19 lg:text-30 xl:text-40 tracking-widest uppercase block text-grey">Next</span>
-          <nuxt-link 
+          <nuxt-link
             class="
-              inline-block 
+              inline-block
               leading-none tracking-tight
               font-serif
               no-underline
@@ -267,20 +271,20 @@ import SiteFooter from '~/components/SiteFooter.vue';
 
 import Seperator from '~/components/Seperator.vue';
 
+let tl = TweenMax;
+
 export default {
   transition: {
     mode: 'out-in',
     css: false,
     leave(el, done) {
-      TweenMax.staggerTo('.project-title', 1.5, { css: { top: 120, autoAlpha: 0, rotation: -2 }, ease: Power4.easeOut, onComplete: done }, -0.1);
-      TweenMax.to(".sectionTitle", 1.5, { css: { autoAlpha: 0 }, ease: Power4.easeOut });
 
-      TweenMax.to(document.querySelectorAll('.seperator-reveal'), 3, { css: { left: -75, autoAlpha: 0 }, ease: Power4.easeOut });
-
-      TweenMax.staggerTo(document.querySelectorAll('.top-mask'), 1.5, { css: { top: -100, autoAlpha: 0, rotation: 0 }, delay: 0, ease: Power4.easeInOut }, -0.15);
-      TweenMax.staggerTo(document.querySelectorAll('.bottom-mask'), 1.5, { css: { top: 100, autoAlpha: 0, rotation: 0 }, delay: 0, ease: Power4.easeInOut }, -0.15);
-
-      TweenMax.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1.5, { css: { left: -100, autoAlpha: 1 }, delay: 0, ease: Power4.easeInOut }, 0.2);
+      tl.staggerTo(document.querySelectorAll('.top-mask'), 3, { y: -100, autoAlpha: 0, rotation: -5, force3D: true, ease: Power4.easeInOut }, -0.17);
+      tl.staggerTo(document.querySelectorAll('.bottom-mask'), 3, { y: 100, autoAlpha: 0, rotation: 5, force3D: true, ease: Power4.easeInOut }, -0.17);
+      tl.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1.5, { scaleX: 0, autoAlpha: 1, transformOrigin:"left center", delay: 0, ease: Power4.easeInOut }, -0.25);
+      tl.staggerTo(document.querySelectorAll('.content'), 4, { y: 405, autoAlpha: 0, delay: 0.5, rotation: -20, force3D: true, ease: Power4.easeInOut, onComplete: done }, -0.2);
+      tl.to(document.querySelectorAll('.meta'), 2, { y: 25, autoAlpha: 1, delay: 0.25, rotation: -5, force3D: true, ease: Power4.easeInOut });
+      tl.to(document.querySelector('.seperator-reveal'), 2.65, { scaleX: 0, autoAlpha: 1, transformOrigin:"left center", delay: 0, ease: Power4.easeInOut });
     },
   },
   components: {
@@ -336,18 +340,29 @@ export default {
   mounted () {
     this.startBaffle('Introduction');
 
-    TweenMax.set(document.querySelector('.mask'), { scaleY:0} );
-    TweenMax.set(document.querySelector('.swipe-reveal'), { scaleY:0 } );
+    tl.set(document.querySelector('.mask'), { scaleY:0} );
+    tl.set(document.querySelector('.swipe-reveal'), { scaleY:0 } );
+    tl.set(document.querySelectorAll('.seperator-reveal-staggered'), { scaleX:0 } );
+    tl.set(document.querySelector('.seperator-reveal'), { scaleX:0 } );
 
-    TweenMax.staggerTo('.project-title', 1.5, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 0.75, ease: Power4.easeOut }, 0.1);
+    tl.set(document.querySelectorAll('.top-mask'), { y: -100, autoAlpha: 0, rotation: -5 });
+    tl.set(document.querySelectorAll('.bottom-mask'), { y: 100, autoAlpha: 0, rotation: 5 });
 
-    TweenMax.staggerTo(document.querySelectorAll('.top-mask'), 1.5, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 0.8, ease: Power4.easeInOut }, 0.075);
-    TweenMax.staggerTo(document.querySelectorAll('.bottom-mask'), 1.5, { css: { top: 0, autoAlpha: 1, rotation: 0 }, delay: 0.8, ease: Power4.easeInOut }, 0.075);
+    tl.set(document.querySelectorAll('.content'), { y: 275, autoAlpha: 1, rotation: -3 });
+    tl.set(document.querySelectorAll('.meta'), { y: 20, autoAlpha: 1, rotation: -5 });
 
-    TweenMax.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1, { css: { left: 0, autoAlpha: 1 }, delay: 0.8, ease: Power4.easeInOut }, 0.2);
 
-    TweenMax.to(".seperator-reveal", 1.5, { css: { left: 0, autoAlpha: 1 }, delay: 0.75, ease: Power4.easeOut });
-    TweenMax.to(".sectionTitle", 1.5, { css: { autoAlpha: 1 }, delay: 0.75, ease: Power4.easeOut });
+
+    tl.staggerTo(document.querySelectorAll('.top-mask'), 3, { y: 0, autoAlpha: 1, rotation: 0, delay: 1, force3D: true, ease: Power4.easeInOut }, 0.15);
+    tl.staggerTo(document.querySelectorAll('.bottom-mask'), 3, { y: 0, autoAlpha: 1, rotation: 0, delay: 1, force3D: true, ease: Power4.easeInOut }, 0.15);
+
+    tl.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1.85, { scaleX: 1, autoAlpha: 1, transformOrigin:"left center", delay: 1.85, ease: Power4.easeInOut }, 0.3);
+
+    tl.to(document.querySelector('.seperator-reveal'), 3.5, { scaleX: 1, autoAlpha: 1, transformOrigin:"left center", delay: 0, ease: Power4.easeInOut });
+    tl.to(document.querySelectorAll('.meta'), 3, { y: 0, autoAlpha: 1, delay: 0.4, rotation: 0, force3D: true, ease: Power4.easeInOut });
+    tl.to(".sectionTitle", 1.5, { css: { autoAlpha: 1 }, delay: 0.75, ease: Power4.easeOut });
+
+    tl.staggerTo(document.querySelectorAll('.content'), 4, { y: 0, autoAlpha: 1, delay: 0, rotation: 0, force3D: true, ease: Power4.easeInOut }, 0.25);
   }
 }
 </script>

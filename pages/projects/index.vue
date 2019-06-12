@@ -51,7 +51,7 @@
                     :to="project.uri">
                     <span class="font-serif text-8 uppercase w-6 lg:mb-4">{{ project.id }}</span>
                     <span :class="project.id">{{ project.name }}</span>
-                    <span class="w-full text-8 lg:w-auto ml-6 lg:ml-3 lg:mb-1 mt-3 sm:mt-5 lg:mt-0 tracking-widest leading-snug font-sans uppercase block">{{ project.date }} / {{ project.meta }}</span>
+                    <span class="w-full text-8 lg:w-auto ml-6 lg:ml-3 lg:mb-1 mt-3 sm:mt-5 lg:mt-0 tracking-widest leading-snug font-sans uppercase block">{{ project.meta }}</span>
                   </nuxt-link>
                 </span>
               </span>

@@ -73,24 +73,24 @@ import SiteHeader from '~/components/SiteHeader.vue';
 import SiteFooter from '~/components/SiteFooter.vue';
 import Seperator from '~/components/Seperator.vue';
 
-let t = TweenMax;
+let tl = TweenMax;
 
 export default {
   transition: {
     mode: 'out-in',
     css: false,
     leave(el, done) {
-      t.staggerTo(document.querySelectorAll('.top-mask'), 3, { y: -100, autoAlpha: 0, rotation: -5, force3D: true, ease: Power4.easeInOut }, -0.17);
-      t.staggerTo(document.querySelectorAll('.bottom-mask'), 3, { y: 100, autoAlpha: 0, rotation: 5, force3D: true, ease: Power4.easeInOut }, -0.17);
+      tl.staggerTo(document.querySelectorAll('.top-mask'), 3, { y: -100, autoAlpha: 0, rotation: -5, force3D: true, ease: Power4.easeInOut }, -0.17);
+      tl.staggerTo(document.querySelectorAll('.bottom-mask'), 3, { y: 100, autoAlpha: 0, rotation: 5, force3D: true, ease: Power4.easeInOut }, -0.17);
 
-      t.to(document.querySelector('.seperator-reveal'), 2.65, { scaleX: 0, autoAlpha: 1, transformOrigin:"left center", delay: 0, ease: Power4.easeInOut });
-      t.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1.5, { scaleX: 0, autoAlpha: 1, transformOrigin:"left center", delay: 0, ease: Power4.easeInOut }, -0.25);
+      tl.to(document.querySelector('.seperator-reveal'), 2.65, { scaleX: 0, autoAlpha: 1, transformOrigin:"left center", delay: 0, ease: Power4.easeInOut });
+      tl.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1.5, { scaleX: 0, autoAlpha: 1, transformOrigin:"left center", delay: 0, ease: Power4.easeInOut }, -0.25);
 
-      t.to(document.querySelectorAll('.image-box'), 1.5, { scale: 0.8, autoAlpha:0, delay: 0.5, force3D: true, ease: Power4.easeInOut });
+      tl.to(document.querySelectorAll('.image-box'), 1.5, { scale: 0.8, autoAlpha:0, delay: 0.5, force3D: true, ease: Power4.easeInOut });
 
-      t.to(document.querySelector('.image-box-carousel'), 1.5, { y: 250, autoAlpha: 0, delay: 0.5, rotation: -20, force3D: true, ease: Power4.easeInOut });
+      tl.to(document.querySelector('.image-box-carousel'), 1.5, { y: 250, autoAlpha: 0, delay: 0.5, rotation: -20, force3D: true, ease: Power4.easeInOut });
 
-      t.staggerTo(document.querySelectorAll('.headline-reveal'), 3.5, { y: 200, autoAlpha: 0, delay: 0.5, rotation: -20, force3D: true, ease: Power4.easeInOut, onComplete: done }, -0.15);
+      tl.staggerTo(document.querySelectorAll('.headline-reveal'), 3.5, { y: 200, autoAlpha: 0, delay: 0.5, rotation: -20, force3D: true, ease: Power4.easeInOut, onComplete: done }, -0.15);
     },
   },
   components: {
@@ -106,50 +106,50 @@ export default {
   },
   methods : {
     hover : function(e) {
-      t.to('.image-box-carousel', 0, { css: { autoAlpha: 1, left: e.pageX + 30, top: e.pageY + 30, display: 'block' } })
-      t.to('.opaque', 0.3, { css: { autoAlpha:0.15 } })
-      t.to('.line', 0.3, { css: { autoAlpha:0.15 } })
+      tl.to('.image-box-carousel', 0, { css: { autoAlpha: 1, left: e.pageX + 30, top: e.pageY + 30, display: 'block' } })
+      tl.to('.opaque', 0.3, { css: { autoAlpha:0.15 } })
+      tl.to('.line', 0.3, { css: { autoAlpha:0.15 } })
     },
     mouseMove : function(e) {
-      t.to('.image-box-carousel', 0, { css: { left: e.pageX + 30, top: e.pageY + 30, display: 'block' } })
+      tl.to('.image-box-carousel', 0, { css: { left: e.pageX + 30, top: e.pageY + 30, display: 'block' } })
     },
     mouseOut : function() {
-      t.to('.opaque', 0.3, { css: { autoAlpha: 1 } })
-      t.to('.line', 0.3, { css: { autoAlpha: 1 } })
-      t.to('.image-box-carousel', 0, { css: { scale: 1, autoAlpha: 0 } })
+      tl.to('.opaque', 0.3, { css: { autoAlpha: 1 } })
+      tl.to('.line', 0.3, { css: { autoAlpha: 1 } })
+      tl.to('.image-box-carousel', 0, { css: { scale: 1, autoAlpha: 0 } })
     },
     hoverLine : function() {
-      t.to('.opaque', 0.3, { css: { autoAlpha:0.15 } })
-      t.to('.work', 0.3, { css: { autoAlpha:0.15 } })
+      tl.to('.opaque', 0.3, { css: { autoAlpha:0.15 } })
+      tl.to('.work', 0.3, { css: { autoAlpha:0.15 } })
     },
     mouseOutLine : function() {
-      t.to('.opaque', 0.3, { css: { autoAlpha: 1 } })
-      t.to('.work', 0.3, { css: { autoAlpha:1 } })
+      tl.to('.opaque', 0.3, { css: { autoAlpha: 1 } })
+      tl.to('.work', 0.3, { css: { autoAlpha:1 } })
     }
   },
   created () {
     this.$store.commit('ui/TOGGLE_LIGHT')
   },
   mounted () {
-    t.set(document.querySelector('.image-box-carousel'), { width: 320, css: { left: 0, bottom: 0, display: 'none' } });
-    t.set(document.querySelector('.image-box'), { width: 230, height: 320, css: { autoAlpha: 0, backgroundImage:`url(${ this.image })` } });
-    t.set(document.querySelectorAll('.headline-reveal'), { y: 200, autoAlpha: 0, rotation: -20 });
-    t.set(document.querySelector('.swipe-reveal'), { scaleY:0 } );
-    t.set(document.querySelector('.mask'), { scaleY:0 } );
-    t.set(document.querySelector('.seperator-reveal'), { scaleX:0 } );
-    t.set(document.querySelectorAll('.seperator-reveal-staggered'), { scaleX:0 } );
+    tl.set(document.querySelector('.image-box-carousel'), { width: 320, css: { left: 0, bottom: 0, display: 'none' } });
+    tl.set(document.querySelector('.image-box'), { width: 230, height: 320, css: { autoAlpha: 0, backgroundImage:`url(${ this.image })` } });
+    tl.set(document.querySelectorAll('.headline-reveal'), { y: 200, autoAlpha: 0, rotation: -20 });
+    tl.set(document.querySelector('.swipe-reveal'), { scaleY:0 } );
+    tl.set(document.querySelector('.mask'), { scaleY:0 } );
+    tl.set(document.querySelector('.seperator-reveal'), { scaleX:0 } );
+    tl.set(document.querySelectorAll('.seperator-reveal-staggered'), { scaleX:0 } );
 
-    t.set(document.querySelectorAll('.top-mask'), { y: -100, autoAlpha: 0, rotation: -5 });
-    t.set(document.querySelectorAll('.bottom-mask'), { y: 100, autoAlpha: 0, rotation: 5 });
+    tl.set(document.querySelectorAll('.top-mask'), { y: -100, autoAlpha: 0, rotation: -5 });
+    tl.set(document.querySelectorAll('.bottom-mask'), { y: 100, autoAlpha: 0, rotation: 5 });
 
-    t.to(document.querySelector('.image-box'), 4, { scale: 1, autoAlpha:1,  delay: 0.05, ease: Power4.easeInOut });
+    tl.to(document.querySelector('.image-box'), 4, { scale: 1, autoAlpha:1,  delay: 0.05, ease: Power4.easeInOut });
 
-    t.to(document.querySelector('.seperator-reveal'), 3.5, { scaleX: 1, autoAlpha: 1, transformOrigin:"left center", delay: 0, ease: Power4.easeInOut });
+    tl.to(document.querySelector('.seperator-reveal'), 3.5, { scaleX: 1, autoAlpha: 1, transformOrigin:"left center", delay: 0, ease: Power4.easeInOut });
 
-    t.staggerTo(document.querySelectorAll('.top-mask'), 3, { y: 0, autoAlpha: 1, rotation: 0, delay: 0.85, force3D: true, ease: Power4.easeInOut }, 0.17);
-    t.staggerTo(document.querySelectorAll('.bottom-mask'), 3, { y: 0, autoAlpha: 1, rotation: 0, delay: 0.85, force3D: true, ease: Power4.easeInOut }, 0.17);
-    t.staggerTo(document.querySelectorAll('.headline-reveal'), 2.85, { y: 0, autoAlpha: 1, delay: 0.4, rotation: 0, force3D: true, ease: Power4.easeInOut }, 0.15);
-    t.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1.85, { scaleX: 1, autoAlpha: 1, transformOrigin:"left center", delay: 1, ease: Power4.easeInOut }, 0.3);
+    tl.staggerTo(document.querySelectorAll('.top-mask'), 3, { y: 0, autoAlpha: 1, rotation: 0, delay: 0.85, force3D: true, ease: Power4.easeInOut }, 0.17);
+    tl.staggerTo(document.querySelectorAll('.bottom-mask'), 3, { y: 0, autoAlpha: 1, rotation: 0, delay: 0.85, force3D: true, ease: Power4.easeInOut }, 0.17);
+    tl.staggerTo(document.querySelectorAll('.headline-reveal'), 2.85, { y: 0, autoAlpha: 1, delay: 0.4, rotation: 0, force3D: true, ease: Power4.easeInOut }, 0.15);
+    tl.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1.85, { scaleX: 1, autoAlpha: 1, transformOrigin:"left center", delay: 1, ease: Power4.easeInOut }, 0.3);
   }
 }
 </script>
