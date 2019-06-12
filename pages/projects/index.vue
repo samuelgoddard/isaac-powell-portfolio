@@ -40,7 +40,7 @@
                     @mouseout.native="projectImageReset()"
                     ref="opaque"
                     class="
-                      flex flex-wrap items-center lg:items-end
+                      flex flex-wrap items-end
                       leading-none tracking-tight
                       font-serif
                       text-white
@@ -49,9 +49,9 @@
                       transition"
                     :class="[{ 'opacity-25' : isHovering }, { 'opacity-100' :project.id == selected }]"
                     :to="project.uri">
-                    <span class="font-serif text-8 uppercase w-6 lg:mb-4">{{ project.id }}</span>
+                    <span class="font-sans text-8 uppercase w-8 mb-1 tracking-wide">{{ project.id }}</span>
                     <span :class="project.id">{{ project.name }}</span>
-                    <span class="w-full text-8 lg:w-auto ml-6 lg:ml-3 lg:mb-1 mt-3 sm:mt-5 lg:mt-0 tracking-widest leading-snug font-sans uppercase block">{{ project.meta }}</span>
+                    <span class="w-full text-8 lg:w-auto ml-8 lg:ml-3 lg:mb-1 mt-3 sm:mt-5 lg:mt-0 tracking-widest leading-snug font-sans uppercase block">{{ project.meta }}</span>
                   </nuxt-link>
                 </span>
               </span>
