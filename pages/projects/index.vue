@@ -21,7 +21,7 @@
           </div>
         </div>
       </div>
-      <div class="w-full md:ml-auto md:flex-1 overflow-hidden">
+      <div class="w-full max-w-2xl md:flex-1 overflow-hidden">
         <parallax-container class="overflow-hidden">
         <parallax-element :parallaxStrength="15" :type="'depth'">
         <nav class="w-full overflow-y-auto overflow-x-hidden max-h-128 block hide-scrollbars md:p-8" @mouseover="isHovering = true" @mouseout="isHovering = false">
@@ -44,14 +44,14 @@
                       leading-none tracking-tight
                       font-serif
                       text-white
-                      py-3 lg:py-4
-                      text-32 md:text-43 lg:text-48 xl:text-52 h-trim
+                      py-3 xs:py-5 md:py-5 lg:py-6
+                      text-24 xs:text-32 md:text-38 lg:text-47 xl:text-52 h-trim
                       transition"
                     :class="[{ 'opacity-25' : isHovering }, { 'opacity-100' :project.id == selected }]"
                     :to="project.uri">
                     <span class="font-serif text-8 uppercase w-6 lg:mb-4">{{ project.id }}</span>
-                      <span :class="project.id">{{ project.name }}</span>
-                    <span class="w-full text-6 lg:w-auto lg:text-7 ml-6 lg:ml-3 lg:mb-1 mt-2 lg:mt-0 tracking-widest uppercase block">{{ project.date }} / {{ project.meta }}</span>
+                    <span :class="project.id">{{ project.name }}</span>
+                    <span class="w-full text-8 lg:w-auto ml-6 lg:ml-3 lg:mb-1 mt-3 sm:mt-5 lg:mt-0 tracking-widest leading-snug font-sans uppercase block">{{ project.date }} / {{ project.meta }}</span>
                   </nuxt-link>
                 </span>
               </span>
@@ -74,21 +74,23 @@ import baffle from "baffle";
 import SiteHeader from '~/components/SiteHeader.vue';
 import SiteFooter from '~/components/SiteFooter.vue';
 
+let tl = TweenMax;
+
 export default {
   transition: {
     mode: 'out-in',
     css: false,
     leave(el, done) {
-      TweenMax.staggerTo(document.querySelectorAll('.top-mask'), 3, { y: -100, autoAlpha: 0, rotation: -5, force3D: true, ease: Power4.easeInOut }, -0.17);
-      TweenMax.staggerTo(document.querySelectorAll('.bottom-mask'), 3, { y: 100, autoAlpha: 0, rotation: 5, force3D: true, ease: Power4.easeInOut }, -0.17);
+      tl.staggerTo(document.querySelectorAll('.top-mask'), 3, { y: -100, autoAlpha: 0, rotation: -5, force3D: true, ease: Power4.easeInOut }, -0.17);
+      tl.staggerTo(document.querySelectorAll('.bottom-mask'), 3, { y: 100, autoAlpha: 0, rotation: 5, force3D: true, ease: Power4.easeInOut }, -0.17);
 
-      TweenMax.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1.5, { scaleX: 0, autoAlpha: 1, transformOrigin:"left center", delay: 0, ease: Power4.easeInOut }, -0.25);
+      tl.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1.5, { scaleX: 0, autoAlpha: 1, transformOrigin:"left center", delay: 0, ease: Power4.easeInOut }, -0.25);
 
-      TweenMax.staggerTo(document.querySelectorAll('.nav-reveal'), 2.5, { y: 200, autoAlpha: 0, delay: 0.5, rotation: -20, force3D: true, ease: Power4.easeInOut }, -0.15);
+      tl.staggerTo(document.querySelectorAll('.nav-reveal'), 2.5, { y: 200, autoAlpha: 0, delay: 0.5, rotation: -20, force3D: true, ease: Power4.easeInOut }, -0.15);
 
-      TweenMax.to(document.querySelector('.project-image-cover'), 1.5, { y: 400, autoAlpha: 0, rotation: -12, delay: 1, force3D: true, ease: Power4.easeInOut});
+      tl.to(document.querySelector('.project-image-cover'), 1.5, { y: 400, autoAlpha: 0, rotation: -12, delay: 1, force3D: true, ease: Power4.easeInOut});
 
-      TweenMax.to(document.querySelectorAll('.swipe-reveal'), 2.5, { scaleY: 0, transformOrigin:"center bottom", delay: 1.65, force3D: true, ease: Power4.easeInOut, onComplete: done });
+      tl.to(document.querySelectorAll('.swipe-reveal'), 2.5, { scaleY: 0, transformOrigin:"center bottom", delay: 1.65, force3D: true, ease: Power4.easeInOut, onComplete: done });
     },
   },
   components: {
@@ -114,31 +116,31 @@ export default {
         height: 240,
         current: false
       },{
-        name: 'CPMG',
+        name: 'CPMG Architects',
         id: 'ii',
         uri: '/projects/example',
         date: '2017',
-        meta: 'Architecture Studio',
+        meta: 'Architects',
         image: '/images/cpmg.jpg',
         width: 260,
         height: 320,
         current: false
       },{
-        name: 'Hive Analytics',
+        name: 'Hive Inc',
         id: 'iii',
         uri: '/projects/example',
         date: '2017',
-        meta: 'Data App',
+        meta: 'Data Visualisations',
         image: '/images/hive.jpg',
         width: 350,
         height: 300,
         current: false
       },{
-        name: 'Yale',
+        name: 'Mat Hayward',
         id: 'iv',
         uri: '/projects/example',
         date: '2017',
-        meta: 'Home Security',
+        meta: 'Photography Portfolio',
         image: '/images/yale.jpg',
         width: 410,
         height: 250,
@@ -160,24 +162,20 @@ export default {
     projectImageUpdate (id, index, imageUrl, width, height) {
       this.selected = id;
 
-      // TweenMax.set(this.$refs.projectimage, { css: { backgroundImage:`url(${ imageUrl })` }});
-      TweenMax.to('.project-image-cover', 0.35, {
+      tl.to('.project-image-cover', 0.35, {
         ease: Power4.easeOut,
         force3D: true,
         autoAlpha: 1,
         width: this.$mq == '2xl' ? width * 1.3 : width * 1.1,
         height: this.$mq == '2xl' ? height * 1.3 : height  * 1.1});
 
-      // THIS IS FIRST
-      TweenMax.to('.project-image', 0.35, { ease: Power4.easeOut, autoAlpha: 0 });
-      // Need to do somethig with indx here....
+      tl.to('.project-image', 0.35, { ease: Power4.easeOut, autoAlpha: 0 });
       let current = '.project-image-' + id;
-      console.log(current);
-      TweenMax.to(current, 0.35, { ease: Power4.easeOut, autoAlpha: 1 });
+      tl.to(current, 0.35, { ease: Power4.easeOut, autoAlpha: 1 });
     },
     projectImageReset () {
-      // TweenMax.to(this.$refs.projectimageCover, 0.66, { ease: Power4.easeOut, autoAlpha: 0 });
-      TweenMax.to('.project-image', 0.35, { ease: Power4.easeOut, autoAlpha: 0 });
+      // tl.to(this.$refs.projectimageCover, 0.66, { ease: Power4.easeOut, autoAlpha: 0 });
+      tl.to('.project-image', 0.35, { ease: Power4.easeOut, autoAlpha: 0 });
     },
     startBaffle (id, name) {
       this.selected = id
@@ -190,25 +188,25 @@ export default {
     },
   },
   mounted () {
-    TweenMax.set(document.querySelector('.project-image-cover'), {  rotation: 0 });
-    // TweenMax.set(document.querySelector('.swipe-reveal'), { y: window.innerHeight });
-    TweenMax.set(document.querySelector('.mask'), { scaleY:0} );
-    TweenMax.set(document.querySelector('.swipe-reveal'), { scaleY:0 } );
-    TweenMax.set(document.querySelectorAll('.nav-reveal'), { y: 200, autoAlpha: 0, rotation: -20 });
-    TweenMax.set(document.querySelectorAll('.seperator-reveal-staggered'), { scaleX:0 } );
+    tl.set(document.querySelector('.project-image-cover'), {  rotation: 0 });
+    // tl.set(document.querySelector('.swipe-reveal'), { y: window.innerHeight });
+    tl.set(document.querySelector('.mask'), { scaleY:0} );
+    tl.set(document.querySelector('.swipe-reveal'), { scaleY:0 } );
+    tl.set(document.querySelectorAll('.nav-reveal'), { y: 200, autoAlpha: 0, rotation: -20 });
+    tl.set(document.querySelectorAll('.seperator-reveal-staggered'), { scaleX:0 } );
 
-    TweenMax.set(document.querySelectorAll('.top-mask'), { y: -100, autoAlpha: 0, rotation: -5 });
-    TweenMax.set(document.querySelectorAll('.bottom-mask'), { y: 100, autoAlpha: 0, rotation: 5 });
+    tl.set(document.querySelectorAll('.top-mask'), { y: -100, autoAlpha: 0, rotation: -5 });
+    tl.set(document.querySelectorAll('.bottom-mask'), { y: 100, autoAlpha: 0, rotation: 5 });
 
-    TweenMax.staggerTo(document.querySelectorAll('.top-mask'), 3, { y: 0, autoAlpha: 1, rotation: 0, delay: 1.25, force3D: true, ease: Power4.easeInOut }, 0.15);
-    TweenMax.staggerTo(document.querySelectorAll('.bottom-mask'), 3, { y: 0, autoAlpha: 1, rotation: 0, delay: 1.25, force3D: true, ease: Power4.easeInOut }, 0.15);
+    tl.staggerTo(document.querySelectorAll('.top-mask'), 3, { y: 0, autoAlpha: 1, rotation: 0, delay: 1.25, force3D: true, ease: Power4.easeInOut }, 0.15);
+    tl.staggerTo(document.querySelectorAll('.bottom-mask'), 3, { y: 0, autoAlpha: 1, rotation: 0, delay: 1.25, force3D: true, ease: Power4.easeInOut }, 0.15);
 
 
-    TweenMax.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1.85, { scaleX: 1, autoAlpha: 1, transformOrigin:"left center", delay: 1.85, ease: Power4.easeInOut }, 0.3);
+    tl.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1.85, { scaleX: 1, autoAlpha: 1, transformOrigin:"left center", delay: 1.85, ease: Power4.easeInOut }, 0.3);
 
-    TweenMax.staggerTo(document.querySelectorAll('.nav-reveal'), 3, { y: 0, autoAlpha: 1, delay: 0.75, rotation: 0, force3D: true, ease: Power4.easeInOut }, 0.15);
+    tl.staggerTo(document.querySelectorAll('.nav-reveal'), 3, { y: 0, autoAlpha: 1, delay: 0.75, rotation: 0, force3D: true, ease: Power4.easeInOut }, 0.15);
 
-    TweenMax.to(document.querySelectorAll('.swipe-reveal'), 2.5, { scaleY: 1, transformOrigin:"center bottom", delay: 0, ease: Power4.easeInOut });
+    tl.to(document.querySelectorAll('.swipe-reveal'), 2.5, { scaleY: 1, transformOrigin:"center bottom", delay: 0, ease: Power4.easeInOut });
   },
 }
 </script>

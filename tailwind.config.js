@@ -170,6 +170,7 @@ module.exports = {
       '32': '2rem',
       '33': '2.0625rem',
       '36': '2.25rem',
+      '38': '2.4rem',
       '40': '2.5rem',
       '42': '2.625rem',
       '43': '2.6875rem',
@@ -422,7 +423,7 @@ module.exports = {
         'slow-in-out-quad': 'all 2s cubic-bezier(0.455, 0.03, 0.515, 0.955)',
         'color' : 'background-color, color, .45s ease',
         'background' : 'background-image, .3s ease'
-      }  
+      }
     })
   ],
 }

@@ -72,6 +72,11 @@ p {
   opacity: 0;
   transform: scale(0.75);
 
+  width: 260px;
+  height: 320px;
+  margin-top: -50px;
+  margin-right: calc(50% - 130px);
+
   @screen md {
     margin-top: -80px;
     margin-right: -100px;
