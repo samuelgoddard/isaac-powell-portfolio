@@ -163,17 +163,37 @@ p {
   text-orientation: mixed;
 }
 
-body {
-  overflow-x: hidden;
-  overflow-y: scroll;
+*, :after, :before {
+  box-sizing: border-box;
 }
 
 
-.scroll-container {  
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  overscroll-behavior: none;
+}
+
+.viewport {
   overflow: hidden;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   backface-visibility: hidden;
   transform-style: preserve-3d;
-  @apply flex-1;
+}
+
+.scroll-container {  
+  position: absolute;  
+  overflow: hidden;
+  z-index: 10;
+  width: 100%;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
 }
 
 

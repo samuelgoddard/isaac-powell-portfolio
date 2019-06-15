@@ -1,16 +1,17 @@
 <template>
 <div>
   <site-header />
-  <div class="block fixed top-0 right-0 mt-40 lg:mt-56 mr-6 md:mr-10 lg:mr-12 z-10">
+  
+  <!-- <div class="block fixed top-0 right-0 mt-40 lg:mt-56 mr-6 md:mr-10 lg:mr-12 z-10">
     <span class="overflow-hidden relative block mb-12 md:mb-16">
       <div class="content relative block sectionTitle">
         <span class="text-16 lg:text-18 xl:text-20 sectionTitle-inner">Introduction</span>
       </div>
     </span>
-  </div>
+  </div> -->
 
-  <div class="block" v-observe-visibility="(isVisible, entry) => updateText(isVisible, entry, 'Introduction')">
-  </div>
+  <!-- <div class="block" v-observe-visibility="(isVisible, entry) => updateText(isVisible, entry, 'Introduction')">
+  </div> -->
 
     <section class="pb-24 pt-24 md:pt-32 xl:pt-40 md:flex md:items-center">
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
@@ -112,8 +113,8 @@
     </div>
   </div>
 
-  <div class="block" v-observe-visibility="(isVisible, entry) => updateText(isVisible, entry, 'Campaigns')">
-  </div>
+  <!-- <div class="block" v-observe-visibility="(isVisible, entry) => updateText(isVisible, entry, 'Campaigns')">
+  </div> -->
 
   <section class="pb-18 md:pb-24 lg:pb-32 md:flex md:items-center">
     <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
@@ -139,8 +140,8 @@
     </div>
   </div>
 
-  <div class="block" v-observe-visibility="(isVisible, entry) => updateText(isVisible, entry, 'Challenges')">
-  </div>
+  <!-- <div class="block" v-observe-visibility="(isVisible, entry) => updateText(isVisible, entry, 'Challenges')">
+  </div> -->
 
   <section class="pb-18 md:pb-24 lg:pb-32 md:flex md:items-center">
     <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
@@ -174,8 +175,8 @@
     </div>
   </div>
 
-  <div class="block" v-observe-visibility="(isVisible, entry) => updateText(isVisible, entry, 'Unifying')">
-  </div>
+  <!-- <div class="block" v-observe-visibility="(isVisible, entry) => updateText(isVisible, entry, 'Unifying')">
+  </div> -->
 
   <section class="pb-18 md:pb-24 lg:pb-32 md:flex md:items-center">
     <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
@@ -211,8 +212,8 @@
     </div>
   </section>
 
-  <div class="block" v-observe-visibility="(isVisible, entry) => updateText(isVisible, entry, 'Evolution')">
-  </div>
+  <!-- <div class="block" v-observe-visibility="(isVisible, entry) => updateText(isVisible, entry, 'Evolution')">
+  </div> -->
 
   <div class="bleed--all pb-8 md:pb-12">
     <div class="bg-grey-light">
@@ -282,7 +283,7 @@ if (process.client) {
 
   var scroller = {
     target: document.querySelector("#scroll-container"),
-    ease: 0.1, // <= scroll speed
+    ease: 0.05, // <= scroll speed
     endY: 0,
     y: 0,
     resizeRequest: 1,
@@ -290,6 +291,10 @@ if (process.client) {
   };
 
   var requestId = null;
+  
+  TweenLite.set(scroller.target, {
+    force3D: true
+  });
 }
 
 export default {
@@ -311,45 +316,32 @@ export default {
     Seperator,
   },
   methods: {
-    updateText (isVisible, entry, title) {
-      document.querySelector('.sectionTitle-inner').innerText = title;
-    },
-
+    // updateText (isVisible, entry, title) {
+    //   document.querySelector('.sectionTitle-inner').innerText = title;
+    // },
     onScroll() {
       scroller.scrollRequest++;
       if (!requestId) {
         requestId = requestAnimationFrame(this.updateScroller);
       }
     },
-
-    onResize() {
-      scroller.resizeRequest++;
-      if (!requestId) {
-        requestId = requestAnimationFrame(this.updateScroller);
-      }
-    },
-
     updateScroller() {  
-      var resized = scroller.resizeRequest > 0;
-        
-      if (resized) {    
-        var height = scroller.target.clientHeight;
-        body.style.height = height + "px";
-        scroller.resizeRequest = 0;
-      }
+      var height = scroller.target.clientHeight;
+      body.style.height = height + "px";
+      scroller.resizeRequest = 0;
           
       var scrollY = window.pageYOffset || html.scrollTop || body.scrollTop || 0;
 
       scroller.endY = scrollY;
       scroller.y += (scrollY - scroller.y) * scroller.ease;
 
-      if (Math.abs(scrollY - scroller.y) < 0.05 || resized) {
+      if (Math.abs(scrollY - scroller.y) < 0.05) {
         scroller.y = scrollY;
         scroller.scrollRequest = 0;
       }
       
       TweenLite.set(scroller.target, { 
-        y: -scroller.y 
+        y: -scroller.y
       });
       
       requestId = scroller.scrollRequest > 0 ? requestAnimationFrame(this.updateScroller) : null;
@@ -357,23 +349,24 @@ export default {
   },
   created () {
     this.$store.commit('ui/TOGGLE_LIGHT');
+    if (process.browser) { 
+      window.addEventListener('scroll', this.onScroll);
+    }
   },
   destroyed () {
-    document.removeEventListener('scroll', this.onScroll);
-    window.addEventListener('resize', this.onResize);
+    if (process.browser) { 
+        window.removeEventListener('scroll', this.onScroll);
+    }
   },
   mounted () {
-    // TweenLite.set(scroller.target, {
-    //   rotation: 0.01,
-    //   force3D: true
-    // });
+    TweenLite.set(scroller.target, {
+      force3D: true
+    });
 
+    window.focus();
     this.updateScroller();
 
-    document.addEventListener('scroll', this.onScroll);
-    window.addEventListener('resize', this.onResize);
-
-    document.querySelector('.sectionTitle-inner').innerText = 'Introduction';
+    // document.querySelector('.sectionTitle-inner').innerText = 'Introduction';
 
     tl.set(document.querySelector('.mask'), { scaleY:0} );
     tl.set(document.querySelector('.swipe-reveal'), { scaleY:0 } );
