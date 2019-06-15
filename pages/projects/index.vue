@@ -69,7 +69,6 @@
 
 <script>
 import { StaggerTo, Power4, TweenMax } from "gsap";
-import baffle from "baffle";
 
 import SiteHeader from '~/components/SiteHeader.vue';
 import SiteFooter from '~/components/SiteFooter.vue';
@@ -176,15 +175,6 @@ export default {
     projectImageReset () {
       // tl.to(this.$refs.projectimageCover, 0.66, { ease: Power4.easeOut, autoAlpha: 0 });
       tl.to('.project-image', 0.35, { ease: Power4.easeOut, autoAlpha: 0 });
-    },
-    startBaffle (id, name) {
-      this.selected = id
-
-      const b = baffle('.' + id).start();
-      b.start()
-      .set({ speed: 150 })
-      .text(text => name)
-      .reveal(750);
     },
   },
   mounted () {

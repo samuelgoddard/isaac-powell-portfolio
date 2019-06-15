@@ -55,8 +55,8 @@ module.exports = {
     src: '~plugins/vue-mq.js',
     ssr: true
   }, {
-    src: '~plugins/vue-waypoint.js',
-    ssr: false
+    src: '~plugins/vue-intersect.js',
+    ssr: true
   }],
 
   /*

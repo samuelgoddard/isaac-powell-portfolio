@@ -163,6 +163,19 @@ p {
   text-orientation: mixed;
 }
 
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+
+.scroll-container {  
+  overflow: hidden;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  @apply flex-1;
+}
+
 
 /* .fancy-link {
   text-decoration: none;

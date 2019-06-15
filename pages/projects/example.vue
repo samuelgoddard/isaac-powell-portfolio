@@ -1,12 +1,17 @@
 <template>
 <div>
   <site-header />
-  <div class="block fixed top-0 right-0 mt-40 lg:mt-56 mr-6 md:mr-14 lg:mr-18 z-10 sectionTitle opacity-0" ref="sectionTitle">
-    <span class="text-22">Introduction</span>
+  <div class="block fixed top-0 right-0 mt-40 lg:mt-56 mr-6 md:mr-10 lg:mr-12 z-10">
+    <span class="overflow-hidden relative block mb-12 md:mb-16">
+      <div class="content relative block sectionTitle">
+        <span class="text-16 lg:text-18 xl:text-20 sectionTitle-inner">Introduction</span>
+      </div>
+    </span>
   </div>
-  <div v-waypoint="{ active: true, callback: onWayPointIntro, options: intersectionOptions }">
-    <span class="block"></span>
+
+  <div class="block" v-observe-visibility="(isVisible, entry) => updateText(isVisible, entry, 'Introduction')">
   </div>
+
     <section class="pb-24 pt-24 md:pt-32 xl:pt-40 md:flex md:items-center">
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
         <div class="w-full">
@@ -107,9 +112,9 @@
     </div>
   </div>
 
-  <div v-waypoint="{ active: true, callback: onWayPointCampaigns, options: intersectionOptions }">
-    <span class="block"></span>
+  <div class="block" v-observe-visibility="(isVisible, entry) => updateText(isVisible, entry, 'Campaigns')">
   </div>
+
   <section class="pb-18 md:pb-24 lg:pb-32 md:flex md:items-center">
     <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
       <div class="w-full">
@@ -134,9 +139,9 @@
     </div>
   </div>
 
-  <div v-waypoint="{ active: true, callback: onWayPointChallenges, options: intersectionOptions }">
-    <span class="block"></span>
+  <div class="block" v-observe-visibility="(isVisible, entry) => updateText(isVisible, entry, 'Challenges')">
   </div>
+
   <section class="pb-18 md:pb-24 lg:pb-32 md:flex md:items-center">
     <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
       <div class="w-full">
@@ -169,9 +174,9 @@
     </div>
   </div>
 
-  <div v-waypoint="{ active: true, callback: onWayPointUnifying, options: intersectionOptions }">
-    <span class="block"></span>
+  <div class="block" v-observe-visibility="(isVisible, entry) => updateText(isVisible, entry, 'Unifying')">
   </div>
+
   <section class="pb-18 md:pb-24 lg:pb-32 md:flex md:items-center">
     <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
       <div class="w-full">
@@ -196,9 +201,6 @@
     </div>
   </div>
 
-  <div v-waypoint="{ active: true, callback: onWayPointEvolution, options: intersectionOptions }">
-    <span class="block"></span>
-  </div>
   <section class="pb-18 md:pb-24 lg:pb-32 md:flex md:items-center">
     <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
       <div class="w-full">
@@ -208,6 +210,9 @@
       </div>
     </div>
   </section>
+
+  <div class="block" v-observe-visibility="(isVisible, entry) => updateText(isVisible, entry, 'Evolution')">
+  </div>
 
   <div class="bleed--all pb-8 md:pb-12">
     <div class="bg-grey-light">
@@ -263,22 +268,35 @@
 </template>
 
 <script>
-import { StaggerTo, Power4, TweenMax } from "gsap";
-import baffle from "baffle";
+import { StaggerTo, Power4, TweenMax, TweenLite } from "gsap";
 
 import SiteHeader from '~/components/SiteHeader.vue';
 import SiteFooter from '~/components/SiteFooter.vue';
-
 import Seperator from '~/components/Seperator.vue';
 
 let tl = TweenMax;
+
+if (process.client) {
+  var html = document.documentElement;
+  var body = document.body;
+
+  var scroller = {
+    target: document.querySelector("#scroll-container"),
+    ease: 0.05, // <= scroll speed
+    endY: 0,
+    y: 0,
+    resizeRequest: 1,
+    scrollRequest: 0,
+  };
+
+  var requestId = null;
+}
 
 export default {
   transition: {
     mode: 'out-in',
     css: false,
     leave(el, done) {
-
       tl.staggerTo(document.querySelectorAll('.top-mask'), 3, { y: -100, autoAlpha: 0, rotation: -5, force3D: true, ease: Power4.easeInOut }, -0.17);
       tl.staggerTo(document.querySelectorAll('.bottom-mask'), 3, { y: 100, autoAlpha: 0, rotation: 5, force3D: true, ease: Power4.easeInOut }, -0.17);
       tl.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1.5, { scaleX: 0, autoAlpha: 1, transformOrigin:"left center", delay: 0, ease: Power4.easeInOut }, -0.25);
@@ -292,77 +310,87 @@ export default {
     SiteFooter,
     Seperator,
   },
-  data: () => ({
-    intersectionOptions: {
-      root: null,
-      rootMargin: '0px 0px 0px 0px',
-      threshold: [0, 1]
-    }
-  }),
   methods: {
-    onWayPointIntro ({ going, direction, index, title }) {
-      if (going === this.$waypointMap.GOING_IN) {
-        this.startBaffle('Introduction');
-      }
+    updateText (isVisible, entry, title) {
+      document.querySelector('.sectionTitle-inner').innerText = title;
     },
-    onWayPointCampaigns ({ going, direction, index, title }) {
-      if (going === this.$waypointMap.GOING_IN) {
-        this.startBaffle('Campaigns');
-      }
-    },
-    onWayPointChallenges ({ going, direction, index, title }) {
-      if (going === this.$waypointMap.GOING_IN) {
-        this.startBaffle('Challenges');
-      }
-    },
-    onWayPointUnifying ({ going, direction, index, title }) {
-      if (going === this.$waypointMap.GOING_IN) {
-        this.startBaffle('Unifying');
-      }
-    },
-    onWayPointEvolution ({ going, direction, index, title }) {
-      if (going === this.$waypointMap.GOING_IN) {
-        this.startBaffle('Evolution');
-      }
-    },
-    startBaffle (title) {
-      const b = baffle('.sectionTitle').start();
 
-      b.start()
-      .set({ speed: 150 })
-      .text(text => title)
-      .reveal(300);
+    onScroll() {
+      scroller.scrollRequest++;
+      if (!requestId) {
+        requestId = requestAnimationFrame(this.updateScroller);
+      }
     },
+
+    onResize() {
+      scroller.resizeRequest++;
+      if (!requestId) {
+        requestId = requestAnimationFrame(this.updateScroller);
+      }
+    },
+
+    updateScroller() {  
+      var resized = scroller.resizeRequest > 0;
+        
+      if (resized) {    
+        var height = scroller.target.clientHeight;
+        body.style.height = height + "px";
+        scroller.resizeRequest = 0;
+      }
+          
+      var scrollY = window.pageYOffset || html.scrollTop || body.scrollTop || 0;
+
+      scroller.endY = scrollY;
+      scroller.y += (scrollY - scroller.y) * scroller.ease;
+
+      if (Math.abs(scrollY - scroller.y) < 0.05 || resized) {
+        scroller.y = scrollY;
+        scroller.scrollRequest = 0;
+      }
+      
+      TweenLite.set(scroller.target, { 
+        y: -scroller.y 
+      });
+      
+      requestId = scroller.scrollRequest > 0 ? requestAnimationFrame(this.updateScroller) : null;
+    }
   },
   created () {
-    this.$store.commit('ui/TOGGLE_LIGHT')
+    this.$store.commit('ui/TOGGLE_LIGHT');
+  },
+  destroyed () {
+    document.removeEventListener('scroll', this.onScroll);
+    window.addEventListener('resize', this.onResize);
   },
   mounted () {
-    this.startBaffle('Introduction');
+    TweenLite.set(scroller.target, {
+      rotation: 0.01,
+      force3D: true
+    });
+
+    this.updateScroller();
+
+    document.addEventListener('scroll', this.onScroll);
+    window.addEventListener('resize', this.onResize);
+
+    document.querySelector('.sectionTitle-inner').innerText = 'Introduction';
 
     tl.set(document.querySelector('.mask'), { scaleY:0} );
     tl.set(document.querySelector('.swipe-reveal'), { scaleY:0 } );
     tl.set(document.querySelectorAll('.seperator-reveal-staggered'), { scaleX:0 } );
     tl.set(document.querySelector('.seperator-reveal'), { scaleX:0 } );
-
     tl.set(document.querySelectorAll('.top-mask'), { y: -100, autoAlpha: 0, rotation: -5 });
     tl.set(document.querySelectorAll('.bottom-mask'), { y: 100, autoAlpha: 0, rotation: 5 });
-
     tl.set(document.querySelectorAll('.content'), { y: 275, autoAlpha: 1, rotation: -3 });
     tl.set(document.querySelectorAll('.meta'), { y: 20, autoAlpha: 1, rotation: -5 });
 
-
-
     tl.staggerTo(document.querySelectorAll('.top-mask'), 3, { y: 0, autoAlpha: 1, rotation: 0, delay: 1, force3D: true, ease: Power4.easeInOut }, 0.15);
     tl.staggerTo(document.querySelectorAll('.bottom-mask'), 3, { y: 0, autoAlpha: 1, rotation: 0, delay: 1, force3D: true, ease: Power4.easeInOut }, 0.15);
-
     tl.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1.85, { scaleX: 1, autoAlpha: 1, transformOrigin:"left center", delay: 1.85, ease: Power4.easeInOut }, 0.3);
+    tl.staggerTo(document.querySelectorAll('.content'), 4, { y: 0, autoAlpha: 1, delay: 0, rotation: 0, force3D: true, ease: Power4.easeInOut }, 0.25);
 
     tl.to(document.querySelector('.seperator-reveal'), 3.5, { scaleX: 1, autoAlpha: 1, transformOrigin:"left center", delay: 0, ease: Power4.easeInOut });
     tl.to(document.querySelectorAll('.meta'), 3, { y: 0, autoAlpha: 1, delay: 0.4, rotation: 0, force3D: true, ease: Power4.easeInOut });
-    tl.to(".sectionTitle", 1.5, { css: { autoAlpha: 1 }, delay: 0.75, ease: Power4.easeOut });
-
-    tl.staggerTo(document.querySelectorAll('.content'), 4, { y: 0, autoAlpha: 1, delay: 0, rotation: 0, force3D: true, ease: Power4.easeInOut }, 0.25);
   }
 }
 </script>

@@ -15,16 +15,22 @@
               </div>
               <div class="hidden md:inline-block">
                 <div class="relative z-10 overflow-hidden">
-                  <div class="top-mask relative">
-                    <Logo />
+                  <div class="h-10 w-12 bg-transparent"></div>
+                  <div class="fixed top-0 md:mt-6 lg:mt-8">
+                    <div class="top-mask relative">
+                      <Logo />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="hidden md:inline-block mx-auto" @mouseover="startBaffle" @mouseleave="unBaffle">
+            <div class="hidden md:inline-block mx-auto">
               <div class="relative z-10 overflow-hidden">
-                <div class="top-mask relative">
-                  <span class="ml-auto leading-snug tracking-tight font-serif time">Nottingham, England</span>
+                <div class="top-mask relative h-7 overflow-hidden" @mouseover="showTime" @mouseleave="hideTime">
+                  <div class="time cursor-text">
+                    <span class="ml-auto leading-snug tracking-tight font-serif block text-center time-1">Nottingham, England</span>
+                    <span class="ml-auto leading-snug tracking-tight font-serif block text-center time-2 pt-2">{{ currentTime }}</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -79,7 +85,6 @@ import { Power4, TweenMax } from "gsap";
 import Logo from '~/components/Logo.vue';
 import Seperator from '~/components/Seperator.vue';
 
-import baffle from "baffle";
 import moment from 'moment';
 
 export default {
@@ -104,22 +109,20 @@ export default {
     updateCurrentTime() {
       this.currentTime = moment().format('LTS');
     },
-    startBaffle () {
-      const b = baffle('.time').start();
-
-      b.start()
-      .set({ speed: 150 })
-      .text(text => this.currentTime)
-      .reveal(500);
+    showTime () {
+      TweenMax.to(document.querySelector('.time'), 0.5, { y: -30 });
+      TweenMax.to(document.querySelector('.time-1'), 0.5, { autoAlpha: 0, rotation: -5 });
+      TweenMax.to(document.querySelector('.time-2'), 0.5, { autoAlpha: 1, rotation: 0 });
     },
-    unBaffle () {
-      const b = baffle('.time').start();
-
-      b.start()
-      .set({ speed: 150 })
-      .text(text => 'Nottingham, England')
-      .reveal(500);
+    hideTime () {
+      TweenMax.to(document.querySelector('.time'), 0.5, { y: 0 });
+      TweenMax.to(document.querySelector('.time-1'), 0.5, { autoAlpha: 1, rotation: 0 });
+      TweenMax.to(document.querySelector('.time-2'), 0.5, { autoAlpha: 0, rotation: -5 });
     },
+  },
+  mounted() {
+    TweenMax.set(document.querySelectorAll('.time-1'), { autoAlpha: 1, rotation: 0 });
+    TweenMax.set(document.querySelectorAll('.time-2'), { autoAlpha: 0, rotation: -10 });
   },
   created() {
     this.currentTime = moment().format('LTS');
