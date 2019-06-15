@@ -282,7 +282,7 @@ if (process.client) {
 
   var scroller = {
     target: document.querySelector("#scroll-container"),
-    ease: 0.05, // <= scroll speed
+    ease: 0.2, // <= scroll speed
     endY: 0,
     y: 0,
     resizeRequest: 1,

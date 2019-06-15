@@ -15,11 +15,8 @@
               </div>
               <div class="hidden md:inline-block">
                 <div class="relative z-10 overflow-hidden">
-                  <div class="h-10 w-12 bg-transparent"></div>
-                  <div class="fixed top-0 md:mt-6 lg:mt-8">
-                    <div class="top-mask relative">
-                      <Logo />
-                    </div>
+                  <div class="top-mask relative">
+                    <Logo />
                   </div>
                 </div>
               </div>
