@@ -282,7 +282,7 @@ if (process.client) {
 
   var scroller = {
     target: document.querySelector("#scroll-container"),
-    ease: 0.2, // <= scroll speed
+    ease: 0.1, // <= scroll speed
     endY: 0,
     y: 0,
     resizeRequest: 1,
@@ -363,10 +363,10 @@ export default {
     window.addEventListener('resize', this.onResize);
   },
   mounted () {
-    TweenLite.set(scroller.target, {
-      rotation: 0.01,
-      force3D: true
-    });
+    // TweenLite.set(scroller.target, {
+    //   rotation: 0.01,
+    //   force3D: true
+    // });
 
     this.updateScroller();
 
