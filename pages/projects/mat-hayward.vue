@@ -175,27 +175,31 @@
     </div>
   </div>
 
-  <section class="pb-16 md:pb-20 lg:pb-28 md:flex md:items-center">
-    <div class="w-full xl:w-2/3 mx-auto">
-      <div class="w-full">
-        <div class="w-full text-right">
-          <span class="text-19 lg:text-30 xl:text-40 tracking-widest uppercase block text-grey">Next</span>
-          <nuxt-link
-            class="
-              inline-block
-              leading-none tracking-tight
-              font-serif
-              no-underline
-              fancy-link
-              pb-3 md:pb-4
-              text-32 md:text-43 lg:text-52 xl:text-60 h-trim"
-            to="/projects/misc">
-              Misc
-          </nuxt-link>
+  <span class="overflow-hidden relative block mb-12 md:mb-16">
+    <span class="content relative block">
+      <section class="pb-16 md:pb-20 lg:pb-28 md:flex md:items-center">
+        <div class="w-full xl:w-2/3 mx-auto">
+          <div class="w-full">
+            <div class="w-full text-right">
+              <span class="text-19 lg:text-30 xl:text-40 tracking-widest uppercase block text-grey">Next</span>
+              <nuxt-link
+                class="
+                  inline-block
+                  leading-none tracking-tight
+                  font-serif
+                  no-underline
+                  fancy-link
+                  pb-3 md:pb-4
+                  text-32 md:text-43 lg:text-52 xl:text-60 h-trim"
+                to="/projects/misc">
+                  Misc
+              </nuxt-link>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
+    </span>
+  </span>
   <site-footer />
 </div>
 </template>
