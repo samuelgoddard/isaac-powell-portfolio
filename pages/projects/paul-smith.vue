@@ -22,7 +22,7 @@
                   <seperator width="w-8" class="inline-block align-middle mr-2" />
                 </div>
                 <div class="overflow-hidden">
-                  <span class="font-serif text-11 uppercase inline-block align-middle meta">iii</span>
+                  <span class="font-serif text-11 uppercase inline-block align-middle meta">i</span>
                 </div>
               </div>
             </div>
@@ -34,7 +34,7 @@
                   text-60 md:text-127 lg:text-138 xl:text-142 pb-3 md:pb-6
                   font-serif"
                 >
-                  Paul<br/>Smith
+                  Paul<br/>Smith.
                 </h1>
               </span>
             </span>
@@ -256,8 +256,8 @@
               fancy-link
               pb-3 md:pb-4
               text-32 md:text-43 lg:text-52 xl:text-60 h-trim"
-            to="/projects/mat-hayward">
-              Mat Hayward
+            to="/projects/cpmg-architects">
+              CPMG Architects
           </nuxt-link>
         </div>
       </div>

@@ -15,8 +15,11 @@
               </div>
               <div class="hidden md:inline-block">
                 <div class="relative z-10 overflow-hidden">
-                  <div class="top-mask relative">
-                    <Logo />
+                  <div class="h-10 w-12 bg-transparent"></div>
+                  <div class="fixed top-0 md:mt-6 lg:mt-8">
+                    <div class="top-mask relative">
+                      <Logo />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -34,7 +37,6 @@
           </div>
         </div>
 
-
         <div class="hidden md:block ml-auto mr-auto">
           <div class="relative z-10 overflow-hidden">
             <span class="seperator-reveal-staggered block relative">
@@ -43,31 +45,29 @@
           </div>
         </div>
         <div class="flex-1 ml-auto text-right">
-              <nuxt-link 
-                v-for="(page, index) in pages"
-                class="
-                  fancy-link
-                  inline-block
-                  mx-4 lg:mx-8 
-                  text-16 lg:text-18 xl:text-20"
-                :key="page.name"
-                :to="page.uri">
-                <div class="relative z-10 overflow-hidden">
-                  <div class="top-mask relative">
-                  {{ page.name }}
-                  </div>
-                </div>
-              </nuxt-link>
-              <div class="relative z-10 overflow-hidden inline-block
-                      mx-4 lg:mx-8 mr-0 lg:mr-0
-                      text-16 lg:text-18 xl:text-20">
-                <div class="top-mask relative">
-                  <a class="fancy-link"
-                    href="mailto:isaac@40000ft.co.uk">
-                      Contact
-                  </a>
-                </div>
+          <nuxt-link 
+            v-for="(page, index) in pages"
+            class="
+              fancy-link
+              inline-block
+              mx-4 lg:mx-8 
+              text-16 lg:text-18 xl:text-20"
+            :key="page.name"
+            :to="page.uri">
+            <div class="relative z-10 overflow-hidden">
+              <div class="top-mask relative">
+              {{ page.name }}
               </div>
+            </div>
+          </nuxt-link>
+          <div class="relative z-10 overflow-hidden inline-block
+                  mx-4 lg:mx-8 mr-0 lg:mr-0
+                  text-16 lg:text-18 xl:text-20">
+            <div class="top-mask relative">
+              <a class="fancy-link"
+                href="mailto:isaac@40000ft.co.uk">
+                  Contact
+              </a>
             </div>
           </div>
         </div>

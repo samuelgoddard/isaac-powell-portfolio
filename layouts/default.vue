@@ -1,21 +1,16 @@
 <template>
-  <div class="viewport">
-    <div id="scroll-container" class="scroll-container">
-      <div class="overflow-hidden min-h-screen flex flex-col">
-        <div class="mask mask-light"></div>
-        <div class="swipe-reveal"></div>
-        <div class="w-full flex-1 flex flex-col p-8 md:py-7 md:px-12 lg:py-10 lg:px-14 xl:py-11 xl:px-18">
-          <div class="flex-1 flex flex-col">
-            <nuxt/>
-          </div>
-        </div>
+  <div class="overflow-hidden min-h-screen flex flex-col">
+    <div class="mask mask-light"></div>
+    <div class="swipe-reveal"></div>
+    <div class="w-full flex-1 flex flex-col p-8 md:py-7 md:px-12 lg:py-10 lg:px-14 xl:py-11 xl:px-18">
+      <div class="flex-1 flex flex-col">
+        <nuxt/>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { Power4, TweenMax } from "gsap";
 import Logo from '~/components/Logo.vue';
 
 import { createNamespacedHelpers } from "vuex";

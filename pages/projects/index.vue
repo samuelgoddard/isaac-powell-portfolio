@@ -107,7 +107,7 @@ export default {
       projects: [{
         name: 'Paul Smith',
         id: 'i',
-        uri: '/projects/example',
+        uri: '/projects/paul-smith',
         date: '2018',
         meta: 'Fashion House',
         image: '/images/paul-smith.jpg',
@@ -117,7 +117,7 @@ export default {
       },{
         name: 'CPMG Architects',
         id: 'ii',
-        uri: '/projects/example',
+        uri: '/projects/cpmg-architects',
         date: '2017',
         meta: 'Architects',
         image: '/images/cpmg.jpg',
@@ -127,7 +127,7 @@ export default {
       },{
         name: 'Hive Inc',
         id: 'iii',
-        uri: '/projects/example',
+        uri: '/projects/hive-inc',
         date: '2017',
         meta: 'Data Visualisations',
         image: '/images/hive.jpg',
@@ -137,7 +137,7 @@ export default {
       },{
         name: 'Mat Hayward',
         id: 'iv',
-        uri: '/projects/example',
+        uri: '/projects/mat-hayward',
         date: '2017',
         meta: 'Photography Portfolio',
         image: '/images/yale.jpg',

@@ -22,7 +22,7 @@
                   <seperator width="w-8" class="inline-block align-middle mr-2" />
                 </div>
                 <div class="overflow-hidden">
-                  <span class="font-serif text-11 uppercase inline-block align-middle meta">iii</span>
+                  <span class="font-serif text-11 uppercase inline-block align-middle meta">ii</span>
                 </div>
               </div>
             </div>
@@ -34,14 +34,14 @@
                   text-60 md:text-127 lg:text-138 xl:text-142 pb-3 md:pb-6
                   font-serif"
                 >
-                  Paul<br/>Smith
+                  CPMG<br/>Architects.
                 </h1>
               </span>
             </span>
 
             <span class="overflow-hidden relative block mb-12 md:mb-20 lg:mb-24">
               <span class="content relative block">
-                <p class="text-15 md:text-20 lg:text-22 xl:text-26">Paul Smith is one of Britain’s most iconic fashion brands, with stores located in cities all over the world. To help make their online e-commerce experience as slick as the physical, I’ve been working with their internal team to tackle key user experience challenges and establish and evolve their existing visual language. </p>
+                <p class="text-15 md:text-20 lg:text-22 xl:text-26">As one of Nottingham’s most established Architects, CPMG’s website did not best represent their core values or prestigious reputation. So I designed them a new one, with a user-centered approach and clean, minimal aesthetic that would really show off their work in full technicolour.</p>
               </span>
             </span>
 
@@ -56,17 +56,17 @@
 
                   <ul class="text-12 md:text-15 lg:text-19 xl:text-24">
                     <li>+ Visual Design</li>
-                    <li>+ Consultancy</li>
+                    <li>+ Art Direction</li>
                   </ul>
                 </div>
                 <div class="w-1/2 md:w-1/3 mb-8">
                   <h2 class="leading-none tracking-tight
                   text-16 md:text-19 lg:text-22 xl:text-28
                   font-serif font-medium mb-2 md:mb-4">
-                    Years
+                    Year
                   </h2>
 
-                  <p class="text-12 md:text-15 lg:text-19 xl:text-24">2017 — 2019</p>
+                  <p class="text-12 md:text-15 lg:text-19 xl:text-24">2018</p>
                 </div>
                 <div class="w-1/2 md:w-1/3">
                   <h2 class="leading-none tracking-tight
@@ -75,7 +75,7 @@
                     Link
                   </h2>
 
-                  <a href="www.paulsmith.co.uk" rel="noopener" target="_blank" class="fancy-link text-12 md:text-15 lg:text-19 xl:text-24">www.paulsmith.co.uk</a>
+                  <a href="www.cpmg-architects.com" rel="noopener" target="_blank" class="fancy-link text-12 md:text-15 lg:text-19 xl:text-24">www.cpmg-architects.com</a>
                 </div>
               </div>
             </div>
@@ -89,9 +89,9 @@
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
         <div class="w-full md:w-4/6 xl:w-3/5 mx-auto py-0 md:py-12">
           <picture class="w-full">
-            <source srcset="/images/paul-smith/ps-perspective@2x.jpg"
+            <source srcset="/images/cpmg/cpmg-header@2x.jpg"
                     media="(min-width: 768px)">
-            <img src="/images/paul-smith/ps-perspective.jpg" class="w-full"/>
+            <img src="/images/cpmg/cpmg-header.jpg" class="w-full"/>
           </picture>
         </div>
       </div>
@@ -103,23 +103,25 @@
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
         <div class="w-full md:w-4/6 xl:w-3/5 mx-auto py-0 md:py-12">
           <picture class="w-full">
-            <source srcset="/images/paul-smith/ps-home@2x.jpg"
+            <source srcset="/images/cpmg/cpmg-quote@2x.jpg"
                     media="(min-width: 768px)">
-            <img src="/images/paul-smith/ps-home@2x.jpg" class="w-full"/>
+            <img src="/images/cpmg/cpmg-quote@2x.jpg" class="w-full"/>
           </picture>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="block" v-observe-visibility="(isVisible, entry) => updateText(isVisible, entry, 'Campaigns')">
+  <div class="block" v-observe-visibility="(isVisible, entry) => updateText(isVisible, entry, 'User Journeys')">
   </div>
 
   <section class="pb-18 md:pb-24 lg:pb-32 md:flex md:items-center">
     <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
       <div class="w-full">
         <div class="w-4/5">
-          <p class="text-15 md:text-20 lg:text-22 xl:text-26">Campaigns and Stories are central to the Paul Smith website – not only as routes to new product lines, but also as a means for people to explore wider context for the variety of collaborations that the company are involved in. As each story is different, I created a range of flexible, modular layouts that could be put together in various ways to serve the content.</p>
+          <p class="text-15 md:text-20 lg:text-22 xl:text-26 mb-10">To start, I conducted a series of staff interviews — accross different seniority levels to establish balance — to get a feel for different perspectives, what they each saw as opportunities for improvement, and how we could better present the various facets of their work.</p>
+
+          <p class="text-15 md:text-20 lg:text-22 xl:text-26">From there, outcomes were discussed, prioritised and streamlined, resulting in a series of sitemaps, user journeys and wireframes. These items would define the problems we were trying to solve, and outline the targets we would aim for.</p>
         </div>
       </div>
     </div>
@@ -130,25 +132,49 @@
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
         <div class="w-full md:w-4/6 xl:w-3/5 mx-auto py-0 md:py-12">
           <picture class="w-full">
-            <source srcset="/images/paul-smith/ps-stories@2x.jpg"
+            <source srcset="/images/cpmg/cpmg-team@2x.jpg"
                     media="(min-width: 768px)">
-            <img src="/images/paul-smith/ps-stories.jpg" class="w-full"/>
+            <img src="/images/cpmg/cpmg-team.jpg" class="w-full"/>
           </picture>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="block" v-observe-visibility="(isVisible, entry) => updateText(isVisible, entry, 'Challenges')">
+  <div class="bleed--all pb-12 md:pb-24 lg:pb-32">
+    <div class="bg-grey-light">
+      <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
+        <div class="w-full md:w-4/6 xl:w-3/5 mx-auto px-12 py-12 md:py-12 overflow-hidden">
+          <div class="flex flex-wrap -mx-6">
+            <picture class="w-1/3 px-6">
+              <source srcset="/images/cpmg/cpmg-mob-a@2x.jpg"
+                      media="(min-width: 768px)">
+              <img src="/images/cpmg/cpmg-mob-a.jpg" class="w-full"/>
+            </picture>
+            <picture class="w-1/3 px-6">
+              <source srcset="/images/cpmg/cpmg-mob-b@2x.jpg"
+                      media="(min-width: 768px)">
+              <img src="/images/cpmg/cpmg-mob-b.jpg" class="w-full"/>
+            </picture>
+            <picture class="w-1/3 px-6">
+              <source srcset="/images/cpmg/cpmg-mob-c@2x.jpg"
+                      media="(min-width: 768px)">
+              <img src="/images/cpmg/cpmg-mob-c.jpg" class="w-full"/>
+            </picture>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block" v-observe-visibility="(isVisible, entry) => updateText(isVisible, entry, 'Minimalism')">
   </div>
 
   <section class="pb-18 md:pb-24 lg:pb-32 md:flex md:items-center">
     <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
       <div class="w-full">
         <div class="w-4/5">
-          <p class="text-15 md:text-20 lg:text-22 xl:text-26 mb-10">One of the broader challenges that we tackled revolved around product filters, and how we could enhance the usability of this function to make searching through large categories a breeze. Our initial research found that the filter implementation was difficult to use, only allowed for one-by-one category selection and generally went against intuition.</p>
-
-          <p class="text-15 md:text-20 lg:text-22 xl:text-26">To improve this, we introduced the ability to select multiple options across several categories without needing to refresh the page, along with a new visual approach, meaning people could filter everything they needed in one swift action.</p>
+          <p class="text-15 md:text-20 lg:text-22 xl:text-26 mb-10">Visually we had a blank slate, so plenty of creative freedom was afforded. Mindful that anything I presented needed to introduce new functionality, serve CPMG’s ethos, and would become a significant cornerstone of the brand identity going forwards, I let the photography do the talking, supported by bold typography, plenty of negative space and minimalist detail.</p>
         </div>
       </div>
     </div>
@@ -159,29 +185,31 @@
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
         <div class="w-full md:w-4/6 xl:w-3/5 mx-auto py-0 md:py-12">
           <picture class="w-full mb-8 md:mb-12 block">
-            <source srcset="/images/paul-smith/ps-filters-a@2x.jpg"
+            <source srcset="/images/cpmg/cpmg-careers@2x.jpg"
                     media="(min-width: 768px)">
-            <img src="/images/paul-smith/ps-filters-a.jpg" class="w-full"/>
+            <img src="/images/cpmg/cpmg-careers.jpg" class="w-full"/>
           </picture>
 
           <picture class="w-full">
-            <source srcset="/images/paul-smith/ps-filters-b@2x.jpg"
+            <source srcset="/images/cpmg/cpmg-project@2x.jpg"
                     media="(min-width: 768px)">
-            <img src="/images/paul-smith/ps-filters-b.jpg" class="w-full"/>
+            <img src="/images/cpmg/cpmg-project.jpg" class="w-full"/>
           </picture>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="block" v-observe-visibility="(isVisible, entry) => updateText(isVisible, entry, 'Unifying')">
+  <div class="block" v-observe-visibility="(isVisible, entry) => updateText(isVisible, entry, 'Animation')">
   </div>
 
   <section class="pb-18 md:pb-24 lg:pb-32 md:flex md:items-center">
     <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
       <div class="w-full">
         <div class="w-4/5">
-          <p class="text-15 md:text-20 lg:text-22 xl:text-26">As part of unifying and introducing new visual elements, the team also asked me to create an icon pack for use across the website and email campaigns.</p>
+          <p class="text-15 md:text-20 lg:text-22 xl:text-26 mb-10">To develop the design aesthetic further, a series of subtle animation guidelines were created. This included specific on-load motion rules, generative scroll interactions and  image treatments when moused over and dragged.</p>
+
+          <p class="text-15 md:text-20 lg:text-22 xl:text-26">As a result, we were able to enhance the presentation of the work without distracting  from the core purpose, as all good motion design should.</p>
         </div>
       </div>
     </div>
@@ -192,50 +220,9 @@
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
         <div class="w-full md:w-4/6 xl:w-3/5 mx-auto py-0 md:py-12">
           <picture class="w-full">
-            <source srcset="/images/paul-smith/ps-icons@2x.jpg"
+            <source srcset="/images/cpmg/cpmg-wireframe@2x.jpg"
                     media="(min-width: 768px)">
-            <img src="/images/paul-smith/ps-icons.jpg" class="w-full"/>
-          </picture>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <section class="pb-18 md:pb-24 lg:pb-32 md:flex md:items-center">
-    <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
-      <div class="w-full">
-        <div class="w-4/5">
-          <p class="text-15 md:text-20 lg:text-22 xl:text-26">There’s more exciting improvements and developments in the pipeline, many of which I can’t show right now, but here’s some additional interface elements which I’ve created with the team as part of the ongoing evolution of the visual language. </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="block" v-observe-visibility="(isVisible, entry) => updateText(isVisible, entry, 'Evolution')">
-  </div>
-
-  <div class="bleed--all pb-8 md:pb-12">
-    <div class="bg-grey-light">
-      <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
-        <div class="w-full md:w-4/6 xl:w-3/5 mx-auto py-0 md:py-12">
-          <picture class="w-full">
-            <source srcset="/images/paul-smith/ps-modules@2x.jpg"
-                    media="(min-width: 768px)">
-            <img src="/images/paul-smith/ps-modules.jpg" class="w-full"/>
-          </picture>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="bleed--all pb-16 md:pb-24 lg:pb-32">
-    <div class="bg-grey-light">
-      <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
-        <div class="w-full md:w-4/6 xl:w-3/5 mx-auto py-0 md:py-12">
-          <picture class="w-full">
-            <source srcset="/images/paul-smith/ps-newsletter@2x.jpg"
-                    media="(min-width: 768px)">
-            <img src="/images/paul-smith/ps-newsletter@2x.jpg" class="w-full"/>
+            <img src="/images/cpmg/cpmg-wireframe.jpg" class="w-full"/>
           </picture>
         </div>
       </div>
@@ -256,8 +243,8 @@
               fancy-link
               pb-3 md:pb-4
               text-32 md:text-43 lg:text-52 xl:text-60 h-trim"
-            to="/projects/mat-hayward">
-              Mat Hayward
+            to="/projects/hive-inc">
+              Hive Inc
           </nuxt-link>
         </div>
       </div>
