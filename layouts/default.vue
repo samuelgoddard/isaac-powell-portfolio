@@ -29,7 +29,7 @@ export default {
   head() {
     return {
       bodyAttrs: {
-        class: this.dark ? 'dark transition-color' : 'light transition-color'
+        class: this.dark ? 'dark no-js' : 'light no-js'
       }
     }
   },
@@ -41,6 +41,7 @@ export default {
         document.getElementById("outer-container").style.minHeight = window.innerHeight + 'auto';  
       }
     })
+    document.body.className = document.body.className.replace("no-js","");
   }
 }
 </script>

@@ -18,7 +18,7 @@ p {
 }
 
 .dark {
-  @apply text-white;
+  @apply text-white bg-grey-dark;
 
   .seperator {
     @apply border-white;
@@ -144,9 +144,7 @@ p {
   position: fixed;
   top: 0;
   right: 0;
-  bottom: 0;
   left: 0;
-  height: 100vh;
   width: 100%;
 
   @apply bg-white z-50;
@@ -156,6 +154,17 @@ p {
 .wf-active {
   .swipe-reveal {
     height: 100vh;
+  }
+
+  .mask {
+    bottom: 0;
+    height: 100vh;
+  }
+}
+
+.wf-active {
+  .dark {
+    background-color: transparent !important;
   }
 }
 
