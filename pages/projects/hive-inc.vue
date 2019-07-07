@@ -12,7 +12,7 @@
   <div class="block" v-observe-visibility="(isVisible, entry) => updateText(isVisible, entry, 'Introduction')">
   </div>
 
-    <section class="pb-24 pt-24 md:pt-32 xl:pt-40 md:flex md:items-center">
+    <section class="pb-24 pt-24 md:pt-32 lg:pt-40 md:flex md:items-center">
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
         <div class="w-full">
           <div class="w-4/5 xl:w-4/5">
@@ -49,12 +49,12 @@
               <div class="flex flex-wrap mb-12 md:mb-20 lg:mb-24 content">
                 <div class="w-1/2 md:w-1/3">
                   <h2 class="leading-none tracking-tight
-                  text-16 md:text-19 lg:text-22 xl:text-28
-                  font-serif font-medium mb-2 md:mb-4">
+                  text-18 md:text-19 lg:text-22 xl:text-28
+                  font-serif font-medium mt-4 md:mt-0 mb-2 md:mb-4">
                     Services
                   </h2>
 
-                  <ul class="text-12 md:text-15 lg:text-19 xl:text-24">
+                  <ul class="text-14 md:text-15 lg:text-19 xl:text-24">
                     <li>+ Visual Design</li>
                     <li>+ User Experience</li>
                     <li>+ Prototyping</li>
@@ -64,12 +64,12 @@
                 </div>
                 <div class="w-1/2 md:w-1/3 mb-8">
                   <h2 class="leading-none tracking-tight
-                  text-16 md:text-19 lg:text-22 xl:text-28
-                  font-serif font-medium mb-2 md:mb-4">
+                  text-18 md:text-19 lg:text-22 xl:text-28
+                  font-serif font-medium mt-4 md:mt-0 mb-2 md:mb-4">
                     Year
                   </h2>
 
-                  <p class="text-12 md:text-15 lg:text-19 xl:text-24">2017</p>
+                  <p class="text-14 md:text-15 lg:text-19 xl:text-24">2017</p>
                 </div>
               </div>
             </div>
@@ -81,11 +81,11 @@
   <div class="bleed--all pb-18 md:pb-24 lg:pb-32">
     <div class="bg-grey-light">
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
-        <div class="w-full md:w-4/6 xl:w-3/5 mx-auto py-0 md:py-12">
+        <div class="w-full md:w-4/6 xl:w-4/6 mx-auto py-0 md:py-18">
           <picture class="w-full">
             <source srcset="/images/hive/hive-perspective@2x.jpg"
                     media="(min-width: 768px)">
-            <img src="/images/hive/hive-perspective.jpg" class="w-full"/>
+            <img src="/images/hive/hive-perspective.jpg" alt="Hive Perspective Design" class="w-full"/>
           </picture>
         </div>
       </div>
@@ -108,22 +108,22 @@
   <div class="bleed--all pb-12 ">
     <div class="bg-grey-light">
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
-        <div class="w-full md:w-4/6 xl:w-3/5 mx-auto px-12 py-12 md:py-12 overflow-hidden">
+        <div class="w-full md:w-4/6 xl:w-4/6 mx-auto px-12 py-18 md:py-24 overflow-hidden">
           <div class="flex flex-wrap -mx-6">
             <picture class="w-1/3 px-6">
               <source srcset="/images/hive/hive-graph@2x.jpg"
                       media="(min-width: 768px)">
-              <img src="/images/hive/hive-graph.jpg" class="w-full"/>
+              <img src="/images/hive/hive-graph.jpg" alt="Hive Graph Design" class="w-full"/>
             </picture>
             <picture class="w-1/3 px-6">
               <source srcset="/images/hive/hive-uniques@2x.jpg"
                       media="(min-width: 768px)">
-              <img src="/images/hive/hive-uniques.jpg" class="w-full"/>
+              <img src="/images/hive/hive-uniques.jpg" alt="Hive Uniques Design" class="w-full"/>
             </picture>
             <picture class="w-1/3 px-6">
               <source srcset="/images/hive/hive-bounce@2x.jpg"
                       media="(min-width: 768px)">
-              <img src="/images/hive/hive-bounce.jpg" class="w-full"/>
+              <img src="/images/hive/hive-bounce.jpg" alt="Hive Bounce Design" class="w-full"/>
             </picture>
           </div>
         </div>
@@ -134,22 +134,22 @@
   <div class="bleed--all pb-12">
     <div class="bg-grey-light">
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
-        <div class="w-full md:w-4/6 xl:w-3/5 mx-auto px-12 py-12 md:py-12 overflow-hidden">
+        <div class="w-full md:w-4/6 xl:w-4/6 mx-auto px-12 py-18 md:py-24 overflow-hidden">
           <div class="flex flex-wrap -mx-6">
             <picture class="w-1/3 px-6">
               <source srcset="/images/hive/hive-loading@2x.jpg"
                       media="(min-width: 768px)">
-              <img src="/images/hive/hive-loading.jpg" class="w-full"/>
+              <img src="/images/hive/hive-loading.jpg" alt="Hive Loading Design"  class="w-full"/>
             </picture>
             <picture class="w-1/3 px-6">
               <source srcset="/images/hive/hive-login@2x.jpg"
                       media="(min-width: 768px)">
-              <img src="/images/hive/hive-login.jpg" class="w-full"/>
+              <img src="/images/hive/hive-login.jpg" alt="Hive Login Design"  class="w-full"/>
             </picture>
             <picture class="w-1/3 px-6">
               <source srcset="/images/hive/hive-notifications@2x.jpg"
                       media="(min-width: 768px)">
-              <img src="/images/hive/hive-notifications.jpg" class="w-full"/>
+              <img src="/images/hive/hive-notifications.jpg" alt="Hive Notifications Design"  class="w-full"/>
             </picture>
           </div>
         </div>
@@ -160,22 +160,22 @@
   <div class="bleed--all pb-12 md:pb-24 lg:pb-32">
     <div class="bg-grey-light">
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
-        <div class="w-full md:w-4/6 xl:w-3/5 mx-auto px-12 py-12 md:py-12 overflow-hidden">
+        <div class="w-full md:w-4/6 xl:w-4/6 mx-auto px-12 py-18 md:py-24 overflow-hidden">
           <div class="flex flex-wrap -mx-6">
             <picture class="w-1/3 px-6">
               <source srcset="/images/hive/hive-nav@2x.jpg"
                       media="(min-width: 768px)">
-              <img src="/images/hive/hive-nav.jpg" class="w-full"/>
+              <img src="/images/hive/hive-nav.jpg" alt="Hive Nav Design" class="w-full"/>
             </picture>
             <picture class="w-1/3 px-6">
               <source srcset="/images/hive/hive-settings@2x.jpg"
                       media="(min-width: 768px)">
-              <img src="/images/hive/hive-settings.jpg" class="w-full"/>
+              <img src="/images/hive/hive-settings.jpg" alt="Hive Settings Design" class="w-full"/>
             </picture>
             <picture class="w-1/3 px-6">
               <source srcset="/images/hive/hive-funnels@2x.jpg"
                       media="(min-width: 768px)">
-              <img src="/images/hive/hive-funnels.jpg" class="w-full"/>
+              <img src="/images/hive/hive-funnels.jpg" alt="Hive Funnels Design" class="w-full"/>
             </picture>
           </div>
         </div>
@@ -199,11 +199,11 @@
   <div class="bleed--all pb-16 md:pb-24 lg:pb-32">
     <div class="bg-grey-light">
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
-        <div class="w-full md:w-4/6 xl:w-3/5 mx-auto py-0 md:py-12">
+        <div class="w-full md:w-4/6 xl:w-4/6 mx-auto py-0 md:py-18">
           <picture class="w-full mb-8 md:mb-12 block">
             <source srcset="/images/hive/hive-proto@2x.jpg"
                     media="(min-width: 768px)">
-            <img src="/images/hive/hive-proto.jpg" class="w-full"/>
+            <img src="/images/hive/hive-proto.jpg" alt="Hive Prototype"  class="w-full"/>
           </picture>
         </div>
       </div>
@@ -213,7 +213,7 @@
   <span class="overflow-hidden relative block mb-12 md:mb-16">
     <span class="content relative block">
       <section class="pb-16 md:pb-20 lg:pb-28 md:flex md:items-center">
-        <div class="w-full xl:w-2/3 mx-auto">
+        <div class="w-full mx-auto">
           <div class="w-full">
             <div class="w-full text-right">
               <span class="text-19 lg:text-30 xl:text-40 tracking-widest uppercase block text-grey">Next</span>
@@ -244,5 +244,10 @@ import ProjectBase from '~/pages/projects/base.vue';
 
 export default {
   extends: ProjectBase,
+  head () {
+    return {
+      title: 'IJP - Hive Inc',
+    }
+  },
 }
 </script>

@@ -12,7 +12,7 @@
   <div class="block" v-observe-visibility="(isVisible, entry) => updateText(isVisible, entry, 'Introduction')">
   </div>
 
-    <section class="pb-24 pt-24 md:pt-32 xl:pt-40 md:flex md:items-center">
+    <section class="pb-24 pt-24 md:pt-32 lg:pt-40 md:flex md:items-center">
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
         <div class="w-full">
           <div class="w-4/5 xl:w-4/5">
@@ -49,33 +49,33 @@
               <div class="flex flex-wrap mb-12 md:mb-20 lg:mb-24 content">
                 <div class="w-1/2 md:w-1/3">
                   <h2 class="leading-none tracking-tight
-                  text-16 md:text-19 lg:text-22 xl:text-28
-                  font-serif font-medium mb-2 md:mb-4">
+                  text-18 md:text-19 lg:text-22 xl:text-28
+                  font-serif font-medium mt-4 md:mt-0 mb-2 md:mb-4">
                     Services
                   </h2>
 
-                  <ul class="text-12 md:text-15 lg:text-19 xl:text-24">
+                  <ul class="text-14 md:text-15 lg:text-19 xl:text-24">
                     <li>+ Visual Design</li>
                     <li>+ Art Direction</li>
                   </ul>
                 </div>
                 <div class="w-1/2 md:w-1/3 mb-8">
                   <h2 class="leading-none tracking-tight
-                  text-16 md:text-19 lg:text-22 xl:text-28
-                  font-serif font-medium mb-2 md:mb-4">
+                  text-18 md:text-19 lg:text-22 xl:text-28
+                  font-serif font-medium mt-4 md:mt-0 mb-2 md:mb-4">
                     Year
                   </h2>
 
-                  <p class="text-12 md:text-15 lg:text-19 xl:text-24">2018</p>
+                  <p class="text-14 md:text-15 lg:text-19 xl:text-24">2018</p>
                 </div>
                 <div class="w-1/2 md:w-1/3">
                   <h2 class="leading-none tracking-tight
-                  text-16 md:text-19 lg:text-22 xl:text-28
-                  font-serif font-medium mb-2 md:mb-4">
+                  text-18 md:text-19 lg:text-22 xl:text-28
+                  font-serif font-medium mt-4 md:mt-0 mb-2 md:mb-4">
                     Link
                   </h2>
 
-                  <a href="www.cpmg-architects.com" rel="noopener" target="_blank" class="fancy-link text-12 md:text-15 lg:text-19 xl:text-24">www.cpmg-architects.com</a>
+                  <a href="www.cpmg-architects.com" rel="noopener" target="_blank" class="fancy-link text-14 md:text-15 lg:text-19 xl:text-24">www.cpmg-architects.com</a>
                 </div>
               </div>
             </div>
@@ -87,11 +87,11 @@
   <div class="bleed--all pb-8 md:pb-12">
     <div class="bg-grey-light">
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
-        <div class="w-full md:w-4/6 xl:w-3/5 mx-auto py-0 md:py-12">
+        <div class="w-full md:w-4/6 xl:w-4/6 mx-auto py-0 md:py-18">
           <picture class="w-full">
             <source srcset="/images/cpmg/cpmg-header@2x.jpg"
                     media="(min-width: 768px)">
-            <img src="/images/cpmg/cpmg-header.jpg" class="w-full"/>
+            <img src="/images/cpmg/cpmg-header.jpg" alt="CPMG Header Design" class="w-full"/>
           </picture>
         </div>
       </div>
@@ -101,11 +101,11 @@
   <div class="bleed--all pb-16 md:pb-24 lg:pb-32">
     <div class="bg-grey-light">
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
-        <div class="w-full md:w-4/6 xl:w-3/5 mx-auto py-0 md:py-12">
+        <div class="w-full md:w-4/6 xl:w-4/6 mx-auto py-0 md:py-18">
           <picture class="w-full">
             <source srcset="/images/cpmg/cpmg-quote@2x.jpg"
                     media="(min-width: 768px)">
-            <img src="/images/cpmg/cpmg-quote@2x.jpg" class="w-full"/>
+            <img src="/images/cpmg/cpmg-quote@2x.jpg" alt="CPMG Quote Design" class="w-full"/>
           </picture>
         </div>
       </div>
@@ -130,11 +130,11 @@
   <div class="bleed--all pb-16 md:pb-24 lg:pb-32">
     <div class="bg-grey-light">
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
-        <div class="w-full md:w-4/6 xl:w-3/5 mx-auto py-0 md:py-12">
+        <div class="w-full md:w-4/6 xl:w-4/6 mx-auto py-0 md:py-18">
           <picture class="w-full">
             <source srcset="/images/cpmg/cpmg-team@2x.jpg"
                     media="(min-width: 768px)">
-            <img src="/images/cpmg/cpmg-team.jpg" class="w-full"/>
+            <img src="/images/cpmg/cpmg-team.jpg" alt="CPMG Team Design" class="w-full"/>
           </picture>
         </div>
       </div>
@@ -144,22 +144,22 @@
   <div class="bleed--all pb-12 md:pb-24 lg:pb-32">
     <div class="bg-grey-light">
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
-        <div class="w-full md:w-4/6 xl:w-3/5 mx-auto px-12 py-12 md:py-12 overflow-hidden">
+        <div class="w-full md:w-4/6 xl:w-4/6 mx-auto px-12 py-18 md:py-24 overflow-hidden">
           <div class="flex flex-wrap -mx-6">
             <picture class="w-1/3 px-6">
               <source srcset="/images/cpmg/cpmg-mob-a@2x.jpg"
                       media="(min-width: 768px)">
-              <img src="/images/cpmg/cpmg-mob-a.jpg" class="w-full"/>
+              <img src="/images/cpmg/cpmg-mob-a.jpg" alt="CPMG Mobile Design Version 1" class="w-full"/>
             </picture>
             <picture class="w-1/3 px-6">
               <source srcset="/images/cpmg/cpmg-mob-b@2x.jpg"
                       media="(min-width: 768px)">
-              <img src="/images/cpmg/cpmg-mob-b.jpg" class="w-full"/>
+              <img src="/images/cpmg/cpmg-mob-b.jpg" alt="CPMG Mobile Design Version 2" class="w-full"/>
             </picture>
             <picture class="w-1/3 px-6">
               <source srcset="/images/cpmg/cpmg-mob-c@2x.jpg"
                       media="(min-width: 768px)">
-              <img src="/images/cpmg/cpmg-mob-c.jpg" class="w-full"/>
+              <img src="/images/cpmg/cpmg-mob-c.jpg" alt="CPMG Mobile Design Version 3" class="w-full"/>
             </picture>
           </div>
         </div>
@@ -183,17 +183,17 @@
   <div class="bleed--all pb-16 md:pb-24 lg:pb-32">
     <div class="bg-grey-light">
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
-        <div class="w-full md:w-4/6 xl:w-3/5 mx-auto py-0 md:py-12">
+        <div class="w-full md:w-4/6 xl:w-4/6 mx-auto py-0 md:py-18">
           <picture class="w-full mb-8 md:mb-12 block">
             <source srcset="/images/cpmg/cpmg-careers@2x.jpg"
                     media="(min-width: 768px)">
-            <img src="/images/cpmg/cpmg-careers.jpg" class="w-full"/>
+            <img src="/images/cpmg/cpmg-careers.jpg" alt="CPMG Careers Design" class="w-full"/>
           </picture>
 
           <picture class="w-full">
             <source srcset="/images/cpmg/cpmg-project@2x.jpg"
                     media="(min-width: 768px)">
-            <img src="/images/cpmg/cpmg-project.jpg" class="w-full"/>
+            <img src="/images/cpmg/cpmg-project.jpg" alt="CPMG Project Design" class="w-full"/>
           </picture>
         </div>
       </div>
@@ -218,11 +218,11 @@
   <div class="bleed--all pb-16 md:pb-24 lg:pb-32">
     <div class="bg-grey-light">
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
-        <div class="w-full md:w-4/6 xl:w-3/5 mx-auto py-0 md:py-12">
+        <div class="w-full md:w-4/6 xl:w-4/6 mx-auto py-0 md:py-18">
           <picture class="w-full">
             <source srcset="/images/cpmg/cpmg-wireframe@2x.jpg"
                     media="(min-width: 768px)">
-            <img src="/images/cpmg/cpmg-wireframe.jpg" class="w-full"/>
+            <img src="/images/cpmg/cpmg-wireframe.jpg" alt="CPMG Wireframes" class="w-full"/>
           </picture>
         </div>
       </div>
@@ -232,7 +232,7 @@
   <span class="overflow-hidden relative block mb-12 md:mb-16">
     <span class="content relative block">
       <section class="pb-16 md:pb-20 lg:pb-28 md:flex md:items-center">
-        <div class="w-full xl:w-2/3 mx-auto">
+        <div class="w-full mx-auto">
           <div class="w-full">
             <div class="w-full text-right">
               <span class="text-19 lg:text-30 xl:text-40 tracking-widest uppercase block text-grey">Next</span>
@@ -263,5 +263,10 @@ import ProjectBase from '~/pages/projects/base.vue';
 
 export default {
   extends: ProjectBase,
+  head () {
+    return {
+      title: 'IJP - CPMG Architects',
+    }
+  },
 }
 </script>

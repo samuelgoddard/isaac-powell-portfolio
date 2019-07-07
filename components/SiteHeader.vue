@@ -26,7 +26,7 @@
             </div>
             <div class="hidden md:inline-block mx-auto">
               <div class="relative z-10 overflow-hidden">
-                <div class="top-mask relative h-7 overflow-hidden" @mouseover="showTime" @mouseleave="hideTime">
+                <div class="top-mask relative h-6 overflow-hidden" @mouseover="showTime" @mouseleave="hideTime">
                   <div class="time cursor-text">
                     <span class="ml-auto leading-snug tracking-tight font-serif block text-center time-1">Nottingham, England</span>
                     <span class="ml-auto leading-snug tracking-tight font-serif block text-center time-2 pt-2">{{ currentTime }}</span>
@@ -120,6 +120,7 @@ export default {
   mounted() {
     TweenMax.set(document.querySelectorAll('.time-1'), { autoAlpha: 1, rotation: 0 });
     TweenMax.set(document.querySelectorAll('.time-2'), { autoAlpha: 0, rotation: -10 });
+    TweenMax.set(document.querySelectorAll('.fancy-link.current'), { css: { backgroundSize: '0% 100%' }});
   },
   created() {
     this.currentTime = moment().format('LTS');

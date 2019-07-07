@@ -13,7 +13,7 @@
         <div class="z-0 absolute top-0 bottom-0 right-0 bg-cover bg-center image-box opacity-0">
         </div>
 
-        <img src="/images/portfolio-loop.gif" alt="Portfolio" class="z-50 opacity-0 left-0 fixed image-box-carousel" />
+        <img src="/images/portfolio-loop.gif" alt="Portfolio Work" class="z-50 opacity-0 left-0 fixed image-box-carousel" />
         <div ref="heading" class="home-heading">
           <parallax-container class="overflow-hidden">
             <parallax-element :parallaxStrength="20" :type="'depth'">
@@ -34,7 +34,7 @@
                   <span class="overflow-hidden relative block">
                     <span class="headline-reveal headline-reveal-2 block relative">
                       <span class="opaque">Nottingham, UK.</span>
-                      <span class="work">
+                      <span class="work inline-block">
                         <mq-layout mq="md+" class="inline-block">
                           <nuxt-link v-on:mouseover.native="hover" v-on:mousemove.native="mouseMove" v-on:mouseout.native="mouseOut" to="/projects" class="underline">See my work</nuxt-link>
                         </mq-layout>
@@ -47,7 +47,13 @@
 
                   <span class="overflow-hidden relative block">
                     <span class="headline-reveal headline-reveal-3 block relative">
-                      <a v-on:mouseover="hoverLine" v-on:mouseout="mouseOutLine" href="mailto:isaac@40000ft.co.uk" class="underline line">drop me a line</a><span class="opaque"> if you want to work</span>
+                      <mq-layout mq="md+" class="inline-block">
+                        <a v-on:mouseover="hoverLine" v-on:mouseout="mouseOutLine" href="mailto:isaac@40000ft.co.uk" class="underline line">drop me a line</a>
+                      </mq-layout>
+                      <mq-layout mq="sm" class="inline-block">
+                        <a href="mailto:isaac@40000ft.co.uk" class="underline line">drop me a line</a>
+                      </mq-layout>
+                      <span class="opaque"> if you want to work</span>
                     </span>
                   </span>
 
@@ -90,6 +96,8 @@ export default {
 
       tl.to(document.querySelector('.image-box-carousel'), 1.5, { y: 250, autoAlpha: 0, delay: 0.5, rotation: -20, force3D: true, ease: Power4.easeInOut });
 
+      tl.to(document.querySelectorAll('.fancy-link'), 0.5, { css: { backgroundSize: '0% 100%' }, ease: Power4.easeInOut });
+
       tl.staggerTo(document.querySelectorAll('.headline-reveal'), 3.5, { y: 200, autoAlpha: 0, delay: 0.5, rotation: -20, force3D: true, ease: Power4.easeInOut, onComplete: done }, -0.15);
     },
   },
@@ -102,6 +110,11 @@ export default {
     return {
       showImages: false,
       image: "/images/isaac.jpg"
+    }
+  },
+  head () {
+    return {
+      title: 'IJP - Freelance Digital Designer',
     }
   },
   methods : {
@@ -145,6 +158,8 @@ export default {
     tl.to(document.querySelector('.image-box'), 4, { scale: 1, autoAlpha:1,  delay: 0.05, ease: Power4.easeInOut });
 
     tl.to(document.querySelector('.seperator-reveal'), 3.5, { scaleX: 1, autoAlpha: 1, transformOrigin:"left center", delay: 0, ease: Power4.easeInOut });
+
+    tl.to(document.querySelectorAll('.fancy-link.current'), 2.75, { css: { backgroundSize: '100% 100%' }, delay: 0.5, ease: Power4.easeInOut });
 
     tl.staggerTo(document.querySelectorAll('.top-mask'), 3, { y: 0, autoAlpha: 1, rotation: 0, delay: 0.85, force3D: true, ease: Power4.easeInOut }, 0.17);
     tl.staggerTo(document.querySelectorAll('.bottom-mask'), 3, { y: 0, autoAlpha: 1, rotation: 0, delay: 0.85, force3D: true, ease: Power4.easeInOut }, 0.17);

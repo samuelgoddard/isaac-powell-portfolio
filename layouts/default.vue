@@ -1,8 +1,8 @@
-<template>
-  <div class="overflow-hidden min-h-screen flex flex-col">
+<template class="max-h-screen">
+  <div class="overflow-hidden flex flex-col outer-container min-h-screen" id="outer-container">
     <div class="mask mask-light"></div>
     <div class="swipe-reveal"></div>
-    <div class="w-full flex-1 flex flex-col p-8 md:py-7 md:px-12 lg:py-10 lg:px-14 xl:py-11 xl:px-18">
+    <div class="w-full flex-1 flex flex-col p-8 md:py-7 md:px-12 lg:py-10 lg:pb-12 lg:px-14 xl:py-12 xl:px-18">
       <div class="flex-1 flex flex-col">
         <nuxt/>
       </div>
@@ -33,5 +33,14 @@ export default {
       }
     }
   },
+  mounted () {
+    this.$nextTick(() => {
+      if (this.$mq === 'sm') {
+        document.getElementById("outer-container").style.minHeight = window.innerHeight + 'px';  
+      } else {
+        document.getElementById("outer-container").style.minHeight = window.innerHeight + 'auto';  
+      }
+    })
+  }
 }
 </script>

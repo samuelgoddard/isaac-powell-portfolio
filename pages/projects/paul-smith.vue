@@ -12,7 +12,7 @@
   <div class="block" v-observe-visibility="(isVisible, entry) => updateText(isVisible, entry, 'Introduction')">
   </div>
 
-    <section class="pb-24 pt-24 md:pt-32 xl:pt-40 md:flex md:items-center">
+    <section class="pb-24 pt-24 md:pt-32 lg:pt-40 md:flex md:items-center">
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
         <div class="w-full">
           <div class="w-4/5 xl:w-4/5">
@@ -49,33 +49,33 @@
               <div class="flex flex-wrap mb-12 md:mb-20 lg:mb-24 content">
                 <div class="w-1/2 md:w-1/3">
                   <h2 class="leading-none tracking-tight
-                  text-16 md:text-19 lg:text-22 xl:text-28
-                  font-serif font-medium mb-2 md:mb-4">
+                  text-18 md:text-19 lg:text-22 xl:text-28
+                  font-serif font-medium mt-4 md:mt-0 mb-2 md:mb-4">
                     Services
                   </h2>
 
-                  <ul class="text-12 md:text-15 lg:text-19 xl:text-24">
+                  <ul class="text-14 md:text-15 lg:text-19 xl:text-24">
                     <li>+ Visual Design</li>
                     <li>+ Consultancy</li>
                   </ul>
                 </div>
                 <div class="w-1/2 md:w-1/3 mb-8">
                   <h2 class="leading-none tracking-tight
-                  text-16 md:text-19 lg:text-22 xl:text-28
-                  font-serif font-medium mb-2 md:mb-4">
+                  text-18 md:text-19 lg:text-22 xl:text-28
+                  font-serif font-medium mt-4 md:mt-0 mb-2 md:mb-4">
                     Years
                   </h2>
 
-                  <p class="text-12 md:text-15 lg:text-19 xl:text-24">2017 — 2019</p>
+                  <p class="text-14 md:text-15 lg:text-19 xl:text-24">2017 — 2019</p>
                 </div>
                 <div class="w-1/2 md:w-1/3">
                   <h2 class="leading-none tracking-tight
-                  text-16 md:text-19 lg:text-22 xl:text-28
-                  font-serif font-medium mb-2 md:mb-4">
+                  text-18 md:text-19 lg:text-22 xl:text-28
+                  font-serif font-medium mt-4 md:mt-0 mb-2 md:mb-4">
                     Link
                   </h2>
 
-                  <a href="www.paulsmith.co.uk" rel="noopener" target="_blank" class="fancy-link text-12 md:text-15 lg:text-19 xl:text-24">www.paulsmith.co.uk</a>
+                  <a href="www.paulsmith.co.uk" rel="noopener" target="_blank" class="fancy-link text-14 md:text-15 lg:text-19 xl:text-24">www.paulsmith.co.uk</a>
                 </div>
               </div>
             </div>
@@ -87,11 +87,11 @@
   <div class="bleed--all pb-8 md:pb-12">
     <div class="bg-grey-light">
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
-        <div class="w-full md:w-4/6 xl:w-3/5 mx-auto py-0 md:py-12">
+        <div class="w-full md:w-4/6 xl:w-4/6 mx-auto py-0 md:py-18">
           <picture class="w-full">
             <source srcset="/images/paul-smith/ps-perspective@2x.jpg"
                     media="(min-width: 768px)">
-            <img src="/images/paul-smith/ps-perspective.jpg" class="w-full"/>
+            <img src="/images/paul-smith/ps-perspective.jpg" alt="Paul Smith Perspective Design" class="w-full"/>
           </picture>
         </div>
       </div>
@@ -101,11 +101,11 @@
   <div class="bleed--all pb-16 md:pb-24 lg:pb-32">
     <div class="bg-grey-light">
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
-        <div class="w-full md:w-4/6 xl:w-3/5 mx-auto py-0 md:py-12">
+        <div class="w-full md:w-4/6 xl:w-4/6 mx-auto py-0 md:py-18">
           <picture class="w-full">
             <source srcset="/images/paul-smith/ps-home@2x.jpg"
                     media="(min-width: 768px)">
-            <img src="/images/paul-smith/ps-home@2x.jpg" class="w-full"/>
+            <img src="/images/paul-smith/ps-home@2x.jpg" alt="Paul Smith Home Design" class="w-full"/>
           </picture>
         </div>
       </div>
@@ -128,11 +128,11 @@
   <div class="bleed--all pb-16 md:pb-24 lg:pb-32">
     <div class="bg-grey-light">
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
-        <div class="w-full md:w-4/6 xl:w-3/5 mx-auto py-0 md:py-12">
+        <div class="w-full md:w-4/6 xl:w-4/6 mx-auto py-0 md:py-18">
           <picture class="w-full">
             <source srcset="/images/paul-smith/ps-stories@2x.jpg"
                     media="(min-width: 768px)">
-            <img src="/images/paul-smith/ps-stories.jpg" class="w-full"/>
+            <img src="/images/paul-smith/ps-stories.jpg" alt="Paul Smith Stories Design" class="w-full"/>
           </picture>
         </div>
       </div>
@@ -157,17 +157,17 @@
   <div class="bleed--all pb-16 md:pb-24 lg:pb-32">
     <div class="bg-grey-light">
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
-        <div class="w-full md:w-4/6 xl:w-3/5 mx-auto py-0 md:py-12">
+        <div class="w-full md:w-4/6 xl:w-4/6 mx-auto py-0 md:py-18">
           <picture class="w-full mb-8 md:mb-12 block">
             <source srcset="/images/paul-smith/ps-filters-a@2x.jpg"
                     media="(min-width: 768px)">
-            <img src="/images/paul-smith/ps-filters-a.jpg" class="w-full"/>
+            <img src="/images/paul-smith/ps-filters-a.jpg" alt="Paul Smith Filters Design" class="w-full"/>
           </picture>
 
           <picture class="w-full">
             <source srcset="/images/paul-smith/ps-filters-b@2x.jpg"
                     media="(min-width: 768px)">
-            <img src="/images/paul-smith/ps-filters-b.jpg" class="w-full"/>
+            <img src="/images/paul-smith/ps-filters-b.jpg" alt="Paul Smith Filters Design Version 2" class="w-full"/>
           </picture>
         </div>
       </div>
@@ -190,11 +190,11 @@
   <div class="bleed--all pb-16 md:pb-24 lg:pb-32">
     <div class="bg-grey-light">
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
-        <div class="w-full md:w-4/6 xl:w-3/5 mx-auto py-0 md:py-12">
+        <div class="w-full md:w-4/6 xl:w-4/6 mx-auto py-0 md:py-18">
           <picture class="w-full">
             <source srcset="/images/paul-smith/ps-icons@2x.jpg"
                     media="(min-width: 768px)">
-            <img src="/images/paul-smith/ps-icons.jpg" class="w-full"/>
+            <img src="/images/paul-smith/ps-icons.jpg" alt="Paul Smith Icons Design"  class="w-full"/>
           </picture>
         </div>
       </div>
@@ -217,11 +217,11 @@
   <div class="bleed--all pb-8 md:pb-12">
     <div class="bg-grey-light">
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
-        <div class="w-full md:w-4/6 xl:w-3/5 mx-auto py-0 md:py-12">
+        <div class="w-full md:w-4/6 xl:w-4/6 mx-auto py-0 md:py-18">
           <picture class="w-full">
             <source srcset="/images/paul-smith/ps-modules@2x.jpg"
                     media="(min-width: 768px)">
-            <img src="/images/paul-smith/ps-modules.jpg" class="w-full"/>
+            <img src="/images/paul-smith/ps-modules.jpg" alt="Paul Smith Modules Design"  class="w-full"/>
           </picture>
         </div>
       </div>
@@ -231,11 +231,11 @@
   <div class="bleed--all pb-16 md:pb-24 lg:pb-32">
     <div class="bg-grey-light">
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
-        <div class="w-full md:w-4/6 xl:w-3/5 mx-auto py-0 md:py-12">
+        <div class="w-full md:w-4/6 xl:w-4/6 mx-auto py-0 md:py-18">
           <picture class="w-full">
             <source srcset="/images/paul-smith/ps-newsletter@2x.jpg"
                     media="(min-width: 768px)">
-            <img src="/images/paul-smith/ps-newsletter@2x.jpg" class="w-full"/>
+            <img src="/images/paul-smith/ps-newsletter@2x.jpg" alt="Paul Smith Newsletters Design"  class="w-full"/>
           </picture>
         </div>
       </div>
@@ -245,7 +245,7 @@
   <span class="overflow-hidden relative block mb-12 md:mb-16">
     <span class="content relative block">
       <section class="pb-16 md:pb-20 lg:pb-28 md:flex md:items-center">
-        <div class="w-full xl:w-2/3 mx-auto">
+        <div class="w-full mx-auto">
           <div class="w-full">
             <div class="w-full text-right">
               <span class="text-19 lg:text-30 xl:text-40 tracking-widest uppercase block text-grey">Next</span>
@@ -276,5 +276,10 @@ import ProjectBase from '~/pages/projects/base.vue';
 
 export default {
   extends: ProjectBase,
+  head () {
+    return {
+      title: 'IJP - Paul Smith',
+    }
+  },
 }
 </script>

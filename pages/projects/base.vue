@@ -23,6 +23,7 @@ export default {
       tl.staggerTo(document.querySelectorAll('.content'), 4, { y: 405, autoAlpha: 0, delay: 0.5, rotation: -20, force3D: true, ease: Power4.easeInOut, onComplete: done }, -0.2);
       tl.to(document.querySelectorAll('.meta'), 2, { y: 25, autoAlpha: 1, delay: 0.25, rotation: -5, force3D: true, ease: Power4.easeInOut });
       tl.to(document.querySelector('.seperator-reveal'), 2.65, { scaleX: 0, autoAlpha: 1, transformOrigin:"left center", delay: 0, ease: Power4.easeInOut });
+      tl.staggerTo(document.querySelectorAll('.bleed--all'), 2.5, { autoAlpha: 0, delay: 0, rotation: 0, force3D: true, ease: Power4.easeInOut }, 0.25);
     },
   },
   components: {
@@ -49,11 +50,14 @@ export default {
     tl.set(document.querySelectorAll('.bottom-mask'), { y: 100, autoAlpha: 0, rotation: 5 });
     tl.set(document.querySelectorAll('.content'), { y: 275, autoAlpha: 1, rotation: -3 });
     tl.set(document.querySelectorAll('.meta'), { y: 20, autoAlpha: 1, rotation: -5 });
+    tl.set(document.querySelectorAll('.bleed--all'), { autoAlpha: 0 } );
 
     tl.staggerTo(document.querySelectorAll('.top-mask'), 3, { y: 0, autoAlpha: 1, rotation: 0, delay: 1, force3D: true, ease: Power4.easeInOut }, 0.15);
     tl.staggerTo(document.querySelectorAll('.bottom-mask'), 3, { y: 0, autoAlpha: 1, rotation: 0, delay: 1, force3D: true, ease: Power4.easeInOut }, 0.15);
     tl.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1.85, { scaleX: 1, autoAlpha: 1, transformOrigin:"left center", delay: 1.85, ease: Power4.easeInOut }, 0.3);
     tl.staggerTo(document.querySelectorAll('.content'), 4, { y: 0, autoAlpha: 1, delay: 0, rotation: 0, force3D: true, ease: Power4.easeInOut }, 0.25);
+    
+    tl.staggerTo(document.querySelectorAll('.bleed--all'), 2.25, { autoAlpha: 1, delay: 0, rotation: 0, force3D: true, ease: Power4.easeInOut }, 0.25);
 
     tl.to(document.querySelector('.seperator-reveal'), 3.5, { scaleX: 1, autoAlpha: 1, transformOrigin:"left center", delay: 0, ease: Power4.easeInOut });
     tl.to(document.querySelectorAll('.meta'), 3, { y: 0, autoAlpha: 1, delay: 0.4, rotation: 0, force3D: true, ease: Power4.easeInOut });

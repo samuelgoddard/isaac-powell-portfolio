@@ -23,7 +23,7 @@
       </div>
       <div class="w-full max-w-2xl md:flex-1 overflow-hidden">
         <parallax-container class="overflow-hidden">
-        <parallax-element :parallaxStrength="15" :type="'depth'">
+        <parallax-element :parallaxStrength="10" :type="'depth'">
         <nav class="w-full overflow-y-auto overflow-x-hidden max-h-128 block hide-scrollbars md:p-8" @mouseover="isHovering = true" @mouseout="isHovering = false">
           <ul>
             <li
@@ -45,7 +45,7 @@
                       font-serif
                       text-white
                       py-3 xs:py-5 md:py-5 lg:py-6
-                      text-24 xs:text-32 md:text-38 lg:text-47 xl:text-52 h-trim
+                      text-20 xs:text-28 md:text-38 lg:text-47 xl:text-52 h-trim
                       transition"
                     :class="[{ 'opacity-25' : isHovering }, { 'opacity-100' :project.id == selected }]"
                     :to="project.uri">
@@ -88,6 +88,8 @@ export default {
       tl.staggerTo(document.querySelectorAll('.nav-reveal'), 2.5, { y: 200, autoAlpha: 0, delay: 0.5, rotation: -20, force3D: true, ease: Power4.easeInOut }, -0.15);
 
       tl.to(document.querySelector('.project-image-cover'), 1.5, { y: 400, autoAlpha: 0, rotation: -12, delay: 1, force3D: true, ease: Power4.easeInOut});
+
+      tl.to(document.querySelectorAll('.fancy-link'), 0.5, { css: { backgroundSize: '0% 100%' }, ease: Power4.easeInOut });
 
       tl.to(document.querySelectorAll('.swipe-reveal'), 2.5, { scaleY: 0, transformOrigin:"center bottom", delay: 1.65, force3D: true, ease: Power4.easeInOut, onComplete: done });
     },
@@ -157,6 +159,11 @@ export default {
       }]
     }
   },
+  head () {
+    return {
+      title: 'IJP - Project List',
+    }
+  },
   methods : {
     projectImageUpdate (id, index, imageUrl, width, height) {
       this.selected = id;
@@ -191,6 +198,7 @@ export default {
     tl.staggerTo(document.querySelectorAll('.top-mask'), 3, { y: 0, autoAlpha: 1, rotation: 0, delay: 1.25, force3D: true, ease: Power4.easeInOut }, 0.15);
     tl.staggerTo(document.querySelectorAll('.bottom-mask'), 3, { y: 0, autoAlpha: 1, rotation: 0, delay: 1.25, force3D: true, ease: Power4.easeInOut }, 0.15);
 
+    tl.to(document.querySelectorAll('.fancy-link.current'), 2.75, { css: { backgroundSize: '100% 100%' }, delay: 1, ease: Power4.easeInOut });
 
     tl.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1.85, { scaleX: 1, autoAlpha: 1, transformOrigin:"left center", delay: 1.85, ease: Power4.easeInOut }, 0.3);
 

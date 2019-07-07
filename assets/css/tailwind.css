@@ -71,6 +71,7 @@ p {
   height: 0;
   opacity: 0;
   transform: scale(0.75);
+  border: 1px solid white;
 
   width: 260px;
   height: 320px;
@@ -163,27 +164,27 @@ p {
   text-orientation: mixed;
 }
 
-/* .fancy-link {
+.fancy-link {
   text-decoration: none;
   background-repeat: no-repeat;
   background-image: linear-gradient(180deg,transparent 97%, #000 0);
-  background-size: 0 100%;
+  background-size: 0% 100%;
   transition: background-size 0.35s ease-in-out;
 
   &:hover {
     background-size: 100% 100%;
   }
-} */
+}
 
-/* .current {
-  background-size: 100% 100%;
-} */
+ .current {
+  background-size: 0% 100%;
+} 
 
-/* .dark {
+ .dark {
   .fancy-link {
     background-image: linear-gradient(180deg,transparent 97%, #FFF 0);
   }
-} */
+}
 
 ::selection {
   background: #000;

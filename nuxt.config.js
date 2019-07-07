@@ -8,7 +8,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'Isaac Powell',
+    title: 'IJP',
     htmlAttrs: {
       lang: 'en',
     },
