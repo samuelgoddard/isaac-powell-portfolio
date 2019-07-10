@@ -257,6 +257,7 @@
                   no-underline
                   fancy-link
                   fancy-link--permanent
+                  fancy-link--permanent
                   pb-3 md:pb-4
                   text-32 md:text-43 lg:text-52 xl:text-60 h-trim"
                 to="/projects/cpmg-architects">
