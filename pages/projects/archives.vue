@@ -11,7 +11,7 @@
     <section class="pb-24 pt-24 md:pt-32 lg:pt-40 md:flex md:items-center">
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
         <div class="w-full">
-          <div class="w-4/5 xl:w-4/5">
+          <div class="w-4/5 md:w-8/12 xl:w-7/12">
             <div class="pb-18 md:pb-28 xl:pb-52">
               <div class="overflow-hidden relative block flex">
                 <div class="seperator-reveal relative block">
@@ -27,7 +27,7 @@
               <span class="content relative block">
                 <h1 class="
                   leading-none tracking-titleSmall md:tracking-title
-                  text-60 md:text-127 lg:text-138 xl:text-142 pb-3 md:pb-6
+                  text-60 md:text-127 lg:text-138 xl:text-226 pb-3 md:pb-6
                   font-serif"
                 >
                   Archives.
@@ -111,20 +111,6 @@ import ProjectBase from '~/pages/projects/base.vue';
 
 export default {
   extends: ProjectBase,
-  transition: {
-    mode: 'out-in',
-    css: false,
-    leave(el, done) {
-      tl.staggerTo(document.querySelectorAll('.top-mask'), 3, { y: -100, autoAlpha: 0, rotation: -5, force3D: true, ease: Power4.easeInOut }, -0.17);
-      tl.staggerTo(document.querySelectorAll('.bottom-mask'), 3, { y: 100, autoAlpha: 0, rotation: 5, force3D: true, ease: Power4.easeInOut }, -0.17);
-      tl.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1.5, { scaleX: 0, autoAlpha: 1, transformOrigin:"left center", delay: 0, ease: Power4.easeInOut }, -0.25);
-      tl.staggerTo(document.querySelectorAll('.content'), 4, { y: 405, autoAlpha: 0, delay: 0.5, rotation: -20, force3D: true, ease: Power4.easeInOut, onComplete: done }, -0.2);
-      tl.to(document.querySelectorAll('.meta'), 2, { y: 25, autoAlpha: 1, delay: 0.25, rotation: -5, force3D: true, ease: Power4.easeInOut });
-      tl.to(document.querySelector('.seperator-reveal'), 2.65, { scaleX: 0, autoAlpha: 1, transformOrigin:"left center", delay: 0, ease: Power4.easeInOut });
-      tl.staggerTo(document.querySelectorAll('.bleed--all'), 2.5, { autoAlpha: 0, delay: 0, rotation: 0, force3D: true, ease: Power4.easeInOut }, 0.25);
-      tl.staggerTo(document.querySelectorAll('.content-image'), 4, { y: 500, autoAlpha: 0, delay: 0.5, rotation: -20, force3D: true, ease: Power4.easeInOut, onComplete: done }, -0.2);
-    },
-  },
   data () {
     return {
       projects: [{
@@ -165,10 +151,6 @@ export default {
         image: '/images/archives/archive-whisk'
       }]
     }
-  },
-  mounted () {
-    tl.set(document.querySelectorAll('.content-image'), { y: 500, autoAlpha: 1, rotation: -3 });
-    tl.staggerTo(document.querySelectorAll('.content-image'), 4, { y: 0, autoAlpha: 1, delay: 0, rotation: 0, force3D: true, ease: Power4.easeInOut }, 0.25);
   },
   head () {
     return {

@@ -20,10 +20,10 @@ export default {
       tl.staggerTo(document.querySelectorAll('.top-mask'), 3, { y: -100, autoAlpha: 0, rotation: -5, delay: -1, force3D: true, ease: Power4.easeInOut }, -0.17);
       tl.staggerTo(document.querySelectorAll('.bottom-mask'), 3, { y: 100, autoAlpha: 0, rotation: 5, delay: -1, force3D: true, ease: Power4.easeInOut }, -0.17);
       tl.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1.5, { scaleX: 0, autoAlpha: 1, transformOrigin:"left center", delay: -1, ease: Power4.easeInOut }, -0.25);
-      tl.staggerTo(document.querySelectorAll('.content'), 4, { y: 450, autoAlpha: 0, delay: -1, rotation: -20, force3D: true, ease: Power4.easeInOut }, -0.2);
+      tl.staggerTo(document.querySelectorAll('.content'), 4, { y: 450, autoAlpha: 0, delay: -0.65, rotation: -20, force3D: true, ease: Power4.easeInOut }, -0.2);
       tl.to(document.querySelectorAll('.meta'), 2, { y: 25, autoAlpha: 1, delay: -1, rotation: -5, force3D: true, ease: Power4.easeInOut });
-      tl.to(document.querySelector('.seperator-reveal'), 2.65, { scaleX: 0, autoAlpha: 1, transformOrigin:"left center", delay: -1, ease: Power4.easeInOut, onComplete: done });
-      tl.staggerTo(document.querySelectorAll('.bleed--all'), 2.5, { autoAlpha: 0, delay: 0, rotation: 0, force3D: true, ease: Power4.easeInOut }, 0.25);
+      tl.to(document.querySelector('.seperator-reveal'), 2.65, { scaleX: 0, autoAlpha: 1, transformOrigin:"left center", delay: -0.5, ease: Power4.easeInOut, onComplete: done });
+      tl.to(document.querySelectorAll('.bleed--all'), 2.5, { autoAlpha: 0, delay: -1, rotation: 0, force3D: true, ease: Power4.easeInOut });
     },
   },
   components: {
