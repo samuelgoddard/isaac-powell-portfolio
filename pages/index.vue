@@ -4,7 +4,7 @@
   <section class="flex-1 flex items-center justify-center relative">
     <div class="hidden md:block w-20 mr-auto">
       <span class="seperator-reveal block relative">
-        <seperator width="w-20" class="hidden md:block mr-auto" />
+        <seperator width="w-10 lg:w-20 xl:w-32" class="hidden md:block mr-auto" />
       </span>
     </div>
     <div class="w-full md:w-4/5 md:mr-auto md:-ml-20 relative">
@@ -15,15 +15,16 @@
 
         <img src="/images/portfolio-loop.gif" alt="Portfolio Work" class="z-50 opacity-0 left-0 fixed image-box-carousel" />
         <div ref="heading" class="home-heading">
+
           <parallax-container class="overflow-hidden">
-            <parallax-element :parallaxStrength="20" :type="'depth'">
+            <parallax-element :parallaxStrength="10" :type="'depth'">
                 <h1 class="
                   relative z-10
-                  leading-snug tracking-tight
-                  text-16 xs:text-20 md:text-31 lg:text-32 xl:text-42
+                  leading-snug tracking-tight leading
+                  text-16 xs:text-19 md:text-31 lg:text-33 xl:text-42
                   font-serif
                   text-center
-                  py-16 md:p-8 lg:p-24"
+                  py-12 md:p-5 lg:p-24"
                 >
                   <span class="overflow-hidden relative block">
                     <span class="headline-reveal headline-reveal-1 block relative">
@@ -36,10 +37,10 @@
                       <span class="opaque">Nottingham, UK.</span>
                       <span class="work inline-block">
                         <mq-layout mq="md+" class="inline-block">
-                          <nuxt-link v-on:mouseover.native="hover" v-on:mousemove.native="mouseMove" v-on:mouseout.native="mouseOut" to="/projects" class="underline">See my work</nuxt-link>
+                          <nuxt-link v-on:mouseover.native="hover" v-on:mousemove.native="mouseMove" v-on:mouseout.native="mouseOut" to="/projects" class="fancy-link fancy-link--permanent">See some work</nuxt-link>
                         </mq-layout>
                         <mq-layout mq="sm" class="inline-block">
-                          <nuxt-link to="/projects" class="underline">See my work</nuxt-link>
+                          <nuxt-link to="/projects" class="no-underline fancy-link fancy-link--permanent">See some work</nuxt-link>
                         </mq-layout>
                       </span><span class="opaque">, or</span>
                     </span>
@@ -48,10 +49,10 @@
                   <span class="overflow-hidden relative block">
                     <span class="headline-reveal headline-reveal-3 block relative">
                       <mq-layout mq="md+" class="inline-block">
-                        <a v-on:mouseover="hoverLine" v-on:mouseout="mouseOutLine" href="mailto:isaac@40000ft.co.uk" class="underline line">drop me a line</a>
+                        <a v-on:mouseover="hoverLine" v-on:mouseout="mouseOutLine" href="mailto:isaac@40000ft.co.uk" class="line fancy-link fancy-link--permanent">send me an email</a>
                       </mq-layout>
                       <mq-layout mq="sm" class="inline-block">
-                        <a href="mailto:isaac@40000ft.co.uk" class="underline line">drop me a line</a>
+                        <a href="mailto:isaac@40000ft.co.uk" class="line fancy-link fancy-link--permanent">send me an email</a>
                       </mq-layout>
                       <span class="opaque"> if you want to work</span>
                     </span>
@@ -86,19 +87,19 @@ export default {
     mode: 'out-in',
     css: false,
     leave(el, done) {
-      tl.staggerTo(document.querySelectorAll('.top-mask'), 3, { y: -100, autoAlpha: 0, rotation: -5, force3D: true, ease: Power4.easeInOut }, -0.17);
-      tl.staggerTo(document.querySelectorAll('.bottom-mask'), 3, { y: 100, autoAlpha: 0, rotation: 5, force3D: true, ease: Power4.easeInOut }, -0.17);
+      tl.staggerTo(document.querySelectorAll('.top-mask'), 3, { y: -100, autoAlpha: 0, delay: -0.5, rotation: -5, force3D: true, ease: Power4.easeInOut }, -0.17);
+      tl.staggerTo(document.querySelectorAll('.bottom-mask'), 3, { y: 100, autoAlpha: 0, delay: -0.5, rotation: 5, force3D: true, ease: Power4.easeInOut }, -0.17);
 
       tl.to(document.querySelector('.seperator-reveal'), 2.65, { scaleX: 0, autoAlpha: 1, transformOrigin:"left center", delay: 0, ease: Power4.easeInOut });
-      tl.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1.5, { scaleX: 0, autoAlpha: 1, transformOrigin:"left center", delay: 0, ease: Power4.easeInOut }, -0.25);
+      tl.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 2, { scaleX: 0, autoAlpha: 1, transformOrigin:"left center", delay: 0, ease: Power4.easeInOut, onComplete: done }, -0.25);
 
-      tl.to(document.querySelectorAll('.image-box'), 1.5, { scale: 0.8, autoAlpha:0, delay: 0.5, force3D: true, ease: Power4.easeInOut });
+      tl.to(document.querySelectorAll('.image-box'), 1.5, { autoAlpha:0, delay: 0, force3D: true, ease: Power4.easeInOut });
 
-      tl.to(document.querySelector('.image-box-carousel'), 1.5, { y: 250, autoAlpha: 0, delay: 0.5, rotation: -20, force3D: true, ease: Power4.easeInOut });
+      tl.to(document.querySelector('.image-box-carousel'), 2, { y: 0, autoAlpha: 0, delay: -0.25, rotation: 0, force3D: true, ease: Power4.easeInOut });
 
       tl.to(document.querySelectorAll('.fancy-link'), 0.5, { css: { backgroundSize: '0% 100%' }, ease: Power4.easeInOut });
 
-      tl.staggerTo(document.querySelectorAll('.headline-reveal'), 3.5, { y: 200, autoAlpha: 0, delay: 0.5, rotation: -20, force3D: true, ease: Power4.easeInOut, onComplete: done }, -0.15);
+      tl.staggerTo(document.querySelectorAll('.headline-reveal'), 3.5, { y: 200, autoAlpha: 0, delay: -0.5, rotation: -20, force3D: true, ease: Power4.easeInOut }, -0.15);
     },
   },
   components: {
@@ -114,7 +115,7 @@ export default {
   },
   head () {
     return {
-      title: 'IJP - Freelance Digital Designer',
+      title: 'IJP - Freelance Digital Designer'
     }
   },
   methods : {
@@ -155,16 +156,17 @@ export default {
     tl.set(document.querySelectorAll('.top-mask'), { y: -100, autoAlpha: 0, rotation: -5 });
     tl.set(document.querySelectorAll('.bottom-mask'), { y: 100, autoAlpha: 0, rotation: 5 });
 
-    tl.to(document.querySelector('.image-box'), 4, { scale: 1, autoAlpha:1,  delay: 0.05, ease: Power4.easeInOut });
 
-    tl.to(document.querySelector('.seperator-reveal'), 3.5, { scaleX: 1, autoAlpha: 1, transformOrigin:"left center", delay: 0, ease: Power4.easeInOut });
+    tl.to(document.querySelector('.image-box'), 5.5, { scale: 1, autoAlpha:0.9, delay: -2, ease: Power4.easeInOut });
 
-    tl.to(document.querySelectorAll('.fancy-link.current'), 2.75, { css: { backgroundSize: '100% 100%' }, delay: 0.5, ease: Power4.easeInOut });
+    tl.to(document.querySelector('.seperator-reveal'), 3.5, { scaleX: 1, autoAlpha: 1, transformOrigin:"left center", delay: -0.5, ease: Power4.easeInOut });
 
-    tl.staggerTo(document.querySelectorAll('.top-mask'), 3, { y: 0, autoAlpha: 1, rotation: 0, delay: 0.85, force3D: true, ease: Power4.easeInOut }, 0.17);
-    tl.staggerTo(document.querySelectorAll('.bottom-mask'), 3, { y: 0, autoAlpha: 1, rotation: 0, delay: 0.85, force3D: true, ease: Power4.easeInOut }, 0.17);
-    tl.staggerTo(document.querySelectorAll('.headline-reveal'), 2.85, { y: 0, autoAlpha: 1, delay: 0.4, rotation: 0, force3D: true, ease: Power4.easeInOut }, 0.15);
-    tl.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1.85, { scaleX: 1, autoAlpha: 1, transformOrigin:"left center", delay: 1, ease: Power4.easeInOut }, 0.3);
+    tl.to(document.querySelectorAll('.fancy-link.current'), 2.75, { css: { backgroundSize: '100% 100%' }, delay: 0, ease: Power4.easeInOut });
+
+    tl.staggerTo(document.querySelectorAll('.top-mask'), 3, { y: 0, autoAlpha: 1, rotation: 0, delay: -1.3, force3D: true, ease: Power4.easeInOut }, 0.17);
+    tl.staggerTo(document.querySelectorAll('.bottom-mask'), 3, { y: 0, autoAlpha: 1, rotation: 0, delay: -1.3, force3D: true, ease: Power4.easeInOut }, 0.17);
+    tl.staggerTo(document.querySelectorAll('.headline-reveal'), 2.85, { y: 0, autoAlpha: 1, delay: -1.4, rotation: 0, force3D: true, ease: Power4.easeInOut }, 0.15);
+    tl.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1.85, { scaleX: 1, autoAlpha: 1, transformOrigin:"left center", delay: -0.5, ease: Power4.easeInOut }, 0.3);
   }
 }
 </script>

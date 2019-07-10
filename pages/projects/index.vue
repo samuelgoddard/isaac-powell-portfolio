@@ -4,7 +4,7 @@
   <section class="flex-1 flex items-center justify-center">
     <div class="flex flex-wrap w-full">
       <div class="w-full md:w-1/2">
-        <div class="hidden md:flex md:flex-wrap items-center justify-center h-full">
+        <div class="hidden lg:flex md:flex-wrap items-center justify-center h-full">
           <div class="relative z-10 overflow-hidden">
             <div
               class="opacity-0 max-w-full relative project-image-cover"
@@ -24,12 +24,10 @@
       <div class="w-full max-w-2xl md:flex-1 overflow-hidden">
         <parallax-container class="overflow-hidden">
         <parallax-element :parallaxStrength="10" :type="'depth'">
-        <nav class="w-full overflow-y-auto overflow-x-hidden max-h-128 block hide-scrollbars md:p-8" @mouseover="isHovering = true" @mouseout="isHovering = false">
-          <ul>
-            <li
+        <nav class="w-full overflow-y-auto overflow-x-hidden block md:p-2" @mouseout="isHovering = false">
+            <div
               v-for="(project, index) in projects"
               :key="project.name"
-              ref="numbers"
               class="flex flex-wrap items-center"
             >
               <span class="overflow-hidden relative block">
@@ -44,19 +42,18 @@
                       leading-none tracking-tight
                       font-serif
                       text-white
-                      py-3 xs:py-5 md:py-5 lg:py-6
-                      text-20 xs:text-28 md:text-38 lg:text-47 xl:text-52 h-trim
+                      py-5 lg:py-6
+                      text-32 md:text-38 lg:text-47 xl:text-52 h-trim
                       transition"
                     :class="[{ 'opacity-25' : isHovering }, { 'opacity-100' :project.id == selected }]"
                     :to="project.uri">
                     <span class="font-sans text-8 uppercase w-8 mb-1 tracking-wide">{{ project.id }}</span>
                     <span :class="project.id">{{ project.name }}</span>
-                    <span class="w-full text-8 lg:w-auto ml-8 lg:ml-3 lg:mb-1 mt-3 sm:mt-5 lg:mt-0 tracking-widest leading-snug font-sans uppercase block">{{ project.meta }}</span>
+                    <span class="w-full text-8 lg:w-auto ml-8 lg:ml-3 lg:mb-0 mt-2 tracking-wide leading-snug font-sans uppercase block">{{ project.meta }}</span>
                   </nuxt-link>
                 </span>
               </span>
-            </li>
-          </ul>
+            </div>
         </nav>
         </parallax-element>
         </parallax-container>
@@ -80,18 +77,18 @@ export default {
     mode: 'out-in',
     css: false,
     leave(el, done) {
-      tl.staggerTo(document.querySelectorAll('.top-mask'), 3, { y: -100, autoAlpha: 0, rotation: -5, force3D: true, ease: Power4.easeInOut }, -0.17);
-      tl.staggerTo(document.querySelectorAll('.bottom-mask'), 3, { y: 100, autoAlpha: 0, rotation: 5, force3D: true, ease: Power4.easeInOut }, -0.17);
+      tl.staggerTo(document.querySelectorAll('.top-mask'), 3, { y: -100, autoAlpha: 0, delay: 0, rotation: -5, force3D: true, ease: Power4.easeInOut, onComplete: done }, -0.17);
+      tl.staggerTo(document.querySelectorAll('.bottom-mask'), 3, { y: 100, autoAlpha: 0, delay: 0, rotation: 5, force3D: true, ease: Power4.easeInOut }, -0.17);
 
       tl.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1.5, { scaleX: 0, autoAlpha: 1, transformOrigin:"left center", delay: 0, ease: Power4.easeInOut }, -0.25);
 
-      tl.staggerTo(document.querySelectorAll('.nav-reveal'), 2.5, { y: 200, autoAlpha: 0, delay: 0.5, rotation: -20, force3D: true, ease: Power4.easeInOut }, -0.15);
+      tl.staggerTo(document.querySelectorAll('.nav-reveal'), 2.5, { y: 200, autoAlpha: 0, delay: -0.5, rotation: -20, force3D: true, ease: Power4.easeInOut, }, -0.15);
 
-      tl.to(document.querySelector('.project-image-cover'), 1.5, { y: 400, autoAlpha: 0, rotation: -12, delay: 1, force3D: true, ease: Power4.easeInOut});
+      tl.to(document.querySelector('.project-image-cover'), 2, { y: 0, autoAlpha: 0, rotation: 0, delay: -0.25, force3D: true, ease: Power4.easeInOut});
 
       tl.to(document.querySelectorAll('.fancy-link'), 0.5, { css: { backgroundSize: '0% 100%' }, ease: Power4.easeInOut });
 
-      tl.to(document.querySelectorAll('.swipe-reveal'), 2.5, { scaleY: 0, transformOrigin:"center bottom", delay: 1.65, force3D: true, ease: Power4.easeInOut, onComplete: done });
+      tl.to(document.querySelectorAll('.swipe-reveal'), 2.1, { scaleY: 0, transformOrigin:"center bottom", delay: 1.1, force3D: true, ease: Power4.easeInOut });
     },
   },
   components: {
@@ -112,49 +109,49 @@ export default {
         uri: '/projects/paul-smith',
         date: '2018',
         meta: 'Fashion House',
-        image: '/images/paul-smith.jpg',
-        width: 400,
-        height: 240,
+        image: '/images/nav/ps-hover@2x.jpg',
+        width: 325,
+        height: 325,
         current: false
       },{
-        name: 'CPMG Architects',
+        name: 'CPMG',
         id: 'ii',
         uri: '/projects/cpmg-architects',
         date: '2017',
         meta: 'Architects',
-        image: '/images/cpmg.jpg',
-        width: 260,
-        height: 320,
+        image: '/images/nav/cpmg-case@2x.jpg',
+        width: 325,
+        height: 325,
         current: false
       },{
         name: 'Hive Inc',
         id: 'iii',
         uri: '/projects/hive-inc',
         date: '2017',
-        meta: 'Data Visualisations',
-        image: '/images/hive.jpg',
-        width: 350,
-        height: 300,
+        meta: 'Data App',
+        image: '/images/nav/hive-hover@2x.jpg',
+        width: 475,
+        height: 275,
         current: false
       },{
         name: 'Mat Hayward',
         id: 'iv',
         uri: '/projects/mat-hayward',
         date: '2017',
-        meta: 'Photography Portfolio',
-        image: '/images/yale.jpg',
-        width: 410,
-        height: 250,
+        meta: 'Photographer',
+        image: '/images/nav/mat-hover@2x.jpg',
+        width: 475,
+        height: 275,
         current: false
       },{
-        name: 'Misc',
+        name: 'Archives',
         id: 'v',
-        uri: '/projects/misc',
+        uri: '/projects/archives',
         date: '2016',
         meta: 'Personal',
-        image: '/images/misc.jpg',
-        width: 260,
-        height: 320,
+        image: '/images/nav/misc-hover@2x.jpg',
+        width: 475,
+        height: 275,
         current: false
       }]
     }
@@ -167,21 +164,22 @@ export default {
   methods : {
     projectImageUpdate (id, index, imageUrl, width, height) {
       this.selected = id;
+      this.isHovering = true;
 
-      tl.to('.project-image-cover', 0.35, {
+      tl.to('.project-image-cover', 0, {
         ease: Power4.easeOut,
         force3D: true,
         autoAlpha: 1,
         width: this.$mq == '2xl' ? width * 1.3 : width * 1.1,
         height: this.$mq == '2xl' ? height * 1.3 : height  * 1.1});
 
-      tl.to('.project-image', 0.35, { ease: Power4.easeOut, autoAlpha: 0 });
+      tl.to('.project-image', 0.1, { ease: Power4.easeOut, autoAlpha: 0 });
       let current = '.project-image-' + id;
-      tl.to(current, 0.35, { ease: Power4.easeOut, autoAlpha: 1 });
+      tl.to(current, 0.05, { ease: Power4.easeOut, autoAlpha: 1 });
     },
     projectImageReset () {
       // tl.to(this.$refs.projectimageCover, 0.66, { ease: Power4.easeOut, autoAlpha: 0 });
-      tl.to('.project-image', 0.35, { ease: Power4.easeOut, autoAlpha: 0 });
+      tl.to('.project-image', 0.1, { ease: Power4.easeOut, autoAlpha: 0 });
     },
   },
   mounted () {
@@ -195,14 +193,14 @@ export default {
     tl.set(document.querySelectorAll('.top-mask'), { y: -100, autoAlpha: 0, rotation: -5 });
     tl.set(document.querySelectorAll('.bottom-mask'), { y: 100, autoAlpha: 0, rotation: 5 });
 
-    tl.staggerTo(document.querySelectorAll('.top-mask'), 3, { y: 0, autoAlpha: 1, rotation: 0, delay: 1.25, force3D: true, ease: Power4.easeInOut }, 0.15);
-    tl.staggerTo(document.querySelectorAll('.bottom-mask'), 3, { y: 0, autoAlpha: 1, rotation: 0, delay: 1.25, force3D: true, ease: Power4.easeInOut }, 0.15);
+    tl.staggerTo(document.querySelectorAll('.top-mask'), 3, { y: 0, autoAlpha: 1, rotation: 0, delay: 0.6, force3D: true, ease: Power4.easeInOut }, 0.15);
+    tl.staggerTo(document.querySelectorAll('.bottom-mask'), 3, { y: 0, autoAlpha: 1, rotation: 0, delay: 0.6, force3D: true, ease: Power4.easeInOut }, 0.15);
 
     tl.to(document.querySelectorAll('.fancy-link.current'), 2.75, { css: { backgroundSize: '100% 100%' }, delay: 1, ease: Power4.easeInOut });
 
-    tl.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1.85, { scaleX: 1, autoAlpha: 1, transformOrigin:"left center", delay: 1.85, ease: Power4.easeInOut }, 0.3);
+    tl.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1.85, { scaleX: 1, autoAlpha: 1, transformOrigin:"left center", delay: 1.25, ease: Power4.easeInOut }, 0.3);
 
-    tl.staggerTo(document.querySelectorAll('.nav-reveal'), 3, { y: 0, autoAlpha: 1, delay: 0.75, rotation: 0, force3D: true, ease: Power4.easeInOut }, 0.15);
+    tl.staggerTo(document.querySelectorAll('.nav-reveal'), 3, { y: 0, autoAlpha: 1, delay: 0.25, rotation: 0, force3D: true, ease: Power4.easeInOut }, 0.15);
 
     tl.to(document.querySelectorAll('.swipe-reveal'), 2.5, { scaleY: 1, transformOrigin:"center bottom", delay: 0, ease: Power4.easeInOut });
   },

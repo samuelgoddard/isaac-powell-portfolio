@@ -28,8 +28,8 @@
               <div class="relative z-10 overflow-hidden">
                 <div class="top-mask relative h-6 overflow-hidden" @mouseover="showTime" @mouseleave="hideTime">
                   <div class="time cursor-text">
-                    <span class="ml-auto leading-snug tracking-tight font-serif block text-center time-1">Nottingham, England</span>
-                    <span class="ml-auto leading-snug tracking-tight font-serif block text-center time-2 pt-2">{{ currentTime }}</span>
+                    <span class="ml-auto leading-snug tracking-tight font-serif block text-center time-1 text-15 md:text-14 lg:text-base xl:text-20">Nottingham, England</span>
+                    <span class="ml-auto leading-snug tracking-tight font-serif block text-center time-2 text-15 md:text-14 lg:text-base xl:text-20 pt-3 lg:pt-2xl:pt-0">{{ currentTime }}</span>
                   </div>
                 </div>
               </div>
@@ -40,7 +40,7 @@
         <div class="hidden md:block ml-auto mr-auto">
           <div class="relative z-10 overflow-hidden">
             <span class="seperator-reveal-staggered block relative">
-              <seperator width="w-8" />
+              <seperator width="w-8 xl:w-20" />
             </span>
           </div>
         </div>
@@ -61,7 +61,7 @@
             </div>
           </nuxt-link>
           <div class="relative z-10 overflow-hidden inline-block
-                  mx-4 lg:mx-8 mr-0 lg:mr-0
+                  mx-1 md:mx-4 lg:mx-8 mr-0 lg:mr-0
                   text-16 lg:text-18 xl:text-20">
             <div class="top-mask relative">
               <a class="fancy-link"

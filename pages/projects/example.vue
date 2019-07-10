@@ -12,10 +12,10 @@
   <div class="block" v-observe-visibility="(isVisible, entry) => updateText(isVisible, entry, 'Introduction')">
   </div>
 
-    <section class="pb-24 pt-24 md:pt-32 lg:pt-40 md:flex md:items-center">
+    <section class="pb-24 pt-60 md:pt-32 lg:pt-40 xl:pt-90 md:flex md:items-center">
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
         <div class="w-full">
-          <div class="w-4/5 xl:w-4/5">
+          <div class="w-4/5 md:w-8/12 xl:w-7/12">
             <div class="pb-18 md:pb-28 xl:pb-52">
               <div class="overflow-hidden relative block flex">
                 <div class="seperator-reveal relative block">
@@ -31,7 +31,7 @@
               <span class="content relative block">
                 <h1 class="
                   leading-none tracking-titleSmall md:tracking-title
-                  text-60 md:text-127 lg:text-138 xl:text-142 pb-3 md:pb-6
+                  text-60 md:text-127 lg:text-138 xl:text-226 pb-3 md:pb-6
                   font-serif"
                 >
                   Paul<br/>Smith
@@ -46,7 +46,7 @@
             </span>
 
             <div class="overflow-hidden relative">
-              <div class="flex flex-wrap mb-12 md:mb-20 lg:mb-24 content">
+              <div class="flex flex-wrap mb-2 md:mb-20 lg:mb-24 content">
                 <div class="w-1/2 md:w-1/3">
                   <h2 class="leading-none tracking-tight
                   text-18 md:text-19 lg:text-22 xl:text-28
@@ -75,7 +75,7 @@
                     Link
                   </h2>
 
-                  <a href="www.paulsmith.co.uk" rel="noopener" target="_blank" class="fancy-link text-14 md:text-15 lg:text-19 xl:text-24">www.paulsmith.co.uk</a>
+                  <a href="www.paulsmith.co.uk" rel="noopener" target="_blank" class="fancy-link fancy-link--permanent text-14 md:text-15 lg:text-19 xl:text-24">www.paulsmith.co.uk</a>
                 </div>
               </div>
             </div>
@@ -87,7 +87,7 @@
   <div class="bleed--all pb-8 md:pb-12">
     <div class="bg-grey-light">
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
-        <div class="w-full md:w-4/6 xl:w-4/6 mx-auto py-0 md:py-18">
+        <div class="w-full md:w-4/6 xl:w-4/6 mx-auto py-0 md:py-24 lg:py-38">
           <picture class="w-full">
             <source srcset="/images/paul-smith/ps-perspective@2x.jpg"
                     media="(min-width: 768px)">
@@ -101,7 +101,7 @@
   <div class="bleed--all pb-16 md:pb-24 lg:pb-32">
     <div class="bg-grey-light">
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
-        <div class="w-full md:w-4/6 xl:w-4/6 mx-auto py-0 md:py-18">
+        <div class="w-full md:w-4/6 xl:w-4/6 mx-auto py-0 md:py-24 lg:py-38">
           <picture class="w-full">
             <source srcset="/images/paul-smith/ps-home@2x.jpg"
                     media="(min-width: 768px)">
@@ -118,7 +118,7 @@
   <section class="pb-18 md:pb-24 lg:pb-32 md:flex md:items-center">
     <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
       <div class="w-full">
-        <div class="w-4/5">
+        <div class="w-4/5 md:w-8/12 xl:w-7/12">
           <p class="text-15 md:text-20 lg:text-22 xl:text-26">Campaigns and Stories are central to the Paul Smith website – not only as routes to new product lines, but also as a means for people to explore wider context for the variety of collaborations that the company are involved in. As each story is different, I created a range of flexible, modular layouts that could be put together in various ways to serve the content.</p>
         </div>
       </div>
@@ -128,7 +128,7 @@
   <div class="bleed--all pb-16 md:pb-24 lg:pb-32">
     <div class="bg-grey-light">
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
-        <div class="w-full md:w-4/6 xl:w-4/6 mx-auto py-0 md:py-18">
+        <div class="w-full md:w-4/6 xl:w-4/6 mx-auto py-0 md:py-24 lg:py-38">
           <picture class="w-full">
             <source srcset="/images/paul-smith/ps-stories@2x.jpg"
                     media="(min-width: 768px)">
@@ -145,7 +145,7 @@
   <section class="pb-18 md:pb-24 lg:pb-32 md:flex md:items-center">
     <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
       <div class="w-full">
-        <div class="w-4/5">
+        <div class="w-4/5 md:w-8/12 xl:w-7/12">
           <p class="text-15 md:text-20 lg:text-22 xl:text-26 mb-10">One of the broader challenges that we tackled revolved around product filters, and how we could enhance the usability of this function to make searching through large categories a breeze. Our initial research found that the filter implementation was difficult to use, only allowed for one-by-one category selection and generally went against intuition.</p>
 
           <p class="text-15 md:text-20 lg:text-22 xl:text-26">To improve this, we introduced the ability to select multiple options across several categories without needing to refresh the page, along with a new visual approach, meaning people could filter everything they needed in one swift action.</p>
@@ -157,7 +157,7 @@
   <div class="bleed--all pb-16 md:pb-24 lg:pb-32">
     <div class="bg-grey-light">
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
-        <div class="w-full md:w-4/6 xl:w-4/6 mx-auto py-0 md:py-18">
+        <div class="w-full md:w-4/6 xl:w-4/6 mx-auto py-0 md:py-24 lg:py-38">
           <picture class="w-full mb-8 md:mb-12 block">
             <source srcset="/images/paul-smith/ps-filters-a@2x.jpg"
                     media="(min-width: 768px)">
@@ -180,7 +180,7 @@
   <section class="pb-18 md:pb-24 lg:pb-32 md:flex md:items-center">
     <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
       <div class="w-full">
-        <div class="w-4/5">
+        <div class="w-4/5 md:w-8/12 xl:w-7/12">
           <p class="text-15 md:text-20 lg:text-22 xl:text-26">As part of unifying and introducing new visual elements, the team also asked me to create an icon pack for use across the website and email campaigns.</p>
         </div>
       </div>
@@ -190,7 +190,7 @@
   <div class="bleed--all pb-16 md:pb-24 lg:pb-32">
     <div class="bg-grey-light">
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
-        <div class="w-full md:w-4/6 xl:w-4/6 mx-auto py-0 md:py-18">
+        <div class="w-full md:w-4/6 xl:w-4/6 mx-auto py-0 md:py-24 lg:py-38">
           <picture class="w-full">
             <source srcset="/images/paul-smith/ps-icons@2x.jpg"
                     media="(min-width: 768px)">
@@ -204,7 +204,7 @@
   <section class="pb-18 md:pb-24 lg:pb-32 md:flex md:items-center">
     <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
       <div class="w-full">
-        <div class="w-4/5">
+        <div class="w-4/5 md:w-8/12 xl:w-7/12">
           <p class="text-15 md:text-20 lg:text-22 xl:text-26">There’s more exciting improvements and developments in the pipeline, many of which I can’t show right now, but here’s some additional interface elements which I’ve created with the team as part of the ongoing evolution of the visual language. </p>
         </div>
       </div>
@@ -217,7 +217,7 @@
   <div class="bleed--all pb-8 md:pb-12">
     <div class="bg-grey-light">
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
-        <div class="w-full md:w-4/6 xl:w-4/6 mx-auto py-0 md:py-18">
+        <div class="w-full md:w-4/6 xl:w-4/6 mx-auto py-0 md:py-24 lg:py-38">
           <picture class="w-full">
             <source srcset="/images/paul-smith/ps-modules@2x.jpg"
                     media="(min-width: 768px)">
@@ -231,7 +231,7 @@
   <div class="bleed--all pb-16 md:pb-24 lg:pb-32">
     <div class="bg-grey-light">
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
-        <div class="w-full md:w-4/6 xl:w-4/6 mx-auto py-0 md:py-18">
+        <div class="w-full md:w-4/6 xl:w-4/6 mx-auto py-0 md:py-24 lg:py-38">
           <picture class="w-full">
             <source srcset="/images/paul-smith/ps-newsletter@2x.jpg"
                     media="(min-width: 768px)">
@@ -242,7 +242,7 @@
     </div>
   </div>
 
-  <section class="pb-16 md:pb-20 lg:pb-28 md:flex md:items-center">
+  <section class="pb-16 md:pb-20 xl:pb-28 md:flex md:items-center relative z-10">
     <div class="w-full xl:w-2/3 mx-auto">
       <div class="w-full">
         <div class="w-full text-right">
