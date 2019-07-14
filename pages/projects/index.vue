@@ -124,24 +124,24 @@ export default {
         height: 235,
         current: false
       },{
-        name: 'Hive Inc',
-        id: 'iii',
-        uri: '/projects/hive-inc',
-        date: '2017',
-        meta: 'Data App',
-        image: '/images/nav/hive-hover@2x.jpg',
-        width: 350,
-        height: 235,
-        current: false
-      },{
         name: 'Mat Hayward',
-        id: 'iv',
+        id: 'iii',
         uri: '/projects/mat-hayward',
         date: '2017',
         meta: 'Photographer',
         image: '/images/nav/mat-hover@2x.jpg',
         width: 280,
         height: 360,
+        current: false
+      },{
+        name: 'Hive Inc',
+        id: 'iv',
+        uri: '/projects/hive-inc',
+        date: '2017',
+        meta: 'Data App',
+        image: '/images/nav/hive-hover@2x.jpg',
+        width: 350,
+        height: 235,
         current: false
       },{
         name: 'Archives',
