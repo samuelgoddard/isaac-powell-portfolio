@@ -1,29 +1,28 @@
 <template>
-  <header class="relative z-10 overflow-hidden">
+  <header class="relative z-10">
     <div class="">
       <div class="flex items-center">
         
         <div class="md:flex-1">
           <div class="flex items-center">
             <div>
-              <div class="md:hidden">
+              <!-- <div class="md:hidden">
                 <div class="relative z-10 overflow-hidden">
                   <div class="top-mask relative">
                     <logo />
                   </div>
                 </div>
-              </div>
-              <div class="hidden md:inline-block">
-                <div class="relative z-10 overflow-hidden">
-                  <div class="h-10 w-12 bg-transparent"></div>
-                  <div class="fixed top-0 md:mt-6 lg:mt-8">
+              </div> -->
+              <!-- <div class="hidden md:inline-block"> -->
+                <div class="">
+                  <div class="h-12 w-12 fixed z-50 top-0 mt-6 md:mt-4 lg:mt-8">
                     <div class="top-mask relative">
                       <Logo />
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+            <!-- </div> -->
             <div class="hidden md:inline-block mx-auto">
               <div class="relative z-10 overflow-hidden">
                 <div class="top-mask relative h-6 overflow-hidden" @mouseover="showTime" @mouseleave="hideTime">

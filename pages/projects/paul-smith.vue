@@ -117,7 +117,7 @@
 
   <section class="pb-18 md:pb-24 lg:pb-32 md:flex md:items-center">
     <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
-      <div class="w-full">
+      <div class="w-full content">
         <div class="w-4/5 md:w-8/12 xl:w-7/12">
           <p class="text-15 md:text-20 lg:text-22 xl:text-26">Campaigns and Stories are central to the Paul Smith website – not only as routes to new product lines, but also as a means for people to explore wider context for the variety of collaborations that the company are involved in. As each story is different, I created a range of flexible, modular layouts that could be put together in various ways to serve the content.</p>
         </div>
@@ -144,7 +144,7 @@
 
   <section class="pb-18 md:pb-24 lg:pb-32 md:flex md:items-center">
     <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
-      <div class="w-full">
+      <div class="w-full content">
         <div class="w-4/5 md:w-8/12 xl:w-7/12">
           <p class="text-15 md:text-20 lg:text-22 xl:text-26 mb-10">One of the broader challenges that we tackled revolved around product filters, and how we could enhance the usability of this function to make searching through large categories a breeze. Our initial research found that the filter implementation was difficult to use, only allowed for one-by-one category selection and generally went against intuition.</p>
 
@@ -179,7 +179,7 @@
 
   <section class="pb-18 md:pb-24 lg:pb-32 md:flex md:items-center">
     <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
-      <div class="w-full">
+      <div class="w-full content">
         <div class="w-4/5 md:w-8/12 xl:w-7/12">
           <p class="text-15 md:text-20 lg:text-22 xl:text-26">As part of unifying and introducing new visual elements, the team also asked me to create an icon pack for use across the website and email campaigns.</p>
         </div>
@@ -203,7 +203,7 @@
 
   <section class="pb-18 md:pb-24 lg:pb-32 md:flex md:items-center">
     <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
-      <div class="w-full">
+      <div class="w-full content">
         <div class="w-4/5 md:w-8/12 xl:w-7/12">
           <p class="text-15 md:text-20 lg:text-22 xl:text-26">There’s more exciting improvements and developments in the pipeline, many of which I can’t show right now, but here’s some additional interface elements which I’ve created with the team as part of the ongoing evolution of the visual language. </p>
         </div>

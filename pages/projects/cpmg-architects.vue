@@ -117,7 +117,7 @@
 
   <section class="pb-18 md:pb-24 lg:pb-32 md:flex md:items-center">
     <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
-      <div class="w-full">
+      <div class="w-full content">
         <div class="w-4/5 md:w-8/12 xl:w-7/12">
           <p class="text-15 md:text-20 lg:text-22 xl:text-26 mb-10">To start, I conducted a series of staff interviews — accross different seniority levels to establish balance — to get a feel for different perspectives, what they each saw as opportunities for improvement, and how we could better present the various facets of their work.</p>
 
@@ -146,7 +146,7 @@
 
   <section class="pb-18 md:pb-24 lg:pb-32 md:flex md:items-center">
     <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
-      <div class="w-full">
+      <div class="w-full content">
         <div class="w-4/5 md:w-8/12 xl:w-7/12">
           <p class="text-15 md:text-20 lg:text-22 xl:text-26 mb-10">Visually we had a blank slate, so plenty of creative freedom was afforded. Mindful that anything I presented needed to introduce new functionality, serve CPMG’s ethos, and would become a significant cornerstone of the brand identity going forwards, I let the photography do the talking, supported by bold typography, plenty of negative space and minimalist detail.</p>
         </div>
@@ -219,7 +219,7 @@
 
   <section class="pb-18 md:pb-24 lg:pb-32 md:flex md:items-center">
     <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
-      <div class="w-full">
+      <div class="w-full content">
         <div class="w-4/5 md:w-8/12 xl:w-7/12">
           <p class="text-15 md:text-20 lg:text-22 xl:text-26 mb-10">To develop the design aesthetic further, a series of subtle animation guidelines were created. This included specific on-load motion rules, generative scroll interactions and  image treatments when moused over and dragged.</p>
 
