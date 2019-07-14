@@ -42,7 +42,7 @@
                       leading-none tracking-tight
                       font-serif
                       text-white
-                      py-3 xs:py-5 lg:py-6
+                      py-3 xs:py-4 lg:py-6
                       text-28 xs:text-32 md:text-38 lg:text-47 xl:text-52 h-trim
                       transition"
                     :class="[{ 'opacity-25' : isHovering }, { 'opacity-100' :project.id == selected }]"
