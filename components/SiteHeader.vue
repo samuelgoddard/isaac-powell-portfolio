@@ -29,7 +29,7 @@
                 <div class="top-mask relative h-6 overflow-hidden" @mouseover="showTime" @mouseleave="hideTime">
                   <div class="time cursor-text">
                     <span class="ml-auto leading-snug tracking-tight font-serif block text-center time-1 text-15 md:text-14 lg:text-base xl:text-20">Nottingham, England</span>
-                    <span class="ml-auto leading-snug tracking-tight font-serif block text-center time-2 text-15 md:text-14 lg:text-base xl:text-20 pt-3 lg:pt-2xl:pt-0">{{ currentTime }}</span>
+                    <span class="ml-auto leading-snug tracking-tight font-serif block text-center time-2 text-15 md:text-14 lg:text-base xl:text-20 pt-3 lg:pt-2 xl:pt-0">{{ currentTime }}</span>
                   </div>
                 </div>
               </div>
