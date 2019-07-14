@@ -8,7 +8,7 @@
         </div>
       </span>
     </div>
-    <section class="pb-24 pt-24 md:pt-32 lg:pt-40 md:flex md:items-center">
+    <section class="pb-24 pt-60 md:pt-32 lg:pt-40 xl:pt-90 md:flex md:items-center">
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
         <div class="w-full">
           <div class="w-4/5 md:w-8/12 xl:w-7/12">
