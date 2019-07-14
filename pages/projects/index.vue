@@ -110,8 +110,8 @@ export default {
         date: '2018',
         meta: 'Fashion House',
         image: '/images/nav/ps-hover@2x.jpg',
-        width: 325,
-        height: 325,
+        width: 350,
+        height: 235,
         current: false
       },{
         name: 'CPMG',
@@ -120,8 +120,8 @@ export default {
         date: '2017',
         meta: 'Architects',
         image: '/images/nav/cpmg-case@2x.jpg',
-        width: 325,
-        height: 325,
+        width: 350,
+        height: 235,
         current: false
       },{
         name: 'Hive Inc',
@@ -130,8 +130,8 @@ export default {
         date: '2017',
         meta: 'Data App',
         image: '/images/nav/hive-hover@2x.jpg',
-        width: 475,
-        height: 275,
+        width: 350,
+        height: 235,
         current: false
       },{
         name: 'Mat Hayward',
@@ -140,8 +140,8 @@ export default {
         date: '2017',
         meta: 'Photographer',
         image: '/images/nav/mat-hover@2x.jpg',
-        width: 475,
-        height: 275,
+        width: 280,
+        height: 360,
         current: false
       },{
         name: 'Archives',
@@ -150,8 +150,8 @@ export default {
         date: '2016',
         meta: 'Personal',
         image: '/images/nav/misc-hover@2x.jpg',
-        width: 475,
-        height: 275,
+        width: 350,
+        height: 300,
         current: false
       }]
     }

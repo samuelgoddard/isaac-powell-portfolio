@@ -61,15 +61,17 @@
     </section>
 
 
-    <div class="bleed--all pb-8 md:pb-12" v-for="project in projects" :key="project.id">
-      <div class="bg-grey-light">
-        <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
-          <div class="w-5/6 md:w-5/6 xl:w-5/6 mx-auto py- md:py-24 lg:py-38">
-            <picture class="w-full">
-              <source :srcset="project.image + '@2x.jpg'"
-                          media="(min-width: 768px)">
-                  <img :src="project.image + '.jpg'" :alt="project.name" class="w-full"/>
-            </picture>
+    <div class="pb-8 md:pb-12 lg:pb-24">
+      <div class="bleed--all pb-8 md:pb-12" v-for="project in projects" :key="project.id">
+        <div class="bg-grey-light">
+          <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
+            <div class="w-5/6 md:w-5/6 xl:w-5/6 mx-auto py- md:py-24 lg:py-38">
+              <picture class="w-full">
+                <source :srcset="project.image + '@2x.jpg'"
+                            media="(min-width: 768px)">
+                    <img :src="project.image + '.jpg'" :alt="project.name" class="w-full"/>
+              </picture>
+            </div>
           </div>
         </div>
       </div>
