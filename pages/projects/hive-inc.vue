@@ -56,7 +56,7 @@
 
                   <ul class="text-14 md:text-15 lg:text-19 xl:text-24">
                     <li>+ Visual Design</li>
-                    <li>+ User Experience</li>
+                    <li>+ UX</li>
                     <li>+ Prototyping</li>
                     <li>+ Art Direction</li>
                     <li>+ Identity</li>
