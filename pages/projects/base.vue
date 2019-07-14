@@ -1,5 +1,6 @@
 <template>
 <div>
+  <span class="fancy-link"></span>
 </div>
 </template>
 
@@ -24,6 +25,7 @@ export default {
       tl.to(document.querySelectorAll('.meta'), 2, { y: 25, autoAlpha: 1, delay: -1, rotation: -5, force3D: true, ease: Power4.easeInOut });
       tl.to(document.querySelector('.seperator-reveal'), 2.65, { scaleX: 0, autoAlpha: 1, transformOrigin:"left center", delay: -0.5, ease: Power4.easeInOut, onComplete: done });
       tl.to(document.querySelectorAll('.bleed--all'), 3.5, { autoAlpha: 0, delay: -0.5, rotation: 0, force3D: true, ease: Power4.easeInOut });
+      tl.to(document.querySelectorAll('.fancy-link'), 0.5, { css: { backgroundSize: '0% 100%' }, ease: Power4.easeInOut });
     },
   },
   components: {

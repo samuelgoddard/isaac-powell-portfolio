@@ -48,9 +48,9 @@
             <div class="overflow-hidden relative">
               <div class="flex flex-wrap mb-2 md:mb-20 lg:mb-24 content">
                 <div class="w-1/2 md:w-1/3">
-                  <h2 class="leading-none tracking-tight
-                  text-18 md:text-19 lg:text-22 xl:text-28
-                  font-serif font-medium mt-4 md:mt-0 mb-2 md:mb-4">
+                  <h2 class="
+                  text-20
+                  font-sans font-bold mt-4 md:mt-0 mb-2 md:mb-4">
                     Services
                   </h2>
 
@@ -63,9 +63,9 @@
                   </ul>
                 </div>
                 <div class="w-1/2 md:w-1/3 mb-8">
-                  <h2 class="leading-none tracking-tight
-                  text-18 md:text-19 lg:text-22 xl:text-28
-                  font-serif font-medium mt-4 md:mt-0 mb-2 md:mb-4">
+                  <h2 class="
+                  text-20
+                  font-sans font-bold mt-4 md:mt-0 mb-2 md:mb-4">
                     Year
                   </h2>
 
@@ -81,7 +81,7 @@
   <div class="bleed--all pb-18 md:pb-24 lg:pb-32">
     <div class="bg-grey-light">
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
-        <div class="w-full md:w-4/6 xl:w-4/6 mx-auto py-0 md:py-24 lg:py-38">
+        <div class="w-5/6 md:w-5/6 xl:w-5/6 mx-auto py-8 sm:py-10 md:py-24 lg:py-38">
           <picture class="w-full">
             <source srcset="/images/hive/hive-perspective@2x.jpg"
                     media="(min-width: 768px)">
@@ -199,7 +199,7 @@
   <div class="bleed--all pb-16 md:pb-24 lg:pb-32">
     <div class="bg-grey-light">
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
-        <div class="w-full md:w-4/6 xl:w-4/6 mx-auto py-0 md:py-24 lg:py-38">
+        <div class="w-5/6 md:w-5/6 xl:w-5/6 mx-auto py-8 sm:py-10 md:py-24 lg:py-38">
           <picture class="w-full mb-8 md:mb-12 block">
             <source srcset="/images/hive/hive-proto@2x.jpg"
                     media="(min-width: 768px)">

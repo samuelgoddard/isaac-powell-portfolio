@@ -24,7 +24,7 @@
       <div class="w-full max-w-2xl md:flex-1 overflow-hidden">
         <parallax-container class="overflow-hidden">
         <parallax-element :parallaxStrength="10" :type="'depth'">
-        <nav class="w-full overflow-y-auto overflow-x-hidden block md:p-2" @mouseout="isHovering = false">
+        <nav class="w-full overflow-y-auto overflow-x-hidden block md:p-2 lg:p-6" @mouseout="isHovering = false">
             <div
               v-for="(project, index) in projects"
               :key="project.name"
@@ -42,8 +42,8 @@
                       leading-none tracking-tight
                       font-serif
                       text-white
-                      py-5 lg:py-6
-                      text-32 md:text-38 lg:text-47 xl:text-52 h-trim
+                      py-3 xs:py-5 lg:py-6
+                      text-28 xs:text-32 md:text-38 lg:text-47 xl:text-52 h-trim
                       transition"
                     :class="[{ 'opacity-25' : isHovering }, { 'opacity-100' :project.id == selected }]"
                     :to="project.uri">
