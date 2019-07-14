@@ -46,10 +46,10 @@
             </span>
 
             <div class="overflow-hidden relative">
-              <div class="flex flex-wrap mb-2 md:mb-20 lg:mb-24 content">
-                <div class="w-1/2 md:w-1/3">
+              <div class="flex flex-wrap mb-2 md:mb-20 lg:mb-24 content -mx-5">
+                <div class="w-1/2 md:w-1/3 px-5">
                   <h2 class="
-                  text-20
+                  text-18
                   font-sans font-bold mt-4 md:mt-0 mb-2 md:mb-4">
                     Services
                   </h2>
@@ -62,9 +62,9 @@
                     <li>+ Identity</li>
                   </ul>
                 </div>
-                <div class="w-1/2 md:w-1/3 mb-8">
+                <div class="w-1/2 md:w-1/3 px-5 mb-8">
                   <h2 class="
-                  text-20
+                  text-18
                   font-sans font-bold mt-4 md:mt-0 mb-2 md:mb-4">
                     Year
                   </h2>

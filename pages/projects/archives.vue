@@ -45,7 +45,7 @@
               <div class="flex flex-wrap mb-12 md:mb-20 lg:mb-24 content">
                 <div class="w-1/2 md:w-1/3 mb-10">
                   <h2 class="
-                  text-20
+                  text-18
                   font-sans font-bold mt-4 md:mt-0 mb-2 md:mb-4">
                     Years
                   </h2>
