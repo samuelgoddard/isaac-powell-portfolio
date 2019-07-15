@@ -2,7 +2,7 @@
 <div>
   <site-header />
   <div class="block fixed top-0 right-0 mt-40 lg:mt-56 mr-6 md:mr-10 lg:mr-12 z-10">
-    <span class="overflow-hidden relative block mb-12 md:mb-16">
+    <span class="relative block mb-12 md:mb-16">
       <div class="content relative block sectionTitle">
         <span class="text-16 lg:text-18 xl:text-20 sectionTitle-inner">Introduction</span>
       </div>
