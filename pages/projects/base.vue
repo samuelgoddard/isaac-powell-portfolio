@@ -33,18 +33,31 @@ export default {
     SiteFooter,
     Seperator,
   },
+  data () {
+    return {
+      scrolled: false
+    };
+  },
   methods: {
+    handleScroll () {
+      this.scrolled = window.scrollY > 0;
+    },
     updateText (isVisible, entry, title) {
-      document.querySelector('.sectionTitle-inner').innerText = title;
+      if (this.scrolled) {
+        document.querySelector('.sectionTitle-inner').innerText = title;
+      }
     },
   },
   created () {
     this.$store.commit('ui/TOGGLE_LIGHT');
-    document.querySelector('.sectionTitle-inner').innerText = 'Introduction';
+  },
+  beforeMount () {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  beforeDestroy () {
+    window.removeEventListener('scroll', this.handleScroll);
   },
   mounted () {
-    document.querySelector('.sectionTitle-inner').innerText = 'Introduction';
-
     tl.set(document.querySelector('.mask'), { scaleY:0} );
     tl.set(document.querySelector('.swipe-reveal'), { scaleY:0 } );
     tl.set(document.querySelectorAll('.seperator-reveal-staggered'), { scaleX:0 } );
