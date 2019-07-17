@@ -9,9 +9,6 @@
     </span>
   </div>
 
-  <div class="block" v-observe-visibility="(isVisible, entry) => updateText(isVisible, entry, 'Introduction')">
-  </div>
-
     <section class="pb-24 pt-60 md:pt-32 lg:pt-40 xl:pt-90 md:flex md:items-center">
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
         <div class="w-full">
@@ -44,6 +41,8 @@
                 <p class="text-15 md:text-20 lg:text-22 xl:text-26">As one of Nottingham’s most established Architects, CPMG’s website did not best represent their core values or prestigious reputation. So I designed them a new one, with a user-centered approach and clean, minimal aesthetic that would really show off their work in full technicolour.</p>
               </span>
             </span>
+
+            <div class="block" v-observe-visibility="(isVisible, entry) => updateText(isVisible, entry, 'Introduction')"></div>
 
             <div class="overflow-hidden relative">
               <div class="flex flex-wrap mb-2 md:mb-20 lg:mb-24 content">

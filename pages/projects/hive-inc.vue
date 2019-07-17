@@ -9,9 +9,6 @@
     </span>
   </div>
 
-  <div class="block" v-observe-visibility="(isVisible, entry) => updateText(isVisible, entry, 'Introduction')">
-  </div>
-
     <section class="pb-24 pt-60 md:pt-32 lg:pt-40 xl:pt-90 md:flex md:items-center">
       <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
         <div class="w-full">
@@ -44,6 +41,8 @@
                 <p class="text-15 md:text-20 lg:text-22 xl:text-26">The Hive mobile app is an app concept to help users to test and optimise their site through a suite of built-in tools, like surveys, heatmaps, funnels and A/B tests. It’s intent is to be visually engaging in a way most apps of this type aren’t.</p>
               </span>
             </span>
+
+            <div class="block" v-observe-visibility="(isVisible, entry) => updateText(isVisible, entry, 'Introduction')"></div>
 
             <div class="overflow-hidden relative">
               <div class="flex flex-wrap mb-2 md:mb-20 lg:mb-24 content -mx-5">
@@ -99,7 +98,7 @@
     <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
       <div class="w-full content">
         <div class="w-4/5 md:w-8/12 xl:w-7/12">
-          <p class="text-15 md:text-20 lg:text-22 xl:text-26">The interface builds upon brand and interface elements already present on the website, ensuring a cohesive design language across devices. Naturally, the app contains a number of native design patterns and animations, all of which follow device specific guidelines for usability.</p>
+          <p class="text-15 md:text-20 lg:text-22 xl:text-26">the interface builds upon brand and interface elements already present on the website, ensuring a cohesive design language across devices. Naturally, the app contains a number of native design patterns and animations, all of which follow device specific guidelines for usability.</p>
         </div>
       </div>
     </div>
