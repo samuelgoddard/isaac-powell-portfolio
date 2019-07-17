@@ -99,7 +99,7 @@
     <div class="w-full md:w-4/5 xl:w-2/3 mx-auto">
       <div class="w-full content">
         <div class="w-4/5 md:w-8/12 xl:w-7/12">
-          <p class="text-15 md:text-20 lg:text-22 xl:text-26">the interface builds upon brand and interface elements already present on the website, ensuring a cohesive design language across devices. Naturally, the app contains a number of native design patterns and animations, all of which follow device specific guidelines for usability.</p>
+          <p class="text-15 md:text-20 lg:text-22 xl:text-26">The interface builds upon brand and interface elements already present on the website, ensuring a cohesive design language across devices. Naturally, the app contains a number of native design patterns and animations, all of which follow device specific guidelines for usability.</p>
         </div>
       </div>
     </div>
