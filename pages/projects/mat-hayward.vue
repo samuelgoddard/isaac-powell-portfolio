@@ -68,7 +68,7 @@
                   <p class="text-14 md:text-15 lg:text-19 xl:text-24">2019</p>
                 </div>
 
-                <div class="w-1/2 md:w-1/3">
+                <!-- <div class="w-1/2 md:w-1/3">
                   <h2 class="
                   text-18
                   font-sans font-bold mt-4 md:mt-0 mb-2 md:mb-4">
@@ -76,7 +76,7 @@
                   </h2>
 
                   <a href="http://www.mathayward.com" rel="noopener" target="_blank" class="fancy-link fancy-link--permanent text-14 md:text-15 lg:text-19 xl:text-24">www.mathayward.com</a>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
