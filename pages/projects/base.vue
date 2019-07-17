@@ -40,6 +40,7 @@ export default {
   },
   created () {
     this.$store.commit('ui/TOGGLE_LIGHT');
+    document.querySelector('.sectionTitle-inner').innerText = 'Introduction';
   },
   mounted () {
     document.querySelector('.sectionTitle-inner').innerText = 'Introduction';
@@ -58,7 +59,7 @@ export default {
     tl.staggerTo(document.querySelectorAll('.bottom-mask'), 3, { y: 0, autoAlpha: 1, rotation: 0, delay: -1, force3D: true, ease: Power4.easeInOut }, 0.15);
     tl.staggerTo(document.querySelectorAll('.seperator-reveal-staggered'), 1.85, { scaleX: 1, autoAlpha: 1, transformOrigin:"left center", delay: -0.5, ease: Power4.easeInOut }, 0.3);
     tl.staggerTo(document.querySelectorAll('.content'), 4, { y: 0, autoAlpha: 1, delay: -1.85, rotation: 0, force3D: true, ease: Power4.easeInOut }, 0.25);
-    
+
     tl.staggerTo(document.querySelectorAll('.bleed--all'), 2.25, { autoAlpha: 1, delay: 0, rotation: 0, force3D: true, ease: Power4.easeInOut }, 0.25);
 
     tl.to(document.querySelector('.seperator-reveal'), 3.5, { scaleX: 1, autoAlpha: 1, transformOrigin:"left center", delay: -1, ease: Power4.easeInOut });
