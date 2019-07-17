@@ -214,7 +214,7 @@
     </div>
   </div>
 
-  <div class="block" v-observe-visibility="(isVisible, entry) => updateText(isVisible, entry, 'Animation')">
+  <div class="block" v-observe-visibility="(isVisible, entry) => updateText(isVisible, entry, 'Structure')">
   </div>
 
   <section class="pb-18 md:pb-24 lg:pb-32 md:flex md:items-center">
