@@ -134,13 +134,13 @@ export default {
         height: 360,
         current: false
       },{
-        name: 'Hive Inc',
+        name: 'PRB Architects',
         id: 'iv',
-        uri: '/projects/hive-inc',
+        uri: '/projects/prb-architects',
         date: '2017',
-        meta: 'Data App',
-        image: '/images/nav/hive-hover@2x.jpg',
-        width: 350,
+        meta: 'Architects',
+        image: '/images/nav/prb-hover@2x.jpg',
+        width: 400,
         height: 235,
         current: false
       },{

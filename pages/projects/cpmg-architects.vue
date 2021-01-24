@@ -260,8 +260,8 @@
                   fancy-link--permanent
                   pb-3 md:pb-4
                   text-32 md:text-43 lg:text-52 xl:text-60 h-trim"
-                to="/projects/hive-inc">
-                  Hive Inc
+                to="/projects/prb-architects">
+                  PRB Architects
               </nuxt-link>
             </div>
           </div>
