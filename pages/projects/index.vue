@@ -114,13 +114,13 @@ export default {
         height: 235,
         current: false
       },{
-        name: 'CPMG',
+        name: 'PRB Architects',
         id: 'ii',
-        uri: '/projects/cpmg-architects',
+        uri: '/projects/prb-architects',
         date: '2017',
         meta: 'Architects',
-        image: '/images/nav/cpmg-case@2x.jpg',
-        width: 350,
+        image: '/images/nav/prb-hover@2x.jpg',
+        width: 400,
         height: 235,
         current: false
       },{
@@ -134,13 +134,13 @@ export default {
         height: 360,
         current: false
       },{
-        name: 'PRB Architects',
+        name: 'CPMG',
         id: 'iv',
-        uri: '/projects/prb-architects',
+        uri: '/projects/cpmg-architects',
         date: '2017',
         meta: 'Architects',
-        image: '/images/nav/prb-hover@2x.jpg',
-        width: 400,
+        image: '/images/nav/cpmg-case@2x.jpg',
+        width: 350,
         height: 235,
         current: false
       },{
